@@ -24,18 +24,16 @@ export default function InfiniteLogoMarquee({
         {repeatedLogos.map((_, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 rounded-full border border-white/10 bg-zinc-900 px-4 py-2"
+            className="flex items-center gap-3 rounded-full border border-white/10 bg-zinc-900 px-2 py-1"
           >
             <Image
               src="/imagepages/mboka.png"
               alt="Logo Mboka"
               width={42}
               height={42}
-              className="h-10 w-10 object-contain"
+              className="h-15 w-15 object-contain"
             />
-            <span className="text-sm font-medium tracking-[0.2em] text-white/80">
-              MBOKA
-            </span>
+           
           </div>
         ))}
       </motion.div>

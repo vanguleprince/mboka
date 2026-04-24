@@ -21,6 +21,7 @@ export default function Page() {
             animate={{ x: [0, -30, 0], y: [0, -25, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           />
+
         </div>
 
         <motion.section
@@ -28,13 +29,14 @@ export default function Page() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
           className="relative z-10 mx-auto w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-zinc-950 p-4 shadow-2xl"
-        >
-          
+         >
           <MediaPreview />
         </motion.section>
       </main>
 
       <InfiniteLogoMarquee direction="right" />
+
+        
     </div>
   );
 }
