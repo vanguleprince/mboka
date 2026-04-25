@@ -10,9 +10,9 @@ type VideoItem = {
 };
 
 const videos: VideoItem[] = [
-  { src: "/imagepages/bogo.MP4", title: "Vidéo 1" },
-  { src: "/imagepages/cdb.MP4", title: "Vidéo 2" },
-  { src: "/imagepages/flacko.MP4", title: "Vidéo 3" },
+  { src: "/videos/bogo.MP4", title: "Vidéo 1" },
+  { src: "/videos/cdb.MP4", title: "Vidéo 2" },
+  { src: "/videos/flacko.MP4", title: "Vidéo 3" },
 ];
 
 export default function MediaPreview() {

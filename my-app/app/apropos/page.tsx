@@ -1,50 +1,137 @@
-import Link from "next/link";
+import Image from "next/image";
 
 export default function AproposPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#08070c] px-4 py-12 text-white sm:px-8">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-20 top-10 h-64 w-64 rounded-full bg-violet-500/20 blur-3xl" />
-        <div className="absolute -right-16 bottom-6 h-72 w-72 rounded-full bg-indigo-500/20 blur-3xl" />
-      </div>
-
-      <section className="relative mx-auto max-w-4xl rounded-[34px] border border-white/10 bg-black/40 p-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-10">
-        <p className="text-xs uppercase tracking-[0.22em] text-violet-300">A PROPOS</p>
-        <h1 className="mt-3 text-3xl font-black text-white sm:text-5xl">Univers Mboka</h1>
-        <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-300">
-          Mboka est un label creatif qui melange musique, mode et culture urbaine.
-          Notre vision: offrir des experiences fortes, authentiques et modernes, entre sons,
-          image et style de vie.
+    <main className="min-h-screen bg-[#0A1445] px-4 py-10 sm:px-8 sm:py-14">
+      <section className="mx-auto w-full max-w-6xl rounded-[20px] bg-[#DCCFFF] p-6 text-[#13133a] shadow-[0_24px_70px_rgba(0,0,0,0.35)] sm:p-10">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3e2b80]">Label Mboka</p>
+        <h1 className="mt-3 text-3xl font-black leading-tight sm:text-5xl">L excellence au service de la creation urbaine</h1>
+        <p className="mt-5 max-w-3xl text-base leading-8 text-[#2a2361] sm:text-lg">
+          Fonde a Kinshasa, Mboka porte une vision claire: construire un label solide, moderne et exigeant,
+          ou l artiste reste au centre de chaque decision. Notre mission est de transformer des idees fortes
+          en oeuvres durables, avec une execution professionnelle a chaque etape.
         </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <article className="rounded-3xl border border-violet-200/20 bg-violet-500/10 p-4">
-            <h2 className="text-lg font-bold text-violet-100">Vision</h2>
-            <p className="mt-2 text-sm text-zinc-300">Construire une scene locale forte et inspiree.</p>
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          <article className="rounded-[20px] bg-white/55 p-5 sm:p-6">
+            <h2 className="text-xl font-extrabold text-[#281f66]">Une vision sans frontieres</h2>
+            <p className="mt-3 text-sm leading-7 text-[#2f2869] sm:text-base">
+              Mboka n est pas une simple structure de production. C est un espace de direction artistique,
+              de strategie et d innovation sonore. Nous construisons des catalogues qui traversent le temps,
+              pas des tendances qui disparaissent.
+            </p>
           </article>
-          <article className="rounded-3xl border border-violet-200/20 bg-violet-500/10 p-4">
-            <h2 className="text-lg font-bold text-violet-100">Equipe</h2>
-            <p className="mt-2 text-sm text-zinc-300">Artistes, producteurs, createurs visuels et stylists.</p>
-          </article>
-          <article className="rounded-3xl border border-violet-200/20 bg-violet-500/10 p-4">
-            <h2 className="text-lg font-bold text-violet-100">Ambition</h2>
-            <p className="mt-2 text-sm text-zinc-300">Faire rayonner Mboka au-dela de la scene locale.</p>
+
+          <article className="rounded-[20px] bg-white/55 p-5 sm:p-6">
+            <h2 className="text-xl font-extrabold text-[#281f66]">Accompagnement 360</h2>
+            <ul className="mt-3 space-y-2 text-sm leading-7 text-[#2f2869] sm:text-base">
+              <li>Direction artistique sur mesure pour l identite visuelle et sonore.</li>
+              <li>Distribution digitale et partenariats strategiques.</li>
+              <li>Marketing, communication et narration de marque.</li>
+              <li>Encadrement des droits et valorisation du catalogue.</li>
+            </ul>
           </article>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/decouvrir"
-            className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-zinc-200"
-          >
-            Retour decouvrir
-          </Link>
-          <Link
-            href="/"
-            className="rounded-full border border-white/15 bg-white/8 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/15"
-          >
-            Accueil
-          </Link>
+        <div className="mt-6 rounded-[20px] bg-[#bda6f7] p-5 sm:p-7">
+          <h2 className="text-2xl font-black text-[#20165b]">Roster Mboka</h2>
+          <p className="mt-2 text-sm leading-7 text-[#2a1f66] sm:text-base">
+            Trois identites fortes portent la signature Mboka. Focus special sur BOGOthegoat, C2B et flacko.
+          </p>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#3f2f86]">Headliner Mboka</p>
+              <h3 className="mt-2 text-2xl font-black text-[#1f1556]">BOGOthegoat</h3>
+              <p className="mt-2 text-sm leading-7 text-[#2d2468]">
+                Une energie brute, une signature vocale reconnaissable et une direction artistique assumee.
+                BOGOthegoat incarne la force de frappe creative du label.
+              </p>
+            </article>
+
+            <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#3f2f86]">Headliner Mboka</p>
+              <h3 className="mt-2 text-2xl font-black text-[#1f1556]">C2B</h3>
+              <p className="mt-2 text-sm leading-7 text-[#2d2468]">
+                C2B apporte une ecriture precise, des melodies marquantes et une vision moderne du son urbain.
+                Son univers positionne Mboka comme une reference ambitieuse.
+              </p>
+            </article>
+          </div>
+
+          <article className="mt-4 rounded-[20px] border border-[#4e3a95]/20 bg-white/60 p-5">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#3f2f86]">Artiste en lumiere</p>
+            <h3 className="mt-2 text-xl font-black text-[#1f1556]">flacko</h3>
+            <p className="mt-2 text-sm leading-7 text-[#2d2468] sm:text-base">
+              flacko complete ce trio avec une couleur musicale singuliere et une presence artistique forte.
+              Ensemble, ces artistes definissent l ADN de Mboka: authenticite, exigence et impact.
+            </p>
+          </article>
+        </div>
+
+        <div className="mt-6 rounded-[20px] bg-[#b894f5] p-5 sm:p-7">
+          <h2 className="text-2xl font-black text-[#20165b]">Team Mboka</h2>
+          <p className="mt-2 text-sm leading-7 text-[#2a1f66] sm:text-base">
+            Les talents qui font vivre le label chaque jour.
+          </p>
+
+          <div className="mt-6 flex flex-row items-start justify-between gap-4 overflow-x-auto pb-2">
+            <article className="flex flex-col items-center">
+              <div className="h-24 w-24 rounded-full border-4 border-[#281f66]/40 overflow-hidden bg-white/30">
+                <Image
+                  src="/imagepages/bogopicture.png"
+                  alt="Team member"
+                  width={96}
+                  height={96}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h3 className="mt-4 text-lg font-black text-[#1f1556]">Production</h3>
+              <p className="mt-1 text-xs text-[#2d2468] text-center">Direction artistique et mix</p>
+            </article>
+
+            <article className="flex flex-col items-center">
+              <div className="h-24 w-24 rounded-full border-4 border-[#281f66]/40 overflow-hidden bg-white/30">
+                <Image
+                  src="/imagepages/cdbpicture.png"
+                  alt="Team member"
+                  width={96}
+                  height={96}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h3 className="mt-4 text-lg font-black text-[#1f1556]">Marketing</h3>
+              <p className="mt-1 text-xs text-[#2d2468] text-center">Strategie et communication</p>
+            </article>
+
+            <article className="flex flex-col items-center">
+              <div className="h-24 w-24 rounded-full border-4 border-[#281f66]/40 overflow-hidden bg-white/30">
+                <Image
+                  src="/imagepages/flacko.png"
+                  alt="Team member"
+                  width={96}
+                  height={96}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h3 className="mt-4 text-lg font-black text-[#1f1556]">Distribution</h3>
+              <p className="mt-1 text-xs text-[#2d2468] text-center">Partenariats et logistics</p>
+            </article>
+
+            <article className="flex flex-col items-center">
+              <div className="h-24 w-24 rounded-full border-4 border-[#281f66]/40 overflow-hidden bg-white/30">
+                <Image
+                  src="/imagepages/keurma.png"
+                  alt="Team member"
+                  width={96}
+                  height={96}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h3 className="mt-4 text-lg font-black text-[#1f1556]">Visuel</h3>
+              <p className="mt-1 text-xs text-[#2d2468] text-center">Design et identite graphique</p>
+            </article>
+          </div>
         </div>
       </section>
     </main>
