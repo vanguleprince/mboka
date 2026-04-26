@@ -3,6 +3,18 @@ import Image from "next/image";
 export default function AproposPage() {
   return (
     <main className="min-h-screen bg-[#0A1445] px-4 py-10 sm:px-8 sm:py-14">
+      {/* Logo Mboka centré en haut */}
+      <div className="mx-auto mb-4 flex justify-center">
+        <Image
+          src="/imagepages/mboka.png"
+          alt="Logo Mboka"
+          width={200}
+          height={200}
+          className="h-40 w-40 object-contain sm:h-52 sm:w-52 lg:h-64 lg:w-64"
+          priority
+        />
+      </div>
+
       <section className="mx-auto w-full max-w-6xl rounded-[20px] bg-[#DCCFFF] p-6 text-[#13133a] shadow-[0_24px_70px_rgba(0,0,0,0.35)] sm:p-10">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3e2b80]">Label Mboka</p>
         <h1 className="mt-3 text-3xl font-black leading-tight sm:text-5xl">L excellence au service de la creation urbaine</h1>
