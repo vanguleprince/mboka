@@ -16,9 +16,9 @@ export default function BackLogo() {
       <Image
         src="/imagepages/mboka.png"
         alt="Mboka"
-        width={120}
-        height={104}
-        className="h-11 w-auto object-contain"
+        width={200}
+        height={174}
+        className="h-16 w-auto object-contain"
         priority
       />
     </button>

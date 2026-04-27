@@ -3,9 +3,10 @@ import Link from "next/link";
 
 const sections = [
   {
-    title: "News d'artiste",
+    title: "Artistes",
     subtitle: "Nouvelles sorties et sons exclusifs",
     color: "from-violet-500/45 via-fuchsia-500/25 to-zinc-900/85",
+    href: "/artistes",
   },
   {
     title: "Evenement",

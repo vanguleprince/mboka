@@ -12,12 +12,12 @@ export default function Page() {
       <main className="relative flex flex-1 items-center justify-center px-6 py-14 sm:px-10">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute left-[-5rem] top-[-4rem] h-72 w-72 rounded-full bg-zinc-700/30 blur-3xl"
+            className="absolute left-[-5rem] top-[-4rem] h-72 w-72 rounded-full bg-violet-900/50 blur-3xl"
             animate={{ x: [0, 35, 0], y: [0, 20, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute bottom-[-5rem] right-[-3rem] h-80 w-80 rounded-full bg-neutral-800/40 blur-3xl"
+            className="absolute bottom-[-5rem] right-[-3rem] h-80 w-80 rounded-full bg-violet-800/35 blur-3xl"
             animate={{ x: [0, -30, 0], y: [0, -25, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           />

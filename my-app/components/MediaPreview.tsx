@@ -58,9 +58,9 @@ export default function MediaPreview() {
             <p className="text-sm text-zinc-300">Cette vidéo n’a pas pu être chargée.</p>
             <Link
               href="/decouvrir"
-              className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-amber-400 via-orange-500 to-red-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 transition hover:scale-105 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+              className="absolute bottom-5 left-1/2 inline-flex min-w-[15rem] -translate-x-1/2 items-center justify-center rounded-full border border-violet-200/45 bg-linear-to-r from-violet-800 via-blue-700 to-emerald-500 px-10 py-3.5 text-center text-base font-bold text-white shadow-[0_10px_30px_rgba(59,130,246,0.45)] transition hover:scale-105 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
             >
-              Decouvrir
+              Decouvrez Mboka
             </Link>
           </div>
         ) : (
@@ -88,9 +88,9 @@ export default function MediaPreview() {
 
             <Link
               href="/decouvrir"
-              className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-linear-to-r from-amber-400 via-orange-500 to-red-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 transition hover:scale-105 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-300"
+              className="absolute bottom-5 left-1/2 inline-flex min-w-[15rem] -translate-x-1/2 items-center justify-center rounded-full border border-violet-200/45 bg-linear-to-r from-violet-800 via-blue-700 to-emerald-500 px-10 py-3.5 text-center text-base font-bold text-white shadow-[0_10px_30px_rgba(59,130,246,0.45)] transition hover:scale-105 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
             >
-              Decouvrir
+              Decouvrez Mboka
             </Link>
           </div>
         )}
