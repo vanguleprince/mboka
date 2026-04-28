@@ -43,11 +43,11 @@ export default function MediaPreview() {
     <div className="space-y-4">
      
 
-      <div className="overflow-hidden rounded-2xl border border-white/10 bg-linear-to-br from-zinc-900 via-black to-zinc-800 p-3">
+      <div className="overflow-hidden rounded-2xl border border-white/8 bg-linear-to-br from-zinc-900 via-black to-zinc-800 p-2 sm:p-2.5">
         <p className="mb-3 text-sm font-semibold text-zinc-200">{activeVideo.title}</p>
 
         {hasError ? (
-          <div className="relative flex min-h-80 flex-col items-center justify-center rounded-xl bg-zinc-950 px-4 py-6 text-center">
+          <div className="relative flex min-h-[22rem] flex-col items-center justify-center rounded-xl bg-zinc-950 px-4 py-6 text-center sm:min-h-[26rem]">
             <Image
               src="/imagepages/mboka.png"
               alt="Mboka"
@@ -72,7 +72,7 @@ export default function MediaPreview() {
               muted
               playsInline
               poster="/imagepages/mboka.png"
-              className="h-72 w-full rounded-xl object-cover sm:h-96"
+              className="h-[21rem] w-full rounded-xl object-cover sm:h-[34rem]"
               onError={() => {
                 setVideoErrors((current) => ({
                   ...current,

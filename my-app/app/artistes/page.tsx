@@ -62,29 +62,38 @@ export default function ArtistesPage() {
         </section>
 
         <section className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {artists.map((artist) => (
-            <article
-              key={artist.name}
-              className="group overflow-hidden rounded-[30px] border border-white/12 bg-linear-to-br from-violet-500/20 via-fuchsia-500/10 to-black/70 p-4 shadow-[0_18px_55px_rgba(0,0,0,0.4)] backdrop-blur-sm"
-            >
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/35">
-                <Image
-                  src={artist.image}
-                  alt={artist.name}
-                  width={500}
-                  height={500}
-                  className="h-60 w-full object-cover transition duration-300 group-hover:scale-105"
-                />
-              </div>
+          {artists.map((artist) => {
+            const card = (
+              <div className="group overflow-hidden rounded-[30px] border border-white/12 bg-linear-to-br from-violet-500/20 via-fuchsia-500/10 to-black/70 p-4 shadow-[0_18px_55px_rgba(0,0,0,0.4)] backdrop-blur-sm transition hover:brightness-110">
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/35">
+                  <Image
+                    src={artist.image}
+                    alt={artist.name}
+                    width={500}
+                    height={500}
+                    className="h-60 w-full object-cover transition duration-300 group-hover:scale-105"
+                  />
+                </div>
 
-              <div className="mt-4 space-y-2">
-                <h2 className="text-xl font-bold text-white">{artist.name}</h2>
-                <p className="text-sm text-violet-200/85">{artist.style}</p>
-                <p className="text-xs uppercase tracking-[0.14em] text-zinc-400">{artist.city}</p>
-                <p className="pt-2 text-sm leading-6 text-zinc-200">{artist.highlight}</p>
+                <div className="mt-4 space-y-2">
+                  <h2 className="text-xl font-bold text-white">{artist.name}</h2>
+                  <p className="text-sm text-violet-200/85">{artist.style}</p>
+                  <p className="text-xs uppercase tracking-[0.14em] text-zinc-400">{artist.city}</p>
+                  <p className="pt-2 text-sm leading-6 text-zinc-200">{artist.highlight}</p>
+                </div>
               </div>
-            </article>
-          ))}
+            );
+
+            if (artist.name === "Bogo") {
+              return (
+                <Link key={artist.name} href="/artistes/bogo">
+                  {card}
+                </Link>
+              );
+            }
+
+            return <article key={artist.name}>{card}</article>;
+          })}
         </section>
       </div>
     </main>

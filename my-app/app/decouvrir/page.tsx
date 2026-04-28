@@ -127,27 +127,36 @@ export default function DecouvrirPage() {
 
           <div className="relative overflow-x-auto pb-2 [scrollbar-width:thin] [scrollbar-color:rgba(110,231,183,0.45)_transparent]">
             <div className="flex w-max gap-4 pr-4 sm:gap-6">
-              {artists.map((artist) => (
-                <article
-                  key={artist.name}
-                  className="w-52 shrink-0 rounded-3xl border border-emerald-200/25 bg-black/30 p-3 backdrop-blur-sm sm:w-56"
-                >
-                  <div className="overflow-hidden rounded-2xl border border-emerald-200/20 bg-black/35">
-                    <Image
-                      src={artist.image}
-                      alt={artist.name}
-                      width={320}
-                      height={320}
-                      className="h-44 w-full object-cover"
-                    />
-                  </div>
+              {artists.map((artist) => {
+                const card = (
+                  <div className="w-52 shrink-0 rounded-3xl border border-emerald-200/25 bg-black/30 p-3 backdrop-blur-sm transition hover:brightness-110 sm:w-56">
+                    <div className="overflow-hidden rounded-2xl border border-emerald-200/20 bg-black/35">
+                      <Image
+                        src={artist.image}
+                        alt={artist.name}
+                        width={320}
+                        height={320}
+                        className="h-44 w-full object-cover"
+                      />
+                    </div>
 
-                  <div className="mt-3">
-                    <h3 className="text-base font-bold text-emerald-100">{artist.name}</h3>
-                    <p className="mt-1 text-xs text-emerald-200/80">{artist.role}</p>
+                    <div className="mt-3">
+                      <h3 className="text-base font-bold text-emerald-100">{artist.name}</h3>
+                      <p className="mt-1 text-xs text-emerald-200/80">{artist.role}</p>
+                    </div>
                   </div>
-                </article>
-              ))}
+                );
+
+                if (artist.name === "Bogo") {
+                  return (
+                    <Link key={artist.name} href="/artistes/bogo" className="shrink-0">
+                      {card}
+                    </Link>
+                  );
+                }
+
+                return <div key={artist.name} className="shrink-0">{card}</div>;
+              })}
             </div>
           </div>
         </section>
