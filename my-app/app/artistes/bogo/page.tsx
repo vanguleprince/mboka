@@ -74,7 +74,7 @@ export default function BogoPage() {
           <div className="flex flex-col gap-0 md:flex-row">
             <div className="relative h-72 w-full shrink-0 md:h-auto md:w-80 lg:w-96">
               <Image
-                src="/imagepages/bogopicture.png"
+                src="/imagepages/bogothegoat3.jpeg"
                 alt="Bogo"
                 fill
                 className="object-cover"
@@ -189,7 +189,7 @@ export default function BogoPage() {
                 <span className="w-5 text-center text-sm font-bold text-zinc-500">{i + 1}</span>
                 <div className="h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-violet-200/20 bg-black/40">
                   <Image
-                    src="/imagepages/bogopicture.png"
+                    src="/imagepages/bogothegoat3.jpeg"
                     alt={track.title}
                     width={80}
                     height={80}

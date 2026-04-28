@@ -12,6 +12,7 @@ const sections = [
     title: "Evenement",
     subtitle: "Concerts lives, showcases et invites",
     color: "from-purple-500/40 via-violet-600/25 to-zinc-900/85",
+    href: "/evenement",
   },
   {
     title: "A propos",
@@ -22,10 +23,30 @@ const sections = [
 ];
 
 const artists = [
-  { name: "Bogo", role: "Artiste principal", image: "/imagepages/bogopicture.png" },
-  { name: "CDB", role: "Voix soul", image: "/imagepages/cdbpicture.png" },
-  { name: "Flacko", role: "Rap melodique", image: "/imagepages/flacko.png" },
-  { name: "Keurma", role: "Afro pop", image: "/imagepages/keurma.png" },
+  {
+    name: "Bogo",
+    role: "Artiste principal",
+    image: "/imagepages/bogothegoat3.jpeg",
+    hoverImages: ["/imagepages/cdbpicture.png", "/imagepages/flacko.png", "/imagepages/keurma.png"],
+  },
+  {
+    name: "CDB",
+    role: "Voix soul",
+    image: "/imagepages/cdbpicture.png",
+    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/flacko.png", "/imagepages/keurma.png"],
+  },
+  {
+    name: "Flacko",
+    role: "Rap melodique",
+    image: "/imagepages/flacko.png",
+    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/keurma.png"],
+  },
+  {
+    name: "Keurma",
+    role: "Afro pop",
+    image: "/imagepages/keurma.png",
+    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flacko.png"],
+  },
 ];
 
 const clothingItems = [
@@ -129,15 +150,35 @@ export default function DecouvrirPage() {
             <div className="flex w-max gap-4 pr-4 sm:gap-6">
               {artists.map((artist) => {
                 const card = (
-                  <div className="w-52 shrink-0 rounded-3xl border border-emerald-200/25 bg-black/30 p-3 backdrop-blur-sm transition hover:brightness-110 sm:w-56">
-                    <div className="overflow-hidden rounded-2xl border border-emerald-200/20 bg-black/35">
+                  <div className="group w-52 shrink-0 rounded-3xl border border-emerald-200/25 bg-black/30 p-3 backdrop-blur-sm transition hover:brightness-110 sm:w-56">
+                    <div className="relative overflow-hidden rounded-2xl border border-emerald-200/20 bg-black/35">
                       <Image
                         src={artist.image}
                         alt={artist.name}
                         width={320}
                         height={320}
-                        className="h-44 w-full object-cover"
+                        className="h-44 w-full object-cover transition duration-500 group-hover:scale-105"
                       />
+
+                      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/60 via-black/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                      <div className="pointer-events-none absolute bottom-3 left-3 flex items-center gap-[-6px] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        {artist.hoverImages.map((img, index) => (
+                          <div
+                            key={`${artist.name}-${img}`}
+                            className="h-8 w-8 overflow-hidden rounded-full border border-emerald-100/55 shadow-[0_4px_10px_rgba(0,0,0,0.35)]"
+                            style={{ transform: `translateX(${index * -6}px)` }}
+                          >
+                            <Image
+                              src={img}
+                              alt={`${artist.name} artiste ${index + 1}`}
+                              width={64}
+                              height={64}
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
                     <div className="mt-3">

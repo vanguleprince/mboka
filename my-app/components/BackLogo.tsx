@@ -1,17 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function BackLogo() {
-  const router = useRouter();
-
   return (
-    <button
-      type="button"
-      onClick={() => router.back()}
+    <Link
+      href="/decouvrir"
       className="transition-opacity hover:opacity-80"
-      aria-label="Retour a la page precedente"
+      aria-label="Aller a la page Decouvrir"
     >
       <Image
         src="/imagepages/mboka.png"
@@ -21,6 +18,6 @@ export default function BackLogo() {
         className="h-16 w-auto object-contain"
         priority
       />
-    </button>
+    </Link>
   );
 }
