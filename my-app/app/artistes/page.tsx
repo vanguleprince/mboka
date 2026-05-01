@@ -10,24 +10,24 @@ const artists = [
     highlight: "Nouvel EP en preparation",
   },
   {
-    name: "CDB",
-    style: "Soul moderne",
-    city: "Lubumbashi",
+    name: "C2B",
+    style: "Rap urbain",
+    city: "Kinshasa",
     image: "/imagepages/cdbpicture.png",
     highlight: "Session live ce vendredi",
   },
   {
     name: "Flacko",
-    style: "Rap melodique",
-    city: "Goma",
-    image: "/imagepages/flacko.png",
+    style: "Trap music",
+    city: "Kinshasa",
+    image: "/imagepages/flackoCram.jpg",
     highlight: "Clip Sans Frein disponible",
   },
   {
     name: "Keurma",
     style: "Afro pop",
     city: "Matadi",
-    image: "/imagepages/keurma.png",
+    image: "/imagepages/keurma2.jpg",
     highlight: "Single Mon Horizon en tendance",
   },
 ];
@@ -87,6 +87,30 @@ export default function ArtistesPage() {
             if (artist.name === "Bogo") {
               return (
                 <Link key={artist.name} href="/artistes/bogo">
+                  {card}
+                </Link>
+              );
+            }
+
+            if (artist.name === "C2B") {
+              return (
+                <Link key={artist.name} href="/artistes/c2b">
+                  {card}
+                </Link>
+              );
+            }
+
+            if (artist.name === "Flacko") {
+              return (
+                <Link key={artist.name} href="/artistes/flacko">
+                  {card}
+                </Link>
+              );
+            }
+
+            if (artist.name === "Keurma") {
+              return (
+                <Link key={artist.name} href="/artistes/keurma">
                   {card}
                 </Link>
               );

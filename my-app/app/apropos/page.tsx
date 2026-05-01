@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AproposPage() {
   return (
@@ -119,7 +120,7 @@ export default function AproposPage() {
             <article className="flex flex-col items-center">
               <div className="h-24 w-24 rounded-full border-4 border-[#281f66]/40 overflow-hidden bg-white/30">
                 <Image
-                  src="/imagepages/flacko.png"
+                  src="/imagepages/flackoCram.jpg"
                   alt="Team member"
                   width={96}
                   height={96}
@@ -130,10 +131,10 @@ export default function AproposPage() {
               <p className="mt-1 text-xs text-[#2d2468] text-center">Partenariats et logistics</p>
             </article>
 
-            <article className="flex flex-col items-center">
+            <Link href="/artistes/keurma" className="flex flex-col items-center">
               <div className="h-24 w-24 rounded-full border-4 border-[#281f66]/40 overflow-hidden bg-white/30">
                 <Image
-                  src="/imagepages/keurma.png"
+                  src="/imagepages/keurma2.jpg"
                   alt="Team member"
                   width={96}
                   height={96}
@@ -142,7 +143,7 @@ export default function AproposPage() {
               </div>
               <h3 className="mt-4 text-lg font-black text-[#1f1556]">Visuel</h3>
               <p className="mt-1 text-xs text-[#2d2468] text-center">Design et identite graphique</p>
-            </article>
+            </Link>
           </div>
         </div>
       </section>

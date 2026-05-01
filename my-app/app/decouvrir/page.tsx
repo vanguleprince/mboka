@@ -3,6 +3,12 @@ import Link from "next/link";
 
 const sections = [
   {
+    title: "A propos",
+    subtitle: "Vision, equipe et univers Mboka",
+    color: "from-indigo-500/35 via-violet-500/25 to-zinc-900/85",
+    href: "/apropos",
+  },
+  {
     title: "Artistes",
     subtitle: "Nouvelles sorties et sons exclusifs",
     color: "from-violet-500/45 via-fuchsia-500/25 to-zinc-900/85",
@@ -14,12 +20,6 @@ const sections = [
     color: "from-purple-500/40 via-violet-600/25 to-zinc-900/85",
     href: "/evenement",
   },
-  {
-    title: "A propos",
-    subtitle: "Vision, equipe et univers Mboka",
-    color: "from-indigo-500/35 via-violet-500/25 to-zinc-900/85",
-    href: "/apropos",
-  },
 ];
 
 const artists = [
@@ -27,32 +27,32 @@ const artists = [
     name: "Bogo",
     role: "Artiste principal",
     image: "/imagepages/bogothegoat3.jpeg",
-    hoverImages: ["/imagepages/cdbpicture.png", "/imagepages/flacko.png", "/imagepages/keurma.png"],
+    hoverImages: ["/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg", "/imagepages/keurma2.jpg"],
   },
   {
-    name: "CDB",
+    name: "C2B",
     role: "Voix soul",
     image: "/imagepages/cdbpicture.png",
-    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/flacko.png", "/imagepages/keurma.png"],
+    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/flackoCram.jpg", "/imagepages/keurma2.jpg"],
   },
   {
     name: "Flacko",
     role: "Rap melodique",
-    image: "/imagepages/flacko.png",
-    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/keurma.png"],
+    image: "/imagepages/flackoCram.jpg",
+    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/keurma2.jpg"],
   },
   {
     name: "Keurma",
     role: "Afro pop",
-    image: "/imagepages/keurma.png",
-    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flacko.png"],
+    image: "/imagepages/keurma2.jpg",
+    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
   },
 ];
 
 const clothingItems = [
   { name: "Hoodie Midnight", type: "Sweat capuche", price: "$65", image: "/imagepages/bogopicture.png" },
   { name: "Tee Ocean", type: "T-shirt oversize", price: "$35", image: "/imagepages/cdbpicture.png" },
-  { name: "Veste Storm", type: "Veste street", price: "$90", image: "/imagepages/flacko.png" },
+  { name: "Veste Storm", type: "Veste street", price: "$90", image: "/imagepages/flackoCram.jpg" },
   { name: "Jogger Sky", type: "Pantalon confort", price: "$52", image: "/imagepages/keurma.png" },
   { name: "Top Electric", type: "Top premium", price: "$39", image: "/imagepages/mboka.png" },
   { name: "Casquette Blue Wave", type: "Accessoire", price: "$24", image: "/imagepages/bogopicture.png" },
@@ -61,11 +61,11 @@ const clothingItems = [
 const audioTracks = [
   { title: "Mboka Intro", artist: "Bogo", image: "/imagepages/bogopicture.png", active: true },
   { title: "Ville Lumiere", artist: "CDB", image: "/imagepages/cdbpicture.png" },
-  { title: "Sans Frein", artist: "Flacko", image: "/imagepages/flacko.png" },
+  { title: "Sans Frein", artist: "Flacko", image: "/imagepages/flackoCram.jpg" },
   { title: "Mon Horizon", artist: "Keurma", image: "/imagepages/keurma.png" },
   { title: "Street Melody", artist: "Bogo", image: "/imagepages/bogopicture.png" },
   { title: "Minuit Doux", artist: "CDB", image: "/imagepages/cdbpicture.png" },
-  { title: "Dans le Bloc", artist: "Flacko", image: "/imagepages/flacko.png" },
+  { title: "Dans le Bloc", artist: "Flacko", image: "/imagepages/flackoCram.jpg" },
   { title: "Coeur Neon", artist: "Keurma", image: "/imagepages/keurma.png" },
 ];
 
@@ -191,6 +191,30 @@ export default function DecouvrirPage() {
                 if (artist.name === "Bogo") {
                   return (
                     <Link key={artist.name} href="/artistes/bogo" className="shrink-0">
+                      {card}
+                    </Link>
+                  );
+                }
+
+                if (artist.name === "C2B") {
+                  return (
+                    <Link key={artist.name} href="/artistes/c2b" className="shrink-0">
+                      {card}
+                    </Link>
+                  );
+                }
+
+                if (artist.name === "Flacko") {
+                  return (
+                    <Link key={artist.name} href="/artistes/flacko" className="shrink-0">
+                      {card}
+                    </Link>
+                  );
+                }
+
+                if (artist.name === "Keurma") {
+                  return (
+                    <Link key={artist.name} href="/artistes/keurma" className="shrink-0">
                       {card}
                     </Link>
                   );
