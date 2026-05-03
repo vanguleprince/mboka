@@ -9,6 +9,12 @@ const sections = [
     href: "/apropos",
   },
   {
+    title: "Boutique",
+    subtitle: "Merch officiel, drops et exclusivites",
+    color: "from-amber-500/40 via-orange-500/20 to-zinc-900/85",
+    href: "/boutique",
+  },
+  {
     title: "Artistes",
     subtitle: "Nouvelles sorties et sons exclusifs",
     color: "from-violet-500/45 via-fuchsia-500/25 to-zinc-900/85",
@@ -50,12 +56,12 @@ const artists = [
 ];
 
 const clothingItems = [
-  { name: "Hoodie Midnight", type: "Sweat capuche", price: "$65", image: "/imagepages/bogopicture.png" },
-  { name: "Tee Ocean", type: "T-shirt oversize", price: "$35", image: "/imagepages/cdbpicture.png" },
-  { name: "Veste Storm", type: "Veste street", price: "$90", image: "/imagepages/flackoCram.jpg" },
-  { name: "Jogger Sky", type: "Pantalon confort", price: "$52", image: "/imagepages/keurma.png" },
-  { name: "Top Electric", type: "Top premium", price: "$39", image: "/imagepages/mboka.png" },
-  { name: "Casquette Blue Wave", type: "Accessoire", price: "$24", image: "/imagepages/bogopicture.png" },
+  { name: "Hoodie Midnight", type: "Sweat capuche", price: "$65", image: "/imagepages/thrity1.jpeg" },
+  { name: "Tee Ocean", type: "T-shirt oversize", price: "$35", image: "/imagepages/thrity2.jpeg" },
+  { name: "Veste Storm", type: "Veste street", price: "$90", image: "/imagepages/mbokaTshirt1.png" },
+  { name: "Jogger Sky", type: "Pantalon confort", price: "$52", image: "/imagepages/cape.jpg" },
+  { name: "Top Electric", type: "Top premium", price: "$39", image: "/imagepages/t-shirtwhite.png" },
+  { name: "Casquette Blue Wave", type: "Accessoire", price: "$24", image: "/imagepages/t-shirt.png" },
 ];
 
 const audioTracks = [
@@ -291,21 +297,24 @@ export default function DecouvrirPage() {
                 <Link
                   key={item.name}
                   href="/boutique"
-                  className="group flex w-80 shrink-0 items-center gap-4 rounded-full border border-sky-200/20 bg-black/28 px-4 py-3 transition hover:bg-sky-100/12 sm:w-96"
+                  className="group relative h-97.5 w-72.5 shrink-0 overflow-hidden rounded-[30px] border border-sky-200/20 bg-black/28 transition hover:brightness-110 sm:h-107.5 sm:w-85"
                 >
-                  <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full border border-sky-200/25 bg-black/35">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={128}
-                      height={128}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    sizes="(max-width: 640px) 290px, 340px"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
 
-                 
-                  <div className="shrink-0 rounded-full border border-sky-200/20 bg-sky-300/12 px-4 py-1.5 text-sm font-semibold text-sky-100">
-                    {item.price}
+                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/35 to-transparent" />
+
+                  <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-sky-200/25 bg-black/45 p-4 backdrop-blur-sm">
+                    <h3 className="text-xl font-black leading-tight text-white">{item.name}</h3>
+                    <p className="mt-1 text-sm text-sky-100/85">{item.type}</p>
+                    <div className="mt-3 inline-flex rounded-full border border-sky-200/30 bg-sky-300/12 px-4 py-1.5 text-sm font-semibold text-sky-100">
+                      {item.price}
+                    </div>
                   </div>
                 </Link>
               ))}

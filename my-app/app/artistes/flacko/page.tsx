@@ -172,9 +172,17 @@ export default function FlackoPage() {
         <section className="mt-6 rounded-[32px] border border-white/10 bg-black/40 p-5 backdrop-blur-xl sm:p-7">
           <div className="mb-5 flex items-center justify-between">
             <h2 className="text-lg font-bold text-white">Discographie</h2>
-            <span className="rounded-full border border-violet-300/30 bg-violet-300/10 px-3 py-1 text-xs tracking-[0.14em] text-violet-200">
-              STREAMING
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="rounded-full border border-violet-300/30 bg-violet-300/10 px-3 py-1 text-xs tracking-[0.14em] text-violet-200">
+                STREAMING
+              </span>
+              <Link
+                href="/artistes/flacko/tracklist"
+                className="rounded-full border border-violet-200/35 bg-black/35 px-3 py-1 text-xs font-semibold tracking-widest text-violet-100 transition hover:bg-violet-500/20"
+              >
+                Tracklist complete
+              </Link>
+            </div>
           </div>
 
           <div className="flex flex-col gap-2">

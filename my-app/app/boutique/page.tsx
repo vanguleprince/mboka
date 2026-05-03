@@ -8,7 +8,7 @@ const clothingItems = [
     id: "1",
     title: "T-shirt Premium Noir",
     price: 15000,
-    image: "/api/placeholder/300/300",
+    image: "/imagepages/thrity1.jpeg",
     category: "T-shirt",
     rating: 4.8,
     inStock: true,
@@ -17,7 +17,7 @@ const clothingItems = [
     id: "2",
     title: "Jeans Slim Fit Bleu",
     price: 35000,
-    image: "/api/placeholder/300/300",
+    image: "/imagepages/thrity2.jpeg",
     category: "Jeans",
     rating: 4.6,
     inStock: true,
@@ -26,7 +26,7 @@ const clothingItems = [
     id: "3",
     title: "Chemise Classique Blanche",
     price: 25000,
-    image: "/api/placeholder/300/300",
+    image: "/imagepages/mbokaTshirt1.png",
     category: "Chemise",
     rating: 4.7,
     inStock: true,
@@ -35,7 +35,7 @@ const clothingItems = [
     id: "4",
     title: "Veste Bomber Gris",
     price: 45000,
-    image: "/api/placeholder/300/300",
+    image: "/imagepages/cape.jpg",
     category: "Veste",
     rating: 4.5,
     inStock: true,
@@ -44,7 +44,7 @@ const clothingItems = [
     id: "5",
     title: "Shorts Cargo Kaki",
     price: 20000,
-    image: "/api/placeholder/300/300",
+    image: "/imagepages/t-shirtwhite.png",
     category: "Shorts",
     rating: 4.4,
     inStock: true,
@@ -53,7 +53,7 @@ const clothingItems = [
     id: "6",
     title: "Hoodie Confortable Noir",
     price: 32000,
-    image: "/api/placeholder/300/300",
+    image: "/imagepages/t-shirt.png",
     category: "Hoodie",
     rating: 4.9,
     inStock: true,
@@ -62,7 +62,7 @@ const clothingItems = [
     id: "7",
     title: "Pantalon Chino Beige",
     price: 28000,
-    image: "/api/placeholder/300/300",
+    image: "/imagepages/crame1.png",
     category: "Pantalon",
     rating: 4.5,
     inStock: false,
@@ -71,7 +71,7 @@ const clothingItems = [
     id: "8",
     title: "Polo Sportif Bleu",
     price: 18000,
-    image: "/api/placeholder/300/300",
+    image: "/imagepages/mboka.png",
     category: "Polo",
     rating: 4.6,
     inStock: true,
@@ -134,7 +134,7 @@ export default function BoutiquePage() {
 
       {/* Contact Form Section */}
       <div className="mx-auto max-w-4xl">
-        <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-violet-600/20 via-blue-600/20 to-green-600/20 p-8 sm:p-12">
+        <div className="rounded-2xl border border-white/10 bg-linear-to-br from-violet-600/20 via-blue-600/20 to-green-600/20 p-8 sm:p-12">
           <div className="mb-8 text-center">
             <h2 className="mb-3 text-3xl font-bold sm:text-4xl">
               Passez Votre Commande
@@ -203,7 +203,7 @@ export default function BoutiquePage() {
               </button>
               <button
                 type="submit"
-                className="rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 px-8 py-3 font-semibold text-white transition hover:scale-105 hover:shadow-lg hover:shadow-pink-500/40"
+                className="rounded-lg bg-linear-to-r from-pink-500 to-purple-600 px-8 py-3 font-semibold text-white transition hover:scale-105 hover:shadow-lg hover:shadow-pink-500/40"
               >
                 Envoyer la Commande
               </button>

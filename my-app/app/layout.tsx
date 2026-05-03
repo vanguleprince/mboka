@@ -1,6 +1,8 @@
 // 1. AJOUTE LES IMPORTS (Essentiel pour éviter l'erreur "geistSans is not defined")
 import { Geist, Geist_Mono } from "next/font/google";
 import MainNav from "@/components/MainNav";
+import { AudioProvider } from "@/components/AudioProvider";
+import MiniPlayer from "@/components/MiniPlayer";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -32,16 +34,18 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-black`}
     >
       <body className="min-h-full flex flex-col bg-black text-white">
+        <AudioProvider>
+          <header className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
+            <MainNav />
+          </header>
 
-        <header className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
-          <MainNav />
-        </header>
+          {children}
 
-        {children}
+          <footer className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
+          </footer>
 
-        <footer className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
-           
-        </footer>
+          <MiniPlayer />
+        </AudioProvider>
       </body>
     </html>
   );
