@@ -122,13 +122,13 @@ export default function C2BPage() {
                 >
                   <div className="space-y-3">
                     <p>
-                      Revele en 2019 avec le titre <span className="font-semibold text-white">"Koli"</span>, il impose rapidement une direction claire : creer une musique sans barrieres, enracinee dans la culture congolaise mais connectee aux standards internationaux.
+                      Revele en 2019 avec le titre <span className="font-semibold text-white">&quot;Koli&quot;</span>, il impose rapidement une direction claire : creer une musique sans barrieres, enracinee dans la culture congolaise mais connectee aux standards internationaux.
                     </p>
                     <p>
                       Entre rap, trap, afrobeat et drill, C2B construit un son hybride, moderne et identifiable des les premieres mesures. Inspire par des figures comme Migos, Deejay S ou Big Brown, il developpe un univers puissant : flow precis, energie brute, esthetique travaillee.
                     </p>
                     <p>
-                      Chaque sortie est pensee comme une experience, melant attitude, image et storytelling. Avec des titres comme <span className="font-semibold text-white">"C&apos;est la vie"</span>, <span className="font-semibold text-white">"Makala"</span> ou <span className="font-semibold text-white">"O&apos;A Nani ?"</span>, cumulant des milliers de vues, C2B s&apos;impose progressivement sur la scene urbaine congolaise tout en preparant son expansion a l&apos;international.
+                      Chaque sortie est pensee comme une experience, melant attitude, image et storytelling. Avec des titres comme <span className="font-semibold text-white">&quot;C&apos;est la vie&quot;</span>, <span className="font-semibold text-white">&quot;Makala&quot;</span> ou <span className="font-semibold text-white">&quot;O&apos;A Nani ?&quot;</span>, cumulant des milliers de vues, C2B s&apos;impose progressivement sur la scene urbaine congolaise tout en preparant son expansion a l&apos;international.
                     </p>
                     <p>
                       Porte par une audience jeune, engagee et en pleine croissance, il avance avec une vision claire : passer de Kinshasa au monde.
@@ -297,9 +297,9 @@ export default function C2BPage() {
           <div className="rounded-[32px] border border-violet-300/20 bg-[linear-gradient(180deg,rgba(109,40,217,0.18),rgba(9,8,15,0.82))] p-5 backdrop-blur-xl sm:p-7">
             <div className="mb-5">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-200/80">Boutique</p>
-              <h2 className="mt-2 text-lg font-bold text-white">Vetements de l'artiste</h2>
+              <h2 className="mt-2 text-lg font-bold text-white">Vetements de l&apos;artiste</h2>
               <p className="mt-2 text-sm leading-6 text-zinc-300">
-                Une selection de pieces inspirees de l'univers visuel de C2B.
+                Une selection de pieces inspirees de l&apos;univers visuel de C2B.
               </p>
             </div>
 

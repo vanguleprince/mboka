@@ -52,7 +52,7 @@ export default function ArtistTracklistClient({ tracklist }: ArtistTracklistClie
           href={`/artistes/${tracklist.slug}`}
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-sm font-medium text-zinc-300 transition hover:bg-white/15 hover:text-white"
         >
-          Retour a l'artiste
+          Retour a l&apos;artiste
         </Link>
 
         <section className="overflow-hidden rounded-[36px] border border-white/12 bg-[linear-gradient(135deg,rgba(109,40,217,0.30),rgba(37,99,235,0.18)),rgba(0,0,0,0.55)] p-5 shadow-[0_28px_80px_rgba(10,8,28,0.55)] backdrop-blur-xl sm:p-7">
@@ -63,7 +63,7 @@ export default function ArtistTracklistClient({ tracklist }: ArtistTracklistClie
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-200/80">Tracklist</p>
               <h1 className="mt-1 text-2xl font-black text-white sm:text-3xl">{tracklist.name}</h1>
-              <p className="mt-1 text-sm text-zinc-300">Tous les titres de l'artiste</p>
+              <p className="mt-1 text-sm text-zinc-300">Tous les titres de l&apos;artiste</p>
             </div>
           </div>
         </section>

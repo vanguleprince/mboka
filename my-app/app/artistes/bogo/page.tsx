@@ -304,9 +304,9 @@ export default function BogoPage() {
           <div className="rounded-4xl border border-violet-300/20 bg-[linear-gradient(180deg,rgba(109,40,217,0.18),rgba(9,8,15,0.82))] p-5 backdrop-blur-xl sm:p-7">
             <div className="mb-5">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-200/80">Boutique</p>
-              <h2 className="mt-2 text-lg font-bold text-white">Vetements de l'artiste</h2>
+              <h2 className="mt-2 text-lg font-bold text-white">Vetements de l&apos;artiste</h2>
               <p className="mt-2 text-sm leading-6 text-zinc-300">
-                Une selection de pieces inspirees de l'univers visuel de Bogo The Goat.
+                Une selection de pieces inspirees de l&apos;univers visuel de Bogo The Goat.
               </p>
             </div>
 

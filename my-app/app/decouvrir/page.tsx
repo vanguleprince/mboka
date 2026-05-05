@@ -78,16 +78,6 @@ const audioTracks = [
   { title: "Vraie Momie", artist: "Keurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3" },
 ];
 
-function AudioMenuIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
-      <circle cx="12" cy="5" r="1.8" />
-      <circle cx="12" cy="12" r="1.8" />
-      <circle cx="12" cy="19" r="1.8" />
-    </svg>
-  );
-}
-
 export default function DecouvrirPage() {
   const { playlist, currentIndex, isPlaying, setPlaylist, playTrack } = useAudio();
 

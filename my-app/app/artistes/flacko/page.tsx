@@ -126,7 +126,7 @@ export default function FlackoPage() {
                       Dote d&apos;un flow precis, d&apos;une forte presence et d&apos;un sens travaille de l&apos;image, il se positionne comme un artiste complet, capable de connecter musique, esthetique et culture urbaine.
                     </p>
                     <p>
-                      Avec plus de 8 ans d&apos;activite, Flacko construit son ascension avec constance. Des titres comme <span className="font-semibold text-white">"C&apos;est fou ca"</span> et <span className="font-semibold text-white">"Masse"</span> sont disponibles sur les principales plateformes de streaming et s&apos;accompagnent de visuels ayant genere des milliers de vues, renforcant sa visibilite sur la scene urbaine congolaise.
+                      Avec plus de 8 ans d&apos;activite, Flacko construit son ascension avec constance. Des titres comme <span className="font-semibold text-white">&quot;C&apos;est fou ca&quot;</span> et <span className="font-semibold text-white">&quot;Masse&quot;</span> sont disponibles sur les principales plateformes de streaming et s&apos;accompagnent de visuels ayant genere des milliers de vues, renforcant sa visibilite sur la scene urbaine congolaise.
                     </p>
                     <p>
                       Sa capacite a engager une audience jeune, connectee et fidele constitue aujourd&apos;hui l&apos;un de ses principaux leviers de croissance. Flacko s&apos;inscrit ainsi dans une dynamique d&apos;expansion, avec une strategie artistique orientee vers la performance, l&apos;image et la regularite des sorties.
@@ -295,9 +295,9 @@ export default function FlackoPage() {
           <div className="rounded-[32px] border border-violet-300/20 bg-[linear-gradient(180deg,rgba(109,40,217,0.18),rgba(9,8,15,0.82))] p-5 backdrop-blur-xl sm:p-7">
             <div className="mb-5">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-200/80">Boutique</p>
-              <h2 className="mt-2 text-lg font-bold text-white">Vetements de l'artiste</h2>
+              <h2 className="mt-2 text-lg font-bold text-white">Vetements de l&apos;artiste</h2>
               <p className="mt-2 text-sm leading-6 text-zinc-300">
-                Une selection de pieces inspirees de l'univers visuel de Flacko.
+                Une selection de pieces inspirees de l&apos;univers visuel de Flacko.
               </p>
             </div>
 

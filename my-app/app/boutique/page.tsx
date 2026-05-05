@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ClothingCard from "@/components/ClothingCard";
 import InfiniteLogoMarquee from "@/components/InfiniteLogoMarquee";
 
