@@ -3,13 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useAudio } from "@/components/AudioProvider";
 
 const tracks = [
-  { title: "Mon Horizon", duration: "3:08" },
-  { title: "Rivages", duration: "2:54" },
-  { title: "Lueur", duration: "3:41" },
-  { title: "Pas a Pas", duration: "3:22" },
-  { title: "Aube Tropicale", duration: "3:17" },
+  { title: "Montage (feat. Suintement)", duration: "2:53", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3" },
+  { title: "Vraie Momie", duration: "2:05", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3" },
 ];
 
 const newsItems = [
@@ -47,6 +45,26 @@ const merchItems = [
 
 export default function KeurmaPage() {
   const [expanded, setExpanded] = useState(false);
+  const { playlist, currentIndex, isPlaying, setPlaylist, playTrack } = useAudio();
+
+  const playableTracks = tracks.map((track) => ({
+    ...track,
+    cover: "/imagepages/keurma.jpg",
+    artist: "Keurma",
+  }));
+
+  const playFromKeurmaList = (index: number) => {
+    const samePlaylist =
+      playlist.length === playableTracks.length &&
+      playableTracks.every((track, playlistIndex) => track.src === playlist[playlistIndex]?.src);
+
+    if (!samePlaylist) {
+      setPlaylist(playableTracks, index);
+      return;
+    }
+
+    playTrack(index);
+  };
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#09080f] px-4 py-10 text-white sm:px-8">
@@ -90,7 +108,7 @@ export default function KeurmaPage() {
               <div className="mt-5 max-w-xl text-sm leading-7 text-zinc-300">
                 {/* Paragraphe toujours visible */}
                 <p>
-                  <span className="font-semibold text-white">Keurma</span> est une artiste afro pop du label Mboka. Sa page reprend le meme format editorial que les autres artistes pour presenter son univers musical, son image et ses projets.
+                  <span className="font-semibold text-white">Keurma</span> est l&apos;incarnation meme de la fusion moderne. Artiste Afro-Pop emblematique du label Mboka, elle a su creer une passerelle sonore inedite entre l&apos;energie brute de Kinshasa, sa ville d&apos;origine, et les vibrations solaires des Caraibes. Son image, a la fois urbaine et sophistiquee, reflete une artiste qui a su se reinventer en imposant un style bien a elle : le melange audacieux du Chatta percutant et des melodies caribeennes envoutantes.
                 </p>
 
                 {/* Paragraphes cachés / affichés */}
@@ -101,13 +119,13 @@ export default function KeurmaPage() {
                 >
                   <div className="space-y-3">
                     <p>
-                      Cette section peut accueillir sa bio complete: parcours, influences, debut de carriere et evolution artistique.
+                      <span className="font-semibold text-white">Parcours & Evolution Artistique</span>
                     </p>
                     <p>
-                      Ajoute ici ses titres marquants, ses performances live et ses collaborations importantes.
+                      Originaire de la capitale de la Republique Democratique du Congo, Keurma a puise sa force dans le tumulte creatif kinois avant d&apos;elargir ses horizons. Ses debuts sont marques par une exploration des rythmes locaux, mais c&apos;est sa rencontre avec les sonorites Dancehall et Zouk qui provoque le declic artistique.
                     </p>
                     <p>
-                      Termine avec ses objectifs artistiques, ses projets en preparation et sa vision a long terme.
+                      Son evolution au sein du label Mboka temoigne d&apos;une maturite croissante : elle est passee de l&apos;interprete talentueuse a une artiste complete, capable de naviguer entre un flow saccade et des envolees melodiques. Influencee par les grandes divas de l&apos;Afro-fusion et les rythmes tropicaux, elle propose aujourd&apos;hui une musique qui raconte une Afrique moderne, connectee et audacieuse.
                     </p>
                   </div>
                 </div>
@@ -183,28 +201,62 @@ export default function KeurmaPage() {
           </div>
 
           <div className="flex flex-col gap-2">
-            {tracks.map((track, i) => (
-              <div
-                key={track.title}
-                className="flex items-center gap-4 rounded-2xl border border-white/8 bg-white/5 px-4 py-3 transition hover:bg-white/10"
-              >
-                <span className="w-5 text-center text-sm font-bold text-zinc-500">{i + 1}</span>
-                <div className="h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-violet-200/20 bg-black/40">
-                  <Image
-                    src="/imagepages/keurma.jpg"
-                    alt={track.title}
-                    width={80}
-                    height={80}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="truncate text-sm font-semibold text-white">{track.title}</p>
-                  <p className="text-xs text-zinc-400">Keurma · Mboka Label</p>
-                </div>
-                <span className="shrink-0 text-xs text-zinc-500">{track.duration}</span>
-              </div>
-            ))}
+            {tracks.map((track, i) => {
+              const active = currentIndex === i &&
+                playlist.length === playableTracks.length &&
+                playableTracks.every((item, playlistIndex) => item.src === playlist[playlistIndex]?.src);
+              return (
+                <button
+                  key={track.src}
+                  type="button"
+                  onClick={() => playFromKeurmaList(i)}
+                  className={`flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition ${
+                    active
+                      ? "border-violet-400/40 bg-violet-500/15"
+                      : "border-white/8 bg-white/5 hover:bg-white/10"
+                  }`}
+                >
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center">
+                    {active && isPlaying ? (
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-violet-300">
+                        <rect x="6" y="4" width="4" height="16" rx="1" />
+                        <rect x="14" y="4" width="4" height="16" rx="1" />
+                      </svg>
+                    ) : active ? (
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-violet-300">
+                        <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z" />
+                      </svg>
+                    ) : (
+                      <span className="text-sm font-bold text-zinc-500">{i + 1}</span>
+                    )}
+                  </div>
+                  <div className="h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-violet-200/20 bg-black/40">
+                    <Image
+                      src="/imagepages/keurma.jpg"
+                      alt={track.title}
+                      width={80}
+                      height={80}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className={`truncate text-sm font-semibold ${active ? "text-violet-200" : "text-white"}`}>
+                      {track.title}
+                    </p>
+                    <p className="text-xs text-zinc-400">Keurma · Mboka Label</p>
+                  </div>
+                  {active ? (
+                    <div className="flex shrink-0 items-center gap-1">
+                      <span className="h-1.5 w-1 rounded-full bg-violet-400 animate-bounce [animation-delay:0ms]" />
+                      <span className="h-2.5 w-1 rounded-full bg-violet-400 animate-bounce [animation-delay:150ms]" />
+                      <span className="h-1.5 w-1 rounded-full bg-violet-400 animate-bounce [animation-delay:300ms]" />
+                    </div>
+                  ) : (
+                    <span className="shrink-0 text-xs text-zinc-500">{track.duration}</span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </section>
 

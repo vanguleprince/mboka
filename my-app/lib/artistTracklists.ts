@@ -34,11 +34,11 @@ export const ARTIST_TRACKLISTS: Record<ArtistSlug, ArtistTracklist> = {
     name: "C2B",
     cover: "/imagepages/cdbpicture.png",
     tracks: [
-      { title: "Intro C2B", duration: "3:10" },
-      { title: "Vibration Nocturne", duration: "2:56" },
-      { title: "Ligne de Feu", duration: "3:48" },
-      { title: "Aube Claire", duration: "3:33" },
-      { title: "Ciel Ouvert", duration: "3:21" },
+      { title: "MPIAKA (feat. Gaz Fabilouss)", duration: "2:56", src: "/cdb/C2B - MPIAKA & Gaz Fabilouss - Download - Tubidy.mp3" },
+      { title: "Oa Nani (feat. Mobutu Satana)", duration: "3:32", src: "/cdb/C2B - Oa Nani & @MobutuSatanaOfficiel - Download - Tubidy.mp3" },
+      { title: "OG (feat. SINS OFF)", duration: "3:32", src: "/cdb/C2B - OG & @SINS_OFF - Download - Tubidy.mp3" },
+      { title: "TUKU TUKU (feat. Diesel Gucci)", duration: "3:25", src: "/cdb/C2B - TUKU TUKU & @DieselGucciofficiel - Download - Tubidy.mp3" },
+      { title: "DIPLOME", duration: "2:46", src: "/cdb/DIPLOME [VISUALIZER 02] - Download - Tubidy.mp3" },
     ],
   },
   flacko: {
@@ -46,11 +46,9 @@ export const ARTIST_TRACKLISTS: Record<ArtistSlug, ArtistTracklist> = {
     name: "Flacko",
     cover: "/imagepages/flackoCram.jpg",
     tracks: [
-      { title: "Sans Frein", duration: "3:05" },
-      { title: "Courant Alternatif", duration: "2:47" },
-      { title: "Freestyle Goma", duration: "3:55" },
-      { title: "Ondes Lentes", duration: "3:18" },
-      { title: "Nuit Blanche", duration: "3:40" },
+      { title: "C'est fou ça (Prod by Offside)", duration: "2:50", src: "/flacko/FLACKO - C'est fou ça (Prod by Offside) - Download - Tubidy.mp3" },
+      { title: "HUSTLE (Goat Session)", duration: "2:38", src: "/flacko/FLACKO - HUSTLE ( GOAT SESSION ) - Download - Tubidy.mp3" },
+      { title: "MASSE", duration: "2:34", src: "/flacko/FLACKO - MASSE (DIRECTED BY POPPINJEE) - Download - Tubidy.mp3" },
     ],
   },
   keurma: {
@@ -58,11 +56,8 @@ export const ARTIST_TRACKLISTS: Record<ArtistSlug, ArtistTracklist> = {
     name: "Keurma",
     cover: "/imagepages/keurma.jpg",
     tracks: [
-      { title: "Mon Horizon", duration: "3:08" },
-      { title: "Rivages", duration: "2:54" },
-      { title: "Lueur", duration: "3:41" },
-      { title: "Pas a Pas", duration: "3:22" },
-      { title: "Aube Tropicale", duration: "3:17" },
+      { title: "Montage (feat. Suintement)", duration: "2:53", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3" },
+      { title: "Vraie Momie", duration: "2:05", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3" },
     ],
   },
 };

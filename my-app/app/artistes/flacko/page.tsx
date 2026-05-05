@@ -3,13 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useAudio } from "@/components/AudioProvider";
 
 const tracks = [
-  { title: "Sans Frein", duration: "3:05" },
-  { title: "Courant Alternatif", duration: "2:47" },
-  { title: "Freestyle Goma", duration: "3:55" },
-  { title: "Ondes Lentes", duration: "3:18" },
-  { title: "Nuit Blanche", duration: "3:40" },
+  { title: "C'est fou ça (Prod by Offside)", duration: "2:50", src: "/flacko/FLACKO - C'est fou ça (Prod by Offside) - Download - Tubidy.mp3" },
+  { title: "HUSTLE (Goat Session)", duration: "2:38", src: "/flacko/FLACKO - HUSTLE ( GOAT SESSION ) - Download - Tubidy.mp3" },
+  { title: "MASSE", duration: "2:34", src: "/flacko/FLACKO - MASSE (DIRECTED BY POPPINJEE) - Download - Tubidy.mp3" },
 ];
 
 const newsItems = [
@@ -47,6 +46,26 @@ const merchItems = [
 
 export default function FlackoPage() {
   const [expanded, setExpanded] = useState(false);
+  const { playlist, currentIndex, isPlaying, setPlaylist, playTrack } = useAudio();
+
+  const playableTracks = tracks.map((track) => ({
+    ...track,
+    cover: "/imagepages/flackoCram.jpg",
+    artist: "Flacko",
+  }));
+
+  const playFromFlackoList = (index: number) => {
+    const samePlaylist =
+      playlist.length === playableTracks.length &&
+      playableTracks.every((track, playlistIndex) => track.src === playlist[playlistIndex]?.src);
+
+    if (!samePlaylist) {
+      setPlaylist(playableTracks, index);
+      return;
+    }
+
+    playTrack(index);
+  };
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#09080f] px-4 py-10 text-white sm:px-8">
@@ -90,7 +109,7 @@ export default function FlackoPage() {
               <div className="mt-5 max-w-xl text-sm leading-7 text-zinc-300">
                 {/* Paragraphe toujours visible */}
                 <p>
-                  <span className="font-semibold text-white">FLACKO</span> est un artiste rappeur originaire de Kinshasa, évoluant principalement dans la Trap music. Inspiré par le Rap Américain et le Rap Français, il développe un univers musical mêlant sonorités trap, influences kinoises et égotrip.
+                  Originaire de la Republique Democratique du Congo et base a Lemba, <span className="font-semibold text-white">Flacko (Armando Choukrani)</span> incarne une nouvelle generation d&apos;artistes africains portee par l&apos;ambition, la discipline et une vision internationale.
                 </p>
 
                 {/* Paragraphes cachés / affichés */}
@@ -101,16 +120,19 @@ export default function FlackoPage() {
                 >
                   <div className="space-y-3">
                     <p>
-                      À travers ses textes, il traduit les réalités du quotidien, les ambitions d&apos;une jeunesse en quête de liberté, de réussite et de stabilité, tout en cherchant à transmettre motivation et détermination à son public.
+                      Artiste bilingue (francais / lingala), il developpe une signature musicale moderne, fusionnant les sonorites congolaises avec les codes du rap americain, de la trap et du dancehall. Influence par des figures majeures comme Chief Keef, Kendrick Lamar, Freeze Corleone et Young Thug, Flacko impose progressivement un univers artistique distinct : brut, authentique et resolument actuel.
                     </p>
                     <p>
-                      Passionné de musique depuis son enfance, FLACKO lance officiellement sa carrière en 2018 avec la sortie de son premier single sur la plateforme Audiomack. Ce premier pas attire rapidement l&apos;attention de plusieurs jeunes artistes locaux, ouvrant la voie à de nombreuses collaborations et prestations sur la scène urbaine kinoise.
+                      Dote d&apos;un flow precis, d&apos;une forte presence et d&apos;un sens travaille de l&apos;image, il se positionne comme un artiste complet, capable de connecter musique, esthetique et culture urbaine.
                     </p>
                     <p>
-                      Au fil du temps, il se démarque grâce à plusieurs titres et à son énergie sur scène. Il sort ensuite sa mixtape <span className="font-semibold text-white">TRAPPIN</span>, un projet important dans son parcours, où il produit lui-même certaines instrumentales. Des titres comme <span className="font-semibold text-white">C2 NA FLACKO</span>, <span className="font-semibold text-white">MUMBLE</span> et <span className="font-semibold text-white">HONEY</span> rencontrent un accueil positif, avant que <span className="font-semibold text-white">NTABA MISATO</span> et <span className="font-semibold text-white">MASSE</span> ne le propulsent sur la scène rap congolaise.
+                      Avec plus de 8 ans d&apos;activite, Flacko construit son ascension avec constance. Des titres comme <span className="font-semibold text-white">"C&apos;est fou ca"</span> et <span className="font-semibold text-white">"Masse"</span> sont disponibles sur les principales plateformes de streaming et s&apos;accompagnent de visuels ayant genere des milliers de vues, renforcant sa visibilite sur la scene urbaine congolaise.
                     </p>
                     <p>
-                      Critiqué à ses débuts pour la qualité de ses clips et l&apos;utilisation du français, FLACKO transforme ces critiques en force : il intègre davantage de lingala dans ses textes et améliore considérablement ses productions. Pour lui, le français est un outil pour faire rayonner la musique congolaise à l&apos;international. Aujourd&apos;hui, il représente une nouvelle génération d&apos;artistes urbains congolais déterminés à imposer leur identité bien au-delà des frontières de la RDC.
+                      Sa capacite a engager une audience jeune, connectee et fidele constitue aujourd&apos;hui l&apos;un de ses principaux leviers de croissance. Flacko s&apos;inscrit ainsi dans une dynamique d&apos;expansion, avec une strategie artistique orientee vers la performance, l&apos;image et la regularite des sorties.
+                    </p>
+                    <p>
+                      Actuellement en preparation de nouveaux projets, dont un EP tres attendu, il ambitionne d&apos;elargir son rayonnement a l&apos;international et de s&apos;imposer comme une figure montante de la scene urbaine africaine.
                     </p>
                   </div>
                 </div>
@@ -186,28 +208,62 @@ export default function FlackoPage() {
           </div>
 
           <div className="flex flex-col gap-2">
-            {tracks.map((track, i) => (
-              <div
-                key={track.title}
-                className="flex items-center gap-4 rounded-2xl border border-white/8 bg-white/5 px-4 py-3 transition hover:bg-white/10"
-              >
-                <span className="w-5 text-center text-sm font-bold text-zinc-500">{i + 1}</span>
-                <div className="h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-violet-200/20 bg-black/40">
-                  <Image
-                    src="/imagepages/flackoCram.jpg"
-                    alt={track.title}
-                    width={80}
-                    height={80}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="truncate text-sm font-semibold text-white">{track.title}</p>
-                  <p className="text-xs text-zinc-400">Flacko · Mboka Label</p>
-                </div>
-                <span className="shrink-0 text-xs text-zinc-500">{track.duration}</span>
-              </div>
-            ))}
+            {tracks.map((track, i) => {
+              const active = currentIndex === i &&
+                playlist.length === playableTracks.length &&
+                playableTracks.every((item, playlistIndex) => item.src === playlist[playlistIndex]?.src);
+              return (
+                <button
+                  key={track.src}
+                  type="button"
+                  onClick={() => playFromFlackoList(i)}
+                  className={`flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition ${
+                    active
+                      ? "border-violet-400/40 bg-violet-500/15"
+                      : "border-white/8 bg-white/5 hover:bg-white/10"
+                  }`}
+                >
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center">
+                    {active && isPlaying ? (
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-violet-300">
+                        <rect x="6" y="4" width="4" height="16" rx="1" />
+                        <rect x="14" y="4" width="4" height="16" rx="1" />
+                      </svg>
+                    ) : active ? (
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-violet-300">
+                        <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z" />
+                      </svg>
+                    ) : (
+                      <span className="text-sm font-bold text-zinc-500">{i + 1}</span>
+                    )}
+                  </div>
+                  <div className="h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-violet-200/20 bg-black/40">
+                    <Image
+                      src="/imagepages/flackoCram.jpg"
+                      alt={track.title}
+                      width={80}
+                      height={80}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className={`truncate text-sm font-semibold ${active ? "text-violet-200" : "text-white"}`}>
+                      {track.title}
+                    </p>
+                    <p className="text-xs text-zinc-400">Flacko · Mboka Label</p>
+                  </div>
+                  {active ? (
+                    <div className="flex shrink-0 items-center gap-1">
+                      <span className="h-1.5 w-1 rounded-full bg-violet-400 animate-bounce [animation-delay:0ms]" />
+                      <span className="h-2.5 w-1 rounded-full bg-violet-400 animate-bounce [animation-delay:150ms]" />
+                      <span className="h-1.5 w-1 rounded-full bg-violet-400 animate-bounce [animation-delay:300ms]" />
+                    </div>
+                  ) : (
+                    <span className="shrink-0 text-xs text-zinc-500">{track.duration}</span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </section>
 

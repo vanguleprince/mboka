@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useAudio } from "@/components/AudioProvider";
 
 const tracks = [
-  { title: "Intro C2B", duration: "3:10" },
-  { title: "Vibration Nocturne", duration: "2:56" },
-  { title: "Ligne de Feu", duration: "3:48" },
-  { title: "Aube Claire", duration: "3:33" },
-  { title: "Ciel Ouvert", duration: "3:21" },
+  { title: "MPIAKA (feat. Gaz Fabilouss)", duration: "2:56", src: "/cdb/C2B - MPIAKA & Gaz Fabilouss - Download - Tubidy.mp3" },
+  { title: "Oa Nani (feat. Mobutu Satana)", duration: "3:32", src: "/cdb/C2B - Oa Nani & @MobutuSatanaOfficiel - Download - Tubidy.mp3" },
+  { title: "OG (feat. SINS OFF)", duration: "3:32", src: "/cdb/C2B - OG & @SINS_OFF - Download - Tubidy.mp3" },
+  { title: "TUKU TUKU (feat. Diesel Gucci)", duration: "3:25", src: "/cdb/C2B - TUKU TUKU & @DieselGucciofficiel - Download - Tubidy.mp3" },
+  { title: "DIPLOME", duration: "2:46", src: "/cdb/DIPLOME [VISUALIZER 02] - Download - Tubidy.mp3" },
 ];
 
 const newsItems = [
@@ -47,6 +48,26 @@ const merchItems = [
 
 export default function C2BPage() {
   const [expanded, setExpanded] = useState(false);
+  const { playlist, currentIndex, isPlaying, setPlaylist, playTrack } = useAudio();
+
+  const playableTracks = tracks.map((track) => ({
+    ...track,
+    cover: "/imagepages/cdbpicture.png",
+    artist: "C2B",
+  }));
+
+  const playFromC2BList = (index: number) => {
+    const samePlaylist =
+      playlist.length === playableTracks.length &&
+      playableTracks.every((track, playlistIndex) => track.src === playlist[playlistIndex]?.src);
+
+    if (!samePlaylist) {
+      setPlaylist(playableTracks, index);
+      return;
+    }
+
+    playTrack(index);
+  };
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#09080f] px-4 py-10 text-white sm:px-8">
@@ -90,7 +111,7 @@ export default function C2BPage() {
               <div className="mt-5 max-w-xl text-sm leading-7 text-zinc-300">
                 {/* Paragraphe toujours visible */}
                 <p>
-                  <span className="font-semibold text-white">C2B</span> est un artiste congolais originaire de Kinshasa qui dépasse les frontières traditionnelles du rap pour incarner une figure artistique en constante transformation. Plus qu&apos;un simple musicien, il se présente comme une énergie vivante, un mythe moderne en évolution permanente, oscillant entre réflexion, instinct et dépassement de soi.
+                  Originaire de Kinshasa (RDC), entre Barumbu, Kinshasa et Ngaliema, <span className="font-semibold text-white">C2B</span> est un rappeur multilingue (francais, lingala, swahili, tshiluba) qui incarne une nouvelle generation d&apos;artistes africains prets a franchir les frontieres.
                 </p>
 
                 {/* Paragraphes cachés / affichés */}
@@ -101,13 +122,19 @@ export default function C2BPage() {
                 >
                   <div className="space-y-3">
                     <p>
-                      Issu de l&apos;environnement urbain kinois, C2B puise son inspiration dans la complexité de la ville, ses contrastes, son agitation et son authenticité. Il construit ainsi un univers riche et immersif où chaque élément — le son, l&apos;image, l&apos;attitude et l&apos;esthétique — participe à une narration globale pensée avec précision. Chez lui, rien n&apos;est statique : tout repose sur le mouvement, la tension et l&apos;évolution.
+                      Revele en 2019 avec le titre <span className="font-semibold text-white">"Koli"</span>, il impose rapidement une direction claire : creer une musique sans barrieres, enracinee dans la culture congolaise mais connectee aux standards internationaux.
                     </p>
                     <p>
-                      L&apos;identité artistique de C2B se distingue par une dualité puissante : d&apos;un côté, un esprit stratégique, réfléchi et visionnaire ; de l&apos;autre, une énergie brute, instinctive et presque sauvage. Cette opposition permanente crée une signature singulière que l&apos;on peut définir comme un véritable <span className="font-semibold text-white">« chaos maîtrisé »</span>.
+                      Entre rap, trap, afrobeat et drill, C2B construit un son hybride, moderne et identifiable des les premieres mesures. Inspire par des figures comme Migos, Deejay S ou Big Brown, il developpe un univers puissant : flow precis, energie brute, esthetique travaillee.
                     </p>
                     <p>
-                      À travers sa musique et son univers visuel, C2B cherche à repousser les limites de l&apos;expression artistique, en proposant une expérience qui va au-delà du rap classique. Son ambition est de bâtir une identité forte, intemporelle et capable de marquer durablement la nouvelle génération de la scène urbaine congolaise et internationale.
+                      Chaque sortie est pensee comme une experience, melant attitude, image et storytelling. Avec des titres comme <span className="font-semibold text-white">"C&apos;est la vie"</span>, <span className="font-semibold text-white">"Makala"</span> ou <span className="font-semibold text-white">"O&apos;A Nani ?"</span>, cumulant des milliers de vues, C2B s&apos;impose progressivement sur la scene urbaine congolaise tout en preparant son expansion a l&apos;international.
+                    </p>
+                    <p>
+                      Porte par une audience jeune, engagee et en pleine croissance, il avance avec une vision claire : passer de Kinshasa au monde.
+                    </p>
+                    <p>
+                      Actuellement en preparation de nouveaux projets, dont un EP, C2B accelere son ascension et se positionne comme l&apos;un des visages montants de la scene urbaine africaine.
                     </p>
                   </div>
                 </div>
@@ -183,28 +210,62 @@ export default function C2BPage() {
           </div>
 
           <div className="flex flex-col gap-2">
-            {tracks.map((track, i) => (
-              <div
-                key={track.title}
-                className="flex items-center gap-4 rounded-2xl border border-white/8 bg-white/5 px-4 py-3 transition hover:bg-white/10"
-              >
-                <span className="w-5 text-center text-sm font-bold text-zinc-500">{i + 1}</span>
-                <div className="h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-violet-200/20 bg-black/40">
-                  <Image
-                    src="/imagepages/cdbpicture.png"
-                    alt={track.title}
-                    width={80}
-                    height={80}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="truncate text-sm font-semibold text-white">{track.title}</p>
-                  <p className="text-xs text-zinc-400">C2B · Mboka Label</p>
-                </div>
-                <span className="shrink-0 text-xs text-zinc-500">{track.duration}</span>
-              </div>
-            ))}
+            {tracks.map((track, i) => {
+              const active = currentIndex === i &&
+                playlist.length === playableTracks.length &&
+                playableTracks.every((item, playlistIndex) => item.src === playlist[playlistIndex]?.src);
+              return (
+                <button
+                  key={track.src}
+                  type="button"
+                  onClick={() => playFromC2BList(i)}
+                  className={`flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition ${
+                    active
+                      ? "border-violet-400/40 bg-violet-500/15"
+                      : "border-white/8 bg-white/5 hover:bg-white/10"
+                  }`}
+                >
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center">
+                    {active && isPlaying ? (
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-violet-300">
+                        <rect x="6" y="4" width="4" height="16" rx="1" />
+                        <rect x="14" y="4" width="4" height="16" rx="1" />
+                      </svg>
+                    ) : active ? (
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-violet-300">
+                        <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z" />
+                      </svg>
+                    ) : (
+                      <span className="text-sm font-bold text-zinc-500">{i + 1}</span>
+                    )}
+                  </div>
+                  <div className="h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-violet-200/20 bg-black/40">
+                    <Image
+                      src="/imagepages/cdbpicture.png"
+                      alt={track.title}
+                      width={80}
+                      height={80}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className={`truncate text-sm font-semibold ${active ? "text-violet-200" : "text-white"}`}>
+                      {track.title}
+                    </p>
+                    <p className="text-xs text-zinc-400">C2B · Mboka Label</p>
+                  </div>
+                  {active ? (
+                    <div className="flex shrink-0 items-center gap-1">
+                      <span className="h-1.5 w-1 rounded-full bg-violet-400 animate-bounce [animation-delay:0ms]" />
+                      <span className="h-2.5 w-1 rounded-full bg-violet-400 animate-bounce [animation-delay:150ms]" />
+                      <span className="h-1.5 w-1 rounded-full bg-violet-400 animate-bounce [animation-delay:300ms]" />
+                    </div>
+                  ) : (
+                    <span className="shrink-0 text-xs text-zinc-500">{track.duration}</span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </section>
 

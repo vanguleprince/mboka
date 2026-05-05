@@ -45,6 +45,7 @@ export default function MainNav() {
             <Link
               key={item.href}
               href={item.href}
+              suppressHydrationWarning
               className="group relative overflow-hidden rounded-full border border-violet-400/30 bg-[linear-gradient(135deg,rgba(109,40,217,0.62),rgba(37,99,235,0.45))] px-5 py-2.5 text-sm font-bold text-white shadow-[0_4px_20px_rgba(109,40,217,0.22),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all hover:brightness-110"
             >
               <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_46%)]" />
@@ -53,6 +54,7 @@ export default function MainNav() {
           ))}
           <Link
             href="/boutique"
+            suppressHydrationWarning
             className="group relative overflow-hidden rounded-full border border-sky-300/40 bg-[linear-gradient(135deg,rgba(14,165,233,0.72),rgba(99,102,241,0.6))] px-5 py-2.5 text-sm font-bold text-white shadow-[0_4px_22px_rgba(14,165,233,0.25),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all hover:brightness-110"
           >
             <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_46%)]" />

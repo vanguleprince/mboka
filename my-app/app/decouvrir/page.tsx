@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useAudio } from "@/components/AudioProvider";
 
 const sections = [
   {
@@ -65,14 +68,14 @@ const clothingItems = [
 ];
 
 const audioTracks = [
-  { title: "Mboka Intro", artist: "Bogo", image: "/imagepages/bogopicture.png", active: true },
-  { title: "Ville Lumiere", artist: "CDB", image: "/imagepages/cdbpicture.png" },
-  { title: "Sans Frein", artist: "Flacko", image: "/imagepages/flackoCram.jpg" },
-  { title: "Mon Horizon", artist: "Keurma", image: "/imagepages/keurma.png" },
-  { title: "Street Melody", artist: "Bogo", image: "/imagepages/bogopicture.png" },
-  { title: "Minuit Doux", artist: "CDB", image: "/imagepages/cdbpicture.png" },
-  { title: "Dans le Bloc", artist: "Flacko", image: "/imagepages/flackoCram.jpg" },
-  { title: "Coeur Neon", artist: "Keurma", image: "/imagepages/keurma.png" },
+  { title: "HENNESSY", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo1.mp3" },
+  { title: "WOLO PALATA", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo2.mp3" },
+  { title: "MPIAKA (feat. Gaz Fabilouss)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - MPIAKA & Gaz Fabilouss - Download - Tubidy.mp3" },
+  { title: "Oa Nani (feat. Mobutu Satana)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - Oa Nani & @MobutuSatanaOfficiel - Download - Tubidy.mp3" },
+  { title: "C'est fou ca (Prod by Offside)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - C'est fou ça (Prod by Offside) - Download - Tubidy.mp3" },
+  { title: "HUSTLE (Goat Session)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - HUSTLE ( GOAT SESSION ) - Download - Tubidy.mp3" },
+  { title: "Montage (feat. Suintement)", artist: "Keurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3" },
+  { title: "Vraie Momie", artist: "Keurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3" },
 ];
 
 function AudioMenuIcon() {
@@ -86,6 +89,28 @@ function AudioMenuIcon() {
 }
 
 export default function DecouvrirPage() {
+  const { playlist, currentIndex, isPlaying, setPlaylist, playTrack } = useAudio();
+
+  const playableTracks = audioTracks.map((track) => ({
+    title: track.title,
+    src: track.src,
+    cover: track.image,
+    artist: track.artist,
+  }));
+
+  const playFromLabelList = (index: number) => {
+    const samePlaylist =
+      playlist.length === playableTracks.length &&
+      playableTracks.every((track, playlistIndex) => track.src === playlist[playlistIndex]?.src);
+
+    if (!samePlaylist) {
+      setPlaylist(playableTracks, index);
+      return;
+    }
+
+    playTrack(index);
+  };
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#08070c] px-4 py-10 text-white sm:px-8">
       <div className="pointer-events-none absolute inset-0">
@@ -103,11 +128,14 @@ export default function DecouvrirPage() {
             </span>
           </div>
 
-          <div className="relative overflow-x-auto pb-2">
-            <div className="flex w-max gap-4 pr-4 sm:gap-6">
+          <div className="relative">
+            {/* Masques de fondu sur les bords */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-linear-to-r from-black/55 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-linear-to-l from-black/55 to-transparent" />
+            <div className="flex gap-4 overflow-x-auto pb-1 pr-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-6 [scroll-snap-type:x_mandatory]">
               {sections.map((item) => {
                 const card = (
-                  <div className={`group h-97.5 w-72.5 shrink-0 rounded-[30px] border border-white/12 bg-linear-to-br ${item.color} p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] transition hover:brightness-110 sm:h-107.5 sm:w-85`}>
+                  <div className={`group h-97.5 w-72.5 shrink-0 snap-start rounded-[30px] border border-white/12 bg-linear-to-br ${item.color} p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] transition hover:brightness-110 sm:h-107.5 sm:w-85`}>
                     <div className="flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-black/25 p-5 backdrop-blur-sm">
                       <div>
                         <span className="inline-flex rounded-full border border-violet-200/25 bg-violet-200/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-violet-100">
@@ -241,10 +269,21 @@ export default function DecouvrirPage() {
 
           <div className="relative overflow-x-auto pb-2 [scrollbar-width:thin] [scrollbar-color:rgba(196,181,253,0.45)_transparent]">
             <div className="flex w-max gap-4 pr-4 sm:gap-6">
-              {audioTracks.map((track) => (
-                <article
-                  key={`${track.title}-${track.artist}`}
-                  className="group flex w-80 shrink-0 items-center gap-4 rounded-3xl border border-violet-200/12 bg-black/28 px-4 py-3 transition hover:bg-white/8 sm:w-96"
+              {audioTracks.map((track, index) => {
+                const active =
+                  currentIndex === index &&
+                  playlist.length === playableTracks.length &&
+                  playableTracks.every((item, playlistIndex) => item.src === playlist[playlistIndex]?.src);
+                return (
+                <button
+                  key={track.src}
+                  type="button"
+                  onClick={() => playFromLabelList(index)}
+                  className={`group flex w-80 shrink-0 items-center gap-4 rounded-3xl border px-4 py-3 text-left transition sm:w-96 ${
+                    active
+                      ? "border-violet-400/35 bg-violet-500/15"
+                      : "border-violet-200/12 bg-black/28 hover:bg-white/8"
+                  }`}
                 >
                   <div className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-violet-200/15 bg-black/35">
                     <Image
@@ -258,10 +297,10 @@ export default function DecouvrirPage() {
 
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className={`truncate text-base font-bold ${track.active ? "text-violet-300" : "text-white"}`}>
+                      <h3 className={`truncate text-base font-bold ${active ? "text-violet-200" : "text-white"}`}>
                         {track.title}
                       </h3>
-                      {track.active ? (
+                      {active ? (
                         <span className="shrink-0 rounded-full bg-violet-300/15 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-violet-200">
                           Active
                         </span>
@@ -270,15 +309,21 @@ export default function DecouvrirPage() {
                     <p className="truncate text-sm text-zinc-400">{track.artist}</p>
                   </div>
 
-                  <button
-                    type="button"
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-zinc-400 transition hover:bg-white/10 hover:text-white"
-                    aria-label={`Ouvrir le menu pour ${track.title}`}
-                  >
-                    <AudioMenuIcon />
-                  </button>
-                </article>
-              ))}
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-zinc-300">
+                    {active && isPlaying ? (
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-violet-300">
+                        <rect x="6" y="4" width="4" height="16" rx="1" />
+                        <rect x="14" y="4" width="4" height="16" rx="1" />
+                      </svg>
+                    ) : (
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-zinc-300">
+                        <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z" />
+                      </svg>
+                    )}
+                  </div>
+                </button>
+              );
+              })}
             </div>
           </div>
         </section>

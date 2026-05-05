@@ -33,7 +33,7 @@ export default function RootLayout({
       // 3. AJOUTE "bg-black" ici pour éviter le flash blanc au chargement
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-black`}
     >
-      <body className="min-h-full flex flex-col bg-black text-white">
+      <body className="min-h-full flex flex-col bg-black text-white" suppressHydrationWarning>
         <AudioProvider>
           <header className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
             <MainNav />
