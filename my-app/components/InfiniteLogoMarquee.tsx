@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 type InfiniteLogoMarqueeProps = {
   direction?: "left" | "right";
@@ -15,17 +14,14 @@ export default function InfiniteLogoMarquee({
   variant = "default",
 }: InfiniteLogoMarqueeProps) {
   const repeatedLogos = [...logos, ...logos];
+  const animationClass = direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
   
   const bgClass = variant === "violet" ? "bg-violet-900/30" : "bg-zinc-900";
   const borderClass = variant === "violet" ? "border-violet-500/30" : "border-white/10";
 
   return (
     <div className={`overflow-hidden border-y ${borderClass} bg-black py-4`}>
-      <motion.div
-        className="flex w-max items-center gap-8 whitespace-nowrap px-6"
-        animate={{ x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"] }}
-        transition={{ duration: 20, ease: "linear", repeat: Infinity }}
-      >
+      <div className={`flex w-max items-center gap-8 whitespace-nowrap px-6 ${animationClass}`}>
         {repeatedLogos.map((_, index) => (
           <div
             key={index}
@@ -41,7 +37,7 @@ export default function InfiniteLogoMarquee({
            
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }

@@ -1,12 +1,25 @@
 import MainNav from "@/components/MainNav";
 import { AudioProvider } from "@/components/AudioProvider";
-import MiniPlayer from "@/components/MiniPlayer";
+import DeferredUi from "@/components/DeferredUi";
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  title: "DevTalk | Un site par jour",
+  title: "MBOKA",
   description: "Créé par Vangu Mvuluzi",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "MBOKA",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#581c87",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -26,8 +39,7 @@ export default function RootLayout({
 
           <footer className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
           </footer>
-
-          <MiniPlayer />
+          <DeferredUi />
         </AudioProvider>
       </body>
     </html>

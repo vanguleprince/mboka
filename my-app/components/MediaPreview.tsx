@@ -68,9 +68,9 @@ export default function MediaPreview() {
             <video
               key={activeVideo.src}
               controls
-              autoPlay
               muted
               playsInline
+              preload="none"
               poster="/imagepages/mboka.png"
               className="h-[21rem] w-full rounded-xl object-cover sm:h-[34rem]"
               onError={() => {
