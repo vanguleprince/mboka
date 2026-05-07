@@ -1,6 +1,6 @@
 import MainNav from "@/components/MainNav";
 import { AudioProvider } from "@/components/AudioProvider";
-import DeferredUi from "@/components/DeferredUi";
+import DeferredUi from "../components/DeferredUi";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
