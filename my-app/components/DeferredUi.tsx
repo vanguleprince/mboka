@@ -11,12 +11,10 @@ export default function DeferredUi() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
-
   return (
     <>
-      <MiniPlayer />
       <InstallPwaBanner />
+      {mounted ? <MiniPlayer /> : null}
     </>
   );
 }

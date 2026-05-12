@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "MBOKA",
   description: "Créé par Vangu Mvuluzi",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/mainIcon.png",
+    apple: "/mainIcon.png",
+    shortcut: "/mainIcon.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
