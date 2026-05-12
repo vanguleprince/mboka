@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePwa } from "@/components/PwaContext";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -12,8 +13,7 @@ const LEGACY_DISMISSED_KEYS = ["mboka:pwa-install-dismissed", "mboka:pwa-install
 const LEGACY_INSTALLED_KEYS = ["mboka:pwa-installed", "mboka:pwa-installed:v2"];
 
 export default function InstallPwaBanner() {
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [installed, setInstalled] = useState(false);
+  const { deferredPrompt, setDeferredPrompt, isInstalled, setIsInstalled } = usePwa();
   const [hidden, setHidden] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
   const [ready, setReady] = useState(false);
@@ -28,7 +28,7 @@ export default function InstallPwaBanner() {
 
   const markInstalled = () => {
     window.localStorage.setItem(PWA_INSTALL_DISMISSED_KEY, "true");
-    setInstalled(true);
+    setIsInstalled(true);
     setHidden(true);
   };
 
@@ -36,9 +36,10 @@ export default function InstallPwaBanner() {
     window.localStorage.removeItem(PWA_INSTALL_DISMISSED_KEY);
     LEGACY_DISMISSED_KEYS.forEach((key) => window.localStorage.removeItem(key));
     LEGACY_INSTALLED_KEYS.forEach((key) => window.localStorage.removeItem(key));
-    setInstalled(false);
+    setIsInstalled(false);
     setHidden(false);
     setShowHelp(true);
+    setDeferredPrompt(null);
   };
 
   useEffect(() => {
@@ -49,6 +50,8 @@ export default function InstallPwaBanner() {
 
     if (wasDismissed) {
       setHidden(true);
+      setReady(true);
+      return;
     }
 
     const isStandalone =
@@ -60,21 +63,6 @@ export default function InstallPwaBanner() {
       setReady(true);
       return;
     }
-
-    const onBeforeInstallPrompt = (event: Event) => {
-      event.preventDefault();
-      setDeferredPrompt(event as BeforeInstallPromptEvent);
-      setShowHelp(false);
-      setHidden(false);
-    };
-
-    const onAppInstalled = () => {
-      markInstalled();
-      setDeferredPrompt(null);
-    };
-
-    window.addEventListener("beforeinstallprompt", onBeforeInstallPrompt);
-    window.addEventListener("appinstalled", onAppInstalled);
 
     const ua = window.navigator.userAgent.toLowerCase();
     const isIos = /iphone|ipad|ipod/.test(ua);
@@ -88,6 +76,7 @@ export default function InstallPwaBanner() {
       );
     }
 
+    // Show help after 3.5 seconds if no prompt yet
     const helpTimer = window.setTimeout(() => {
       setShowHelp(true);
     }, 3500);
@@ -95,13 +84,11 @@ export default function InstallPwaBanner() {
     setReady(true);
 
     return () => {
-      window.removeEventListener("beforeinstallprompt", onBeforeInstallPrompt);
-      window.removeEventListener("appinstalled", onAppInstalled);
       window.clearTimeout(helpTimer);
     };
   }, []);
 
-  if (!ready || installed || hidden || (!deferredPrompt && !showHelp)) return null;
+  if (!ready || isInstalled || hidden || (!deferredPrompt && !showHelp)) return null;
 
   const handleInstall = async () => {
     if (!deferredPrompt) {
@@ -113,15 +100,23 @@ export default function InstallPwaBanner() {
       return;
     }
 
-    await deferredPrompt.prompt();
-    const choice = await deferredPrompt.userChoice;
-    if (choice.outcome === "accepted") {
-      markInstalled();
-      setDeferredPrompt(null);
-      return;
-    }
+    try {
+      console.log("Showing PWA install prompt");
+      await deferredPrompt.prompt();
+      const choice = await deferredPrompt.userChoice;
+      console.log("User choice:", choice.outcome);
+      
+      if (choice.outcome === "accepted") {
+        markInstalled();
+        setDeferredPrompt(null);
+        return;
+      }
 
-    persistDismiss();
+      persistDismiss();
+    } catch (error) {
+      console.error("Error during PWA install:", error);
+      window.alert("Une erreur est survenue lors de l'installation. Veuillez réessayer.");
+    }
   };
 
   const helpText =

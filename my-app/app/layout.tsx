@@ -1,6 +1,7 @@
 import MainNav from "@/components/MainNav";
 import { AudioProvider } from "@/components/AudioProvider";
 import DeferredUi from "../components/DeferredUi";
+import { PwaProvider } from "../components/PwaContext";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
@@ -35,17 +36,19 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-full antialiased bg-black">
       <body className="min-h-full flex flex-col bg-black text-white" suppressHydrationWarning>
-        <AudioProvider>
-          <header className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
-            <MainNav />
-          </header>
+        <PwaProvider>
+          <AudioProvider>
+            <header className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
+              <MainNav />
+            </header>
 
-          {children}
+            {children}
 
-          <footer className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
-          </footer>
-          <DeferredUi />
-        </AudioProvider>
+            <footer className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
+            </footer>
+            <DeferredUi />
+          </AudioProvider>
+        </PwaProvider>
       </body>
     </html>
   );
