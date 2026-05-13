@@ -17,6 +17,7 @@ export default function InstallPwaBanner() {
   const [hidden, setHidden] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
   const [ready, setReady] = useState(false);
+  const [isIos, setIsIos] = useState(false);
   const [manualInstallText, setManualInstallText] = useState(
     "Ouvrez le menu du navigateur puis choisissez Installer l'application."
   );
@@ -69,6 +70,7 @@ export default function InstallPwaBanner() {
     const isAndroid = /android/.test(ua);
 
     if (isIos) {
+      setIsIos(true);
       setManualInstallText("Sur iPhone/iPad: touchez Partager puis Sur l'ecran d'accueil.");
     } else if (isAndroid) {
       setManualInstallText(
@@ -145,8 +147,52 @@ export default function InstallPwaBanner() {
         </div>
       ) : (
         <div className="mt-3">
-          <p className="text-xs text-zinc-300">{manualInstallText}</p>
-          <p className="mt-2 text-xs text-zinc-300">{helpText}</p>
+          {isIos ? (
+            <div className="space-y-2">
+              <p className="text-xs font-medium text-zinc-200">Suivez ces 3 étapes dans Safari :</p>
+              <div className="flex items-start gap-2">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-violet-600 text-[10px] font-bold">1</span>
+                <p className="text-xs text-zinc-300 leading-relaxed">
+                  Appuyez sur l'icône{" "}
+                  <span className="inline-flex items-center gap-0.5 rounded bg-white/10 px-1 py-0.5 font-medium text-white">
+                    {/* Safari Share icon */}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
+                      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                      <polyline points="16 6 12 2 8 6"/>
+                      <line x1="12" y1="2" x2="12" y2="15"/>
+                    </svg>
+                    Partager
+                  </span>{" "}
+                  en bas de Safari
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-violet-600 text-[10px] font-bold">2</span>
+                <p className="text-xs text-zinc-300 leading-relaxed">
+                  Faites défiler et appuyez sur{" "}
+                  <span className="inline-flex items-center gap-0.5 rounded bg-white/10 px-1 py-0.5 font-medium text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
+                      <rect x="3" y="3" width="18" height="18" rx="2"/>
+                      <line x1="12" y1="8" x2="12" y2="16"/>
+                      <line x1="8" y1="12" x2="16" y2="12"/>
+                    </svg>
+                    Sur l'écran d'accueil
+                  </span>
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-violet-600 text-[10px] font-bold">3</span>
+                <p className="text-xs text-zinc-300 leading-relaxed">
+                  Appuyez sur <span className="font-medium text-white">Ajouter</span> en haut à droite
+                </p>
+              </div>
+            </div>
+          ) : (
+            <>
+              <p className="text-xs text-zinc-300">{manualInstallText}</p>
+              <p className="mt-2 text-xs text-zinc-300">{helpText}</p>
+            </>
+          )}
           <div className="mt-3 flex items-center gap-2">
             <button
               type="button"
