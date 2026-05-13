@@ -2,7 +2,6 @@ DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
 
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
@@ -22,4 +21,4 @@ DirectoryIndex index.html
   </FilesMatch>
 </IfModule>
 
-ErrorDocument 404 /404.html
+ErrorDocument 404 404.html

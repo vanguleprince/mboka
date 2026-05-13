@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
+    "postbuild": "node -e \"const fs=require('fs'); if (fs.existsSync('.htaccess') && fs.existsSync('out')) fs.copyFileSync('.htaccess','out/.htaccess');\"",
     "start": "next start",
     "lint": "eslint"
   },
