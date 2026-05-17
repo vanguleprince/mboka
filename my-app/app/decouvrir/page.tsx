@@ -33,26 +33,26 @@ const sections = [
 
 const artists = [
   {
-    name: "Bogo",
-    role: "Artiste principal",
+    name: "Bogo thegoat",
+    role: "Artiste Trap",
     image: "/imagepages/bogothegoat3.jpeg",
     hoverImages: ["/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg", "/imagepages/keurma2.jpg"],
   },
   {
     name: "C2B",
-    role: "Voix soul",
+    role: "Modjalisme",
     image: "/imagepages/cdbpicture.png",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/flackoCram.jpg", "/imagepages/keurma2.jpg"],
   },
   {
     name: "Flacko",
-    role: "Rap melodique",
+    role: "Rap pur",
     image: "/imagepages/flackoCram.jpg",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/keurma2.jpg"],
   },
   {
     name: "Keurma",
-    role: "Afro pop",
+    role: "Afro pop kin",
     image: "/imagepages/keurma2.jpg",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
   },

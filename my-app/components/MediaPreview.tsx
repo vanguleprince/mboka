@@ -10,9 +10,7 @@ type VideoItem = {
 };
 
 const videos: VideoItem[] = [
-  { src: "/videos/bogo.MP4", title: "Vidéo 1" },
-  { src: "/videos/cdb.MP4", title: "Vidéo 2" },
-  { src: "/videos/flacko.MP4", title: "Vidéo 3" },
+  { src: "/videos/ntamba-misatu.mp4", title: "Ntaba Misatu" },
 ];
 
 export default function MediaPreview() {
