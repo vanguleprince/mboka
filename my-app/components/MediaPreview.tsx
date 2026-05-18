@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,28 +11,12 @@ type VideoItem = {
 
 const videos: VideoItem[] = [
   { src: "/videos/ntamba-misatu.mp4", title: "Ntaba Misatu" },
+  { src: "/videos/keurma_1.mp4", title: "Keurma" },
 ];
 
 export default function MediaPreview() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [videoErrors, setVideoErrors] = useState<Record<number, boolean>>({});
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveIndex((current) => {
-        for (let step = 1; step <= videos.length; step += 1) {
-          const nextIndex = (current + step) % videos.length;
-          if (!videoErrors[nextIndex]) {
-            return nextIndex;
-          }
-        }
-
-        return current;
-      });
-    }, 5000);
-
-    return () => window.clearInterval(interval);
-  }, [videoErrors]);
 
   const activeVideo = videos[activeIndex];
   const hasError = videoErrors[activeIndex];
@@ -65,6 +49,7 @@ export default function MediaPreview() {
           <div className="relative">
             <video
               key={activeVideo.src}
+              autoPlay
               controls
               muted
               playsInline
