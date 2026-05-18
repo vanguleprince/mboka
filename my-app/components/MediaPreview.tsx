@@ -18,6 +18,13 @@ export default function MediaPreview() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [videoErrors, setVideoErrors] = useState<Record<number, boolean>>({});
 
+  const enforceMuted = (video: HTMLVideoElement | null) => {
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+  };
+
   const activeVideo = videos[activeIndex];
   const hasError = videoErrors[activeIndex];
 
@@ -50,12 +57,18 @@ export default function MediaPreview() {
             <video
               key={activeVideo.src}
               autoPlay
-              controls
+              controls={false}
+              ref={enforceMuted}
               muted
               playsInline
               preload="none"
               poster="/imagepages/mboka.png"
               className="h-[21rem] w-full rounded-xl object-cover sm:h-[34rem]"
+              onVolumeChange={(event) => {
+                event.currentTarget.muted = true;
+                event.currentTarget.defaultMuted = true;
+                event.currentTarget.volume = 0;
+              }}
               onError={() => {
                 setVideoErrors((current) => ({
                   ...current,

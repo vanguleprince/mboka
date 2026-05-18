@@ -26,7 +26,7 @@ const artists = [
   {
     name: "Keurma",
     style: "Afro pop",
-    city: "Matadi",
+    city: "Kinshasa",
     image: "/imagepages/keurma2.jpg",
     highlight: "Single Mon Horizon en tendance",
   },

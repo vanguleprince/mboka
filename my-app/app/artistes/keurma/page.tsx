@@ -104,11 +104,11 @@ export default function KeurmaPage() {
             <div className="flex flex-col justify-center p-7 sm:p-10">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-300/80">Mboka Label</p>
               <h1 className="mt-3 text-5xl font-black leading-none tracking-tight text-white sm:text-6xl">KEURMA</h1>
-              <p className="mt-2 text-lg font-medium text-violet-200/70">Afro pop · Matadi</p>
+              <p className="mt-2 text-lg font-medium text-violet-200/70">Afro pop-kin · Kinshasa</p>
               <div className="mt-5 max-w-xl text-sm leading-7 text-zinc-300">
                 {/* Paragraphe toujours visible */}
                 <p>
-                  <span className="font-semibold text-white">Keurma</span> est l&apos;incarnation meme de la fusion moderne. Artiste Afro-Pop emblematique du label Mboka, elle a su creer une passerelle sonore inedite entre l&apos;energie brute de Kinshasa, sa ville d&apos;origine, et les vibrations solaires des Caraibes. Son image, a la fois urbaine et sophistiquee, reflete une artiste qui a su se reinventer en imposant un style bien a elle : le melange audacieux du Chatta percutant et des melodies caribeennes envoutantes.
+                  <span className="font-semibold text-white">Keurma </span> est l&apos;incarnation meme de la fusion moderne. Artiste Afro-Pop emblematique du label Mboka, elle a su creer une passerelle sonore inedite entre l&apos;energie brute de Kinshasa, sa ville d&apos;origine, et les vibrations solaires des Caraibes. Son image, a la fois urbaine et sophistiquee, reflete une artiste qui a su se reinventer en imposant un style bien a elle : le melange audacieux du Chatta percutant et des melodies caribeennes envoutantes.
                 </p>
 
                 {/* Paragraphes cachés / affichés */}
@@ -153,7 +153,7 @@ export default function KeurmaPage() {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {["Afro pop", "Matadi", "Live performer", "Nouveau single"].map((tag) => (
+                {["Afro pop-kin", "Kinshasa", "Live performer", "Nouveau single"].map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full border border-violet-300/25 bg-violet-300/10 px-3 py-1 text-xs font-semibold text-violet-100"
@@ -166,21 +166,53 @@ export default function KeurmaPage() {
           </div>
         </section>
 
-        {/* Stats */}
+        {/* Liens sociaux */}
         <section className="mt-6 grid grid-cols-3 gap-4">
-          {[
-            { label: "Titres", value: "9+" },
-            { label: "Shows", value: "14" },
-            { label: "Fans", value: "4K+" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm"
-            >
-              <p className="text-3xl font-black text-white">{stat.value}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-400">{stat.label}</p>
+          {/* Spotify Link */}
+          <a
+            href="https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-green-400/40 hover:bg-green-500/10 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]"
+          >
+            <div className="mx-auto mb-2 h-12 w-12 relative">
+              <Image
+                src="/spotify.jpg"
+                alt="Spotify"
+                fill
+                className="object-contain"
+              />
             </div>
-          ))}
+            <p className="text-xs uppercase tracking-[0.16em] text-green-300 font-semibold">Spotify</p>
+          </a>
+
+          {/* Instagram Link */}
+          <a
+            href="https://www.instagram.com/santa_calisse_officiel?igsh=ZnNtYjlxdDhidDgz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-pink-400/40 hover:bg-pink-500/10 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]"
+          >
+            <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-purple-500 via-pink-500 to-orange-400">
+              <svg viewBox="0 0 24 24" fill="white" className="h-7 w-7">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.013-3.583.07-4.849c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.646-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z" />
+              </svg>
+            </div>
+            <p className="text-xs uppercase tracking-[0.16em] text-pink-300 font-semibold">Instagram</p>
+          </a>
+
+          {/* YouTube Link */}
+          <a
+            href="https://www.youtube.com/@SainteVi%C3%A8rge-z1m"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-red-400/40 hover:bg-red-500/10 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="mx-auto mb-2 h-12 w-12 text-red-500">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+            <p className="text-xs uppercase tracking-[0.16em] text-red-300 font-semibold">YouTube</p>
+          </a>
         </section>
 
         {/* Discographie */}
