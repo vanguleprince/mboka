@@ -108,7 +108,7 @@ export default function KeurmaPage() {
               <div className="mt-5 max-w-xl text-sm leading-7 text-zinc-300">
                 {/* Paragraphe toujours visible */}
                 <p>
-                  <span className="font-semibold text-white">Keurma </span> est l&apos;incarnation meme de la fusion moderne. Artiste Afro-Pop emblematique du label Mboka, elle a su creer une passerelle sonore inedite entre l&apos;energie brute de Kinshasa, sa ville d&apos;origine, et les vibrations solaires des Caraibes. Son image, a la fois urbaine et sophistiquee, reflete une artiste qui a su se reinventer en imposant un style bien a elle : le melange audacieux du Chatta percutant et des melodies caribeennes envoutantes.
+                  <span className="font-semibold text-white">Keurma</span> est l&apos;incarnation meme de la fusion moderne. Artiste Afro-Pop emblematique du label Mboka, elle a su creer une passerelle sonore inedite entre l&apos;energie brute de Kinshasa, sa ville d&apos;origine, et les vibrations solaires des Caraibes. Son image, a la fois urbaine et sophistiquee, reflete une artiste qui a su se reinventer en imposant un style bien a elle : le melange audacieux du Chatta percutant et des melodies caribeennes envoutantes.
                 </p>
 
                 {/* Paragraphes cachés / affichés */}
@@ -167,7 +167,7 @@ export default function KeurmaPage() {
         </section>
 
         {/* Liens sociaux */}
-        <section className="mt-6 grid grid-cols-3 gap-4">
+        <section className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {/* Spotify Link */}
           <a
             href="https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw"
@@ -212,6 +212,19 @@ export default function KeurmaPage() {
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
             <p className="text-xs uppercase tracking-[0.16em] text-red-300 font-semibold">YouTube</p>
+          </a>
+
+          {/* TikTok Link */}
+          <a
+            href="https://www.tiktok.com/@keurma01?_r=1&_t=ZS-96T2hfyjxDA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-cyan-300/40 hover:bg-cyan-500/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
+          >
+            <svg viewBox="0 0 48 48" fill="currentColor" className="mx-auto mb-2 h-12 w-12 text-white">
+              <path d="M41 16.5c-4.2 0-8.1-1.9-10.7-5.1v20.2c0 8.4-6.8 15.2-15.2 15.2S0 40 0 31.6s6.8-15.2 15.2-15.2c1.1 0 2.2.1 3.2.3v8.5c-1-.4-2.1-.6-3.2-.6-3.9 0-7 3.1-7 7s3.1 7 7 7 7-3.1 7-7V1h8.1c.4 7.4 6.3 13.3 13.7 13.7v1.8z" />
+            </svg>
+            <p className="text-xs uppercase tracking-[0.16em] text-cyan-200 font-semibold">TikTok</p>
           </a>
         </section>
 

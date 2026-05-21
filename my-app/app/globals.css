@@ -55,3 +55,36 @@ body {
   animation: marquee-right 20s linear infinite;
 }
 
+/* ── InstallPwaBanner — animations PWA ─────────────────────────────────────── */
+@keyframes mboka-share-bounce {
+  0%, 100% { transform: translateY(0px);  }
+  45%       { transform: translateY(-7px); }
+  65%       { transform: translateY(-3px); }
+}
+
+@keyframes mboka-glow-pulse {
+  0%, 100% { box-shadow: 0 -4px 60px rgba(109,40,217,0.25), 0 0 0 1px rgba(139,92,246,0.2); }
+  50%       { box-shadow: 0 -4px 80px rgba(109,40,217,0.45), 0 0 0 1px rgba(139,92,246,0.4); }
+}
+
+@keyframes mboka-btn-shimmer {
+  0%   { background-position: 0% 50%;   }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%;   }
+}
+
+.mboka-share-icon   { animation: mboka-share-bounce 1.8s ease-in-out infinite; }
+
+.mboka-modal        { animation: mboka-glow-pulse 3.5s ease-in-out infinite; }
+
+.mboka-install-btn  {
+  background: linear-gradient(270deg, #7c3aed, #a855f7, #ec4899, #7c3aed);
+  background-size: 300% 300%;
+  animation: mboka-btn-shimmer 4s ease infinite;
+}
+
+.mboka-step-badge {
+  background: linear-gradient(135deg, #6d28d9, #a855f7);
+  flex-shrink: 0;
+}
+
