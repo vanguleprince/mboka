@@ -5,8 +5,9 @@ const events = [
     title: "Mboka Live Session",
     place: "Institut Francais, Kinshasa",
     date: "18 Juin 2026",
-    time: "19:30",
+    time: "1:00",
     tag: "Showcase",
+    
   },
   {
     title: "Urban Night x Mboka",
