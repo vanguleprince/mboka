@@ -6,14 +6,14 @@ import { useState } from "react";
 import { useAudio } from "@/components/AudioProvider";
 
 const tracks = [
-  { title: "Bogo - HENNESSY", src: "/audios/bogo/bogo1.mp3" },
-  { title: "Bogo - WOLO PALATA", src: "/audios/bogo/bogo2.mp3" },
-  { title: "Bogo - GENERATION GANG", src: "/audios/bogo/bogo3.mp3" },
-  { title: "Bogo - MBONGO", src: "/audios/bogo/bogo4.mp3" },
-  { title: "Bogo - MWANA MABE", src: "/audios/bogo/bogo5.mp3" },
-  { title: "Bogo - AWA", src: "/audios/bogo/bogo6.mp3" },
-  { title: "Bogo - NTABA MISATO", src: "/audios/bogo/bogo7.mp3" },
-  { title: "Bogo - KIMPA VITA", src: "/audios/bogo/bogo8.mp3" },
+  { title: "Bogo - HENNESSY", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q", src: "/audios/bogo/bogo1.mp3" },
+  { title: "Bogo - WOLO PALATA", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q", src: "/audios/bogo/bogo2.mp3" },
+  { title: "Bogo - GENERATION GANG", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q", src: "/audios/bogo/bogo3.mp3" },
+  { title: "Bogo - MBONGO", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q", src: "/audios/bogo/bogo4.mp3" },
+  { title: "Bogo - MWANA MABE", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q", src: "/audios/bogo/bogo5.mp3" },
+  { title: "Bogo - AWA", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q", src: "/audios/bogo/bogo6.mp3" },
+  { title: "Bogo - NTABA MISATO", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q", src: "/audios/bogo/bogo7.mp3" },
+  { title: "Bogo - KIMPA VITA", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q", src: "/audios/bogo/bogo8.mp3" },
 ];
 
 const newsItems = [

@@ -6,8 +6,8 @@ import { useState } from "react";
 import { useAudio } from "@/components/AudioProvider";
 
 const tracks = [
-  { title: "Montage (feat. Suintement)", duration: "2:53", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3" },
-  { title: "Vraie Momie", duration: "2:05", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3" },
+  { title: "Montage (feat. Suintement)", duration: "2:53", link:"https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3" },
+  { title: "Vraie Momie", duration: "2:05", link:"https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3" },
 ];
 
 const newsItems = [

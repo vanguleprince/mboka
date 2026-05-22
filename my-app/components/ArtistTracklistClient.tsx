@@ -29,6 +29,7 @@ export default function ArtistTracklistClient({ tracklist }: ArtistTracklistClie
           src: track.src!,
           cover: tracklist.cover,
           artist: tracklist.name,
+          link: track.link,
         })),
         playableTracks.findIndex((track) => track.src === selected.src)
       );

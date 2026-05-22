@@ -6,11 +6,11 @@ import { useState } from "react";
 import { useAudio } from "@/components/AudioProvider";
 
 const tracks = [
-  { title: "MPIAKA (feat. Gaz Fabilouss)", duration: "2:56", src: "/cdb/C2B - MPIAKA & Gaz Fabilouss - Download - Tubidy.mp3" },
-  { title: "Oa Nani (feat. Mobutu Satana)", duration: "3:32", src: "/cdb/C2B - Oa Nani & @MobutuSatanaOfficiel - Download - Tubidy.mp3" },
-  { title: "OG (feat. SINS OFF)", duration: "3:32", src: "/cdb/C2B - OG & @SINS_OFF - Download - Tubidy.mp3" },
-  { title: "TUKU TUKU (feat. Diesel Gucci)", duration: "3:25", src: "/cdb/C2B - TUKU TUKU & @DieselGucciofficiel - Download - Tubidy.mp3" },
-  { title: "DIPLOME", duration: "2:46", src: "/cdb/DIPLOME [VISUALIZER 02] - Download - Tubidy.mp3" },
+  { title: "MPIAKA (feat. Gaz Fabilouss)", duration: "2:56", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg", src: "/cdb/C2B - MPIAKA & Gaz Fabilouss - Download - Tubidy.mp3" },
+  { title: "Oa Nani (feat. Mobutu Satana)", duration: "3:32", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg", src: "/cdb/C2B - Oa Nani & @MobutuSatanaOfficiel - Download - Tubidy.mp3" },
+  { title: "OG (feat. SINS OFF)", duration: "3:32", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg", src: "/cdb/C2B - OG & @SINS_OFF - Download - Tubidy.mp3" },
+  { title: "TUKU TUKU (feat. Diesel Gucci)", duration: "3:25", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg", src: "/cdb/C2B - TUKU TUKU & @DieselGucciofficiel - Download - Tubidy.mp3" },
+  { title: "DIPLOME", duration: "2:46", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg", src: "/cdb/DIPLOME [VISUALIZER 02] - Download - Tubidy.mp3" },
 ];
 
 const newsItems = [

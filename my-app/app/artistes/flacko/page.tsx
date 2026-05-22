@@ -6,9 +6,9 @@ import { useState } from "react";
 import { useAudio } from "@/components/AudioProvider";
 
 const tracks = [
-  { title: "C'est fou ça (Prod by Offside)", duration: "2:50", src: "/flacko/FLACKO - C'est fou ça (Prod by Offside) - Download - Tubidy.mp3" },
-  { title: "HUSTLE (Goat Session)", duration: "2:38", src: "/flacko/FLACKO - HUSTLE ( GOAT SESSION ) - Download - Tubidy.mp3" },
-  { title: "MASSE", duration: "2:34", src: "/flacko/FLACKO - MASSE (DIRECTED BY POPPINJEE) - Download - Tubidy.mp3" },
+  { title: "C'est fou ça (Prod by Offside)", duration: "2:50", link: "https://open.spotify.com/artist/14CMqCyT5GDbEJpzn8EmsJ?si=7dx-i4_wSl2dmBzYbjAIcg", src: "/flacko/FLACKO - C'est fou ça (Prod by Offside) - Download - Tubidy.mp3" },
+  { title: "HUSTLE (Goat Session)", duration: "2:38", link: "https://open.spotify.com/artist/14CMqCyT5GDbEJpzn8EmsJ?si=7dx-i4_wSl2dmBzYbjAIcg", src: "/flacko/FLACKO - HUSTLE ( GOAT SESSION ) - Download - Tubidy.mp3" },
+  { title: "MASSE", duration: "2:34", link: "https://open.spotify.com/artist/14CMqCyT5GDbEJpzn8EmsJ?si=7dx-i4_wSl2dmBzYbjAIcg", src: "/flacko/FLACKO - MASSE (DIRECTED BY POPPINJEE) - Download - Tubidy.mp3" },
 ];
 
 const newsItems = [
