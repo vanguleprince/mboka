@@ -9,7 +9,7 @@ Le projet inclut maintenant une couche d'integration API avec fallback local pou
 - Configuration d'environnement: `lib/config/env.ts`
 - Client HTTP centralise: `lib/http/api-client.ts`
 - Service metier: `lib/services/artist-tracklist.service.ts`
-- Endpoints internes: `app/api/tracklists/route.ts`, `app/api/tracklists/[slug]/route.ts`
+- Endpoints internes: `app/api/tracklists/all/route.ts`, `app/api/tracklists/[slug]/route.ts`
 
 ## Variable d'environnement
 

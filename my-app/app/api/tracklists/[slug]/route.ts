@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
-import { isArtistSlug } from "@/lib/types/artist";
+import { ARTIST_SLUGS, isArtistSlug } from "@/lib/types/artist";
 import { getArtistTracklist } from "@/lib/services/artist-tracklist.service";
+
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return ARTIST_SLUGS.map((slug) => ({ slug }));
+}
 
 interface Context {
   params: Promise<{ slug: string }>;
