@@ -10,9 +10,12 @@ export const metadata: Metadata = {
   description: "Créé par Vangu Mvuluzi",
   manifest: "/manifest.json",
   icons: {
-    icon: "/mainIcon.png",
-    apple: "/mainIcon.png",
-    shortcut: "/mainIcon.png",
+    icon: [
+      { url: "/icon-192.png?v=20260523", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png?v=20260523", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png?v=20260523", sizes: "180x180", type: "image/png" }],
+    shortcut: "/icon-192.png?v=20260523",
   },
   appleWebApp: {
     capable: true,

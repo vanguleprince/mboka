@@ -1,6 +1,7 @@
 import ArtistTracklistClient from "@/components/ArtistTracklistClient";
-import { ARTIST_TRACKLISTS } from "@/lib/artistTracklists";
+import { getArtistTracklist } from "@/lib/services/artist-tracklist.service";
 
-export default function C2BTracklistPage() {
-  return <ArtistTracklistClient tracklist={ARTIST_TRACKLISTS.c2b} />;
+export default async function C2BTracklistPage() {
+  const tracklist = await getArtistTracklist("c2b");
+  return <ArtistTracklistClient tracklist={tracklist} />;
 }

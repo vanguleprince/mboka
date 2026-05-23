@@ -1,6 +1,7 @@
 import ArtistTracklistClient from "@/components/ArtistTracklistClient";
-import { ARTIST_TRACKLISTS } from "@/lib/artistTracklists";
+import { getArtistTracklist } from "@/lib/services/artist-tracklist.service";
 
-export default function BogoTracklistPage() {
-  return <ArtistTracklistClient tracklist={ARTIST_TRACKLISTS.bogo} />;
+export default async function BogoTracklistPage() {
+  const tracklist = await getArtistTracklist("bogo");
+  return <ArtistTracklistClient tracklist={tracklist} />;
 }

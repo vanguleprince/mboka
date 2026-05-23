@@ -3,11 +3,6 @@
 import { useEffect, useState } from "react";
 import { usePwa } from "@/components/PwaContext";
 
-interface BeforeInstallPromptEvent extends Event {
-  prompt: () => Promise<void>;
-  userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>;
-}
-
 const DISMISSED_KEY = "mboka:pwa-install-dismissed:v3";
 
 export default function InstallPwaBanner() {
@@ -44,11 +39,14 @@ export default function InstallPwaBanner() {
     const params = new URLSearchParams(window.location.search);
     const preview = params.get("pwa-preview");
     if (preview === "android" || preview === "ios") {
-      setPreviewMode(preview);
-      setIsIos(preview === "ios");
-      setMounted(true);
-      requestAnimationFrame(() => requestAnimationFrame(() => setVisible(true)));
-      return; // bypass toutes les autres vérifications
+      const previewTimer = window.setTimeout(() => {
+        setPreviewMode(preview);
+        setIsIos(preview === "ios");
+        setMounted(true);
+        requestAnimationFrame(() => requestAnimationFrame(() => setVisible(true)));
+      }, 0);
+
+      return () => window.clearTimeout(previewTimer); // bypass toutes les autres vérifications
     }
 
     // 1. Déjà ignoré par l'utilisateur
@@ -60,8 +58,11 @@ export default function InstallPwaBanner() {
       (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
     if (isStandalone) {
       window.localStorage.setItem(DISMISSED_KEY, "true");
-      setIsInstalled(true);
-      return;
+      const installedTimer = window.setTimeout(() => {
+        setIsInstalled(true);
+      }, 0);
+
+      return () => window.clearTimeout(installedTimer);
     }
 
     // 3. Détection iOS (Safari bloque le prompt natif)
@@ -69,7 +70,9 @@ export default function InstallPwaBanner() {
     const iosDevice =
       /iPad|iPhone|iPod/.test(ua) &&
       !(window as Window & { MSStream?: unknown }).MSStream;
-    setIsIos(iosDevice);
+    const iosTimer = window.setTimeout(() => {
+      setIsIos(iosDevice);
+    }, 0);
 
     // 4. Monte le composant après 2 s, puis déclenche la transition
     const timer = window.setTimeout(() => {
@@ -78,7 +81,10 @@ export default function InstallPwaBanner() {
       requestAnimationFrame(() => requestAnimationFrame(() => setVisible(true)));
     }, 2000);
 
-    return () => window.clearTimeout(timer);
+    return () => {
+      window.clearTimeout(iosTimer);
+      window.clearTimeout(timer);
+    };
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Conditions de rendu ──────────────────────────────────────────────────────

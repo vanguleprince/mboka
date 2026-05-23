@@ -1,6 +1,7 @@
 import ArtistTracklistClient from "@/components/ArtistTracklistClient";
-import { ARTIST_TRACKLISTS } from "@/lib/artistTracklists";
+import { getArtistTracklist } from "@/lib/services/artist-tracklist.service";
 
-export default function FlackoTracklistPage() {
-  return <ArtistTracklistClient tracklist={ARTIST_TRACKLISTS.flacko} />;
+export default async function FlackoTracklistPage() {
+  const tracklist = await getArtistTracklist("flacko");
+  return <ArtistTracklistClient tracklist={tracklist} />;
 }

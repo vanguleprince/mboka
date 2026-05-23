@@ -47,9 +47,18 @@ export default function MediaPreview() {
             <p className="text-sm text-zinc-300">Cette vidéo n’a pas pu être chargée.</p>
             <Link
               href="/decouvrir"
-              className="absolute bottom-5 left-1/2 inline-flex min-w-[15rem] -translate-x-1/2 items-center justify-center rounded-full border border-violet-200/45 bg-linear-to-r from-violet-800 via-blue-700 to-emerald-500 px-10 py-3.5 text-center text-base font-bold text-white shadow-[0_10px_30px_rgba(59,130,246,0.45)] transition hover:scale-105 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+              suppressHydrationWarning
+              aria-label="Decouvrir Mboka"
+              className="absolute left-1/2 top-1/2 inline-flex h-18 w-18 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-violet-200/50 bg-linear-to-br from-violet-700 to-blue-600 text-white shadow-[0_12px_35px_rgba(59,130,246,0.5)] transition hover:scale-110 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
             >
-              Decouvrez Mboka
+              <span className="sr-only">Decouvrir Mboka</span>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="ml-1 h-8 w-8 fill-current"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </Link>
           </div>
         ) : (
@@ -84,9 +93,18 @@ export default function MediaPreview() {
 
             <Link
               href="/decouvrir"
-              className="absolute bottom-5 left-1/2 inline-flex min-w-[15rem] -translate-x-1/2 items-center justify-center rounded-full border border-violet-200/45 bg-linear-to-r from-violet-800 via-blue-700 to-emerald-500 px-10 py-3.5 text-center text-base font-bold text-white shadow-[0_10px_30px_rgba(59,130,246,0.45)] transition hover:scale-105 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+              suppressHydrationWarning
+              aria-label="Decouvrir Mboka"
+              className="absolute left-1/2 top-1/2 inline-flex h-18 w-18 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-violet-200/50 bg-linear-to-br from-violet-700 to-blue-600 text-white shadow-[0_12px_35px_rgba(59,130,246,0.5)] transition hover:scale-110 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
             >
-              Decouvrez Mboka
+              <span className="sr-only">Decouvrir Mboka</span>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="ml-1 h-8 w-8 fill-current"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </Link>
           </div>
         )}

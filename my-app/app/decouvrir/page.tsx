@@ -33,28 +33,32 @@ const sections = [
 
 const artists = [
   {
-    name: "Bogo thegoat",
+    name: "Bogo",
     role: "Artiste Trap",
     image: "/imagepages/bogothegoat3.jpeg",
     hoverImages: ["/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg", "/imagepages/keurma2.jpg"],
+    href: "/artistes/bogo",
   },
   {
     name: "C2B",
     role: "Modjalisme",
     image: "/imagepages/cdbpicture.png",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/flackoCram.jpg", "/imagepages/keurma2.jpg"],
+    href: "/artistes/c2b",
   },
   {
     name: "Flacko",
     role: "Rap pur",
     image: "/imagepages/flackoCram.jpg",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/keurma2.jpg"],
+    href: "/artistes/flacko",
   },
   {
     name: "Keurma",
     role: "Afro pop kin",
     image: "/imagepages/keurma2.jpg",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
+    href: "/artistes/keurma",
   },
 ];
 
@@ -68,14 +72,14 @@ const clothingItems = [
 ];
 
 const audioTracks = [
-  { title: "HENNESSY", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo1.mp3" },
-  { title: "WOLO PALATA", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo2.mp3" },
-  { title: "MPIAKA (feat. Gaz Fabilouss)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - MPIAKA & Gaz Fabilouss - Download - Tubidy.mp3" },
-  { title: "Oa Nani (feat. Mobutu Satana)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - Oa Nani & @MobutuSatanaOfficiel - Download - Tubidy.mp3" },
-  { title: "C'est fou ca (Prod by Offside)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - C'est fou ça (Prod by Offside) - Download - Tubidy.mp3" },
-  { title: "HUSTLE (Goat Session)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - HUSTLE ( GOAT SESSION ) - Download - Tubidy.mp3" },
-  { title: "Montage (feat. Suintement)", artist: "Keurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3" },
-  { title: "Vraie Momie", artist: "Keurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3" },
+  { title: "HENNESSY", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo1.mp3", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q" },
+  { title: "WOLO PALATA", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo2.mp3", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q" },
+  { title: "MPIAKA (feat. Gaz Fabilouss)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - MPIAKA & Gaz Fabilouss - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg" },
+  { title: "Oa Nani (feat. Mobutu Satana)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - Oa Nani & @MobutuSatanaOfficiel - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg" },
+  { title: "C'est fou ca (Prod by Offside)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - C'est fou ça (Prod by Offside) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/14CMqCyT5GDbEJpzn8EmsJ?si=7dx-i4_wSl2dmBzYbjAIcg" },
+  { title: "HUSTLE (Goat Session)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - HUSTLE ( GOAT SESSION ) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/14CMqCyT5GDbEJpzn8EmsJ?si=7dx-i4_wSl2dmBzYbjAIcg" },
+  { title: "Montage (feat. Suintement)", artist: "Keurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw" },
+  { title: "Vraie Momie", artist: "Keurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw" },
 ];
 
 export default function DecouvrirPage() {
@@ -86,6 +90,7 @@ export default function DecouvrirPage() {
     src: track.src,
     cover: track.image,
     artist: track.artist,
+    link: track.link,
   }));
 
   const playFromLabelList = (index: number) => {
@@ -212,33 +217,9 @@ export default function DecouvrirPage() {
                   </div>
                 );
 
-                if (artist.name === "Bogo") {
+                if (artist.href) {
                   return (
-                    <Link key={artist.name} href="/artistes/bogo" className="shrink-0">
-                      {card}
-                    </Link>
-                  );
-                }
-
-                if (artist.name === "C2B") {
-                  return (
-                    <Link key={artist.name} href="/artistes/c2b" className="shrink-0">
-                      {card}
-                    </Link>
-                  );
-                }
-
-                if (artist.name === "Flacko") {
-                  return (
-                    <Link key={artist.name} href="/artistes/flacko" className="shrink-0">
-                      {card}
-                    </Link>
-                  );
-                }
-
-                if (artist.name === "Keurma") {
-                  return (
-                    <Link key={artist.name} href="/artistes/keurma" className="shrink-0">
+                    <Link key={artist.name} href={artist.href} className="shrink-0 cursor-pointer">
                       {card}
                     </Link>
                   );

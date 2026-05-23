@@ -1,6 +1,7 @@
 import ArtistTracklistClient from "@/components/ArtistTracklistClient";
-import { ARTIST_TRACKLISTS } from "@/lib/artistTracklists";
+import { getArtistTracklist } from "@/lib/services/artist-tracklist.service";
 
-export default function KeurmaTracklistPage() {
-  return <ArtistTracklistClient tracklist={ARTIST_TRACKLISTS.keurma} />;
+export default async function KeurmaTracklistPage() {
+  const tracklist = await getArtistTracklist("keurma");
+  return <ArtistTracklistClient tracklist={tracklist} />;
 }

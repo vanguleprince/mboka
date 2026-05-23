@@ -1,18 +1,6 @@
-export type ArtistSlug = "bogo" | "c2b" | "flacko" | "keurma";
+import type { ArtistSlug, ArtistTracklist } from "@/lib/types/artist";
 
-export interface ArtistTrack {
-  title: string;
-  duration: string;
-  src?: string;
-  link?: string;
-}
-
-export interface ArtistTracklist {
-  slug: ArtistSlug;
-  name: string;
-  cover: string;
-  tracks: ArtistTrack[];
-}
+export type { ArtistSlug, ArtistTrack, ArtistTracklist } from "@/lib/types/artist";
 
 export const ARTIST_TRACKLISTS: Record<ArtistSlug, ArtistTracklist> = {
   bogo: {
@@ -62,3 +50,4 @@ export const ARTIST_TRACKLISTS: Record<ArtistSlug, ArtistTracklist> = {
     ],
   },
 };
+

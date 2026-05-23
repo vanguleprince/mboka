@@ -95,6 +95,45 @@ export default function AproposPage() {
             </p>
           </article>
         </div>
+
+        <section className="mt-6 rounded-[20px] bg-white/55 p-5 sm:p-7">
+          <div className="flex items-center justify-between gap-3">
+            <h2 className="text-2xl font-black text-[#20165b]">Membres de l&apos;equipe</h2>
+            <span className="rounded-full border border-[#4e3a95]/25 bg-[#efe7ff] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#3f2f86]">
+              Team Mboka
+            </span>
+          </div>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
+                <Image
+                  src="/mboka_admi/laurent_mboka.jpg"
+                  alt="Laurent Ilonga Weya"
+                  width={900}
+                  height={900}
+                  className="h-72 w-full object-cover"
+                />
+              </div>
+              <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Laurent Ilonga Weya</h3>
+              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Président (CEO)</p>
+            </article>
+
+            <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
+                <Image
+                  src="/mboka_admi/desmond_picture.jpg"
+                  alt="Desmond Despi"
+                  width={900}
+                  height={900}
+                  className="h-72 w-full object-cover"
+                />
+              </div>
+              <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Desmond Despi</h3>
+              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Manager d&apos;artistes</p>
+            </article>
+          </div>
+        </section>
       </section>
     </main>
   );
