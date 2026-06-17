@@ -110,6 +110,9 @@ export default function KeurmaPage() {
                 <p>
                   <span className="font-semibold text-white">Keurma</span> est l&apos;incarnation meme de la fusion moderne. Artiste Afro-Pop emblematique du label Mboka, elle a su creer une passerelle sonore inedite entre l&apos;energie brute de Kinshasa, sa ville d&apos;origine, et les vibrations solaires des Caraibes. Son image, a la fois urbaine et sophistiquee, reflete une artiste qui a su se reinventer en imposant un style bien a elle : le melange audacieux du Chatta percutant et des melodies caribeennes envoutantes.
                 </p>
+                <p className="mt-3">
+                  Elle s&apos;appelle EMMANUELLA NTUMBA CALISSE, nee le 28/08/2003, et son premier son est MA VIE, sorti en 2019.
+                </p>
 
                 {/* Paragraphes cachés / affichés */}
                 <div
@@ -233,9 +236,6 @@ export default function KeurmaPage() {
           <div className="mb-5 flex items-center justify-between">
             <h2 className="text-lg font-bold text-white">Discographie</h2>
             <div className="flex items-center gap-2">
-              <span className="rounded-full border border-violet-300/30 bg-violet-300/10 px-3 py-1 text-xs tracking-[0.14em] text-violet-200">
-                STREAMING
-              </span>
               <Link
                 href="/artistes/keurma/tracklist"
                 className="rounded-full border border-violet-200/35 bg-black/35 px-3 py-1 text-xs font-semibold tracking-widest text-violet-100 transition hover:bg-violet-500/20"

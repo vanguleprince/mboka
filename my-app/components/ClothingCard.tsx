@@ -20,6 +20,8 @@ export default function ClothingCard({
   rating = 4.5,
   inStock = true,
 }: ClothingCardProps) {
+  const formattedPrice = `${price.toLocaleString("fr-FR")} FC`;
+
   return (
     <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-zinc-900 transition hover:border-pink-500/50 hover:shadow-lg hover:shadow-pink-500/20">
       {/* Image Container */}
@@ -50,12 +52,7 @@ export default function ClothingCard({
           )}
         </div>
 
-        {/* Catégorie Badge */}
-        <div className="absolute left-2 top-2">
-          <span className="inline-block rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-3 py-1 text-xs font-semibold text-white">
-            {category}
-          </span>
-        </div>
+
       </div>
 
       {/* Content */}
@@ -88,10 +85,7 @@ export default function ClothingCard({
         {/* Price and Button */}
         <div className="flex items-center justify-between gap-3 border-t border-white/5 pt-4">
           <span suppressHydrationWarning className="text-2xl font-bold text-transparent bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text sm:text-3xl">
-            {price.toLocaleString("fr-FR", {
-              style: "currency",
-              currency: "XAF",
-            })}
+            {formattedPrice}
           </span>
           <Link
             href={`/boutique/${id}`}

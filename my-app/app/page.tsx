@@ -1,5 +1,46 @@
 import InfiniteLogoMarquee from "@/components/InfiniteLogoMarquee";
 import MediaPreview from "@/components/MediaPreview";
+import ClothingCard from "@/components/ClothingCard";
+import Link from "next/link";
+
+const featuredItems = [
+  {
+    id: "1",
+    title: "Generation Gang T-shirt",
+    price: 15000,
+    image: "/imagepages/thrity1.jpeg",
+    category: "T-shirt",
+    rating: 4.8,
+    inStock: true,
+  },
+  {
+    id: "2",
+    title: "Generation Gang T-shirt",
+    price: 35000,
+    image: "/imagepages/thrity2.jpeg",
+    category: "T-shirt",
+    rating: 4.6,
+    inStock: true,
+  },
+  {
+    id: "3",
+    title: "MBOKA T-shirt",
+    price: 25000,
+    image: "/imagepages/mbokaTshirt1.png",
+    category: "T-shirt",
+    rating: 4.7,
+    inStock: true,
+  },
+  {
+    id: "4",
+    title: "CRAMECITY T-shirt",
+    price: 28000,
+    image: "/imagepages/crame1.png",
+    category: "T-shirt",
+    rating: 4.5,
+    inStock: true,
+  },
+];
 
 export default function Page() {
   return (
@@ -19,6 +60,35 @@ export default function Page() {
           <MediaPreview />
         </section>
       </main>
+
+      {/* Section Boutique */}
+      <section className="px-6 pb-16 sm:px-10">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-8 flex items-center justify-between">
+            <h2 className="text-2xl font-bold sm:text-3xl">Boutique</h2>
+            <Link
+              href="/boutique"
+              className="rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 px-4 py-2 text-sm font-semibold text-white transition hover:scale-105 hover:shadow-lg hover:shadow-pink-500/40"
+            >
+              Voir tout
+            </Link>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {featuredItems.map((item) => (
+              <ClothingCard
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                image={item.image}
+                category={item.category}
+                rating={item.rating}
+                inStock={item.inStock}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
         
     </div>

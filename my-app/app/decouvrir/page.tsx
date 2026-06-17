@@ -18,6 +18,12 @@ const sections = [
     href: "/boutique",
   },
   {
+    title: "Autre branche",
+    subtitle: "Nouvelle branche du label, visibilite renforcee",
+    color: "from-amber-400/65 via-orange-500/45 to-zinc-900/88",
+    href: "/autre-branche",
+  },
+  {
     title: "Artistes",
     subtitle: "Nouvelles sorties et sons exclusifs",
     color: "from-violet-500/45 via-fuchsia-500/25 to-zinc-900/85",
@@ -63,12 +69,12 @@ const artists = [
 ];
 
 const clothingItems = [
-  { name: "Hoodie Midnight", type: "Sweat capuche", price: "$65", image: "/imagepages/thrity1.jpeg" },
-  { name: "Tee Ocean", type: "T-shirt oversize", price: "$35", image: "/imagepages/thrity2.jpeg" },
-  { name: "Veste Storm", type: "Veste street", price: "$90", image: "/imagepages/mbokaTshirt1.png" },
-  { name: "Jogger Sky", type: "Pantalon confort", price: "$52", image: "/imagepages/cape.jpg" },
-  { name: "Top Electric", type: "Top premium", price: "$39", image: "/imagepages/t-shirtwhite.png" },
-  { name: "Casquette Blue Wave", type: "Accessoire", price: "$24", image: "/imagepages/t-shirt.png" },
+  { id: "1", name: "Generation Gang T-shirt", type: "T-shirt", price: "15.000 FC", image: "/imagepages/thrity1.jpeg" },
+  { id: "2", name: "Generation Gang T-shirt", type: "T-shirt", price: "35.000 FC", image: "/imagepages/thrity2.jpeg" },
+  { id: "3", name: "MBOKA T-shirt", type: "T-shirt", price: "25.000 FC", image: "/imagepages/mbokaTshirt1.png" },
+  { id: "4", name: "CRAMECITY T-shirt", type: "T-shirt", price: "28.000 FC", image: "/imagepages/crame1.png" },
+  { id: "5", name: "Corne C2B", type: "Accessoire", price: "22.000 FC", image: "/corneC2B.jpeg" },
+  { id: "6", name: "Corne C2B", type: "Accessoire", price: "22.000 FC", image: "/corne2C2B.jpeg" },
 ];
 
 const audioTracks = [
@@ -118,9 +124,7 @@ export default function DecouvrirPage() {
         <section className="rounded-[34px] border border-white/10 bg-black/40 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-6">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-bold text-violet-100 sm:text-xl">Explore</h2>
-            <span className="rounded-full border border-violet-300/25 bg-violet-300/10 px-3 py-1 text-xs tracking-[0.16em] text-violet-200">
-              SECTIONS
-            </span>
+           
           </div>
 
           <div className="relative">
@@ -133,22 +137,12 @@ export default function DecouvrirPage() {
                   <div className={`group h-97.5 w-72.5 shrink-0 snap-start rounded-[30px] border border-white/12 bg-linear-to-br ${item.color} p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.22)] transition hover:brightness-110 sm:h-107.5 sm:w-85`}>
                     <div className="flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-black/25 p-5 backdrop-blur-sm">
                       <div>
-                        <span className="inline-flex rounded-full border border-violet-200/25 bg-violet-200/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-violet-100">
-                          iOS Card
-                        </span>
+                       
                         <h3 className="mt-4 text-3xl font-black leading-tight text-white">{item.title}</h3>
                         <p className="mt-3 text-sm leading-6 text-zinc-200/90">{item.subtitle}</p>
                       </div>
 
-                      <div className="rounded-2xl border border-violet-100/20 bg-black/35 p-4">
-                        <div className="mb-2 h-1.5 w-full overflow-hidden rounded-full bg-white/15">
-                          <div className="h-full w-2/3 rounded-full bg-linear-to-r from-violet-300 to-fuchsia-300" />
-                        </div>
-                        <div className="flex items-center justify-between text-xs text-zinc-300">
-                          <span>Now</span>
-                          <span>Streaming</span>
-                        </div>
-                      </div>
+                      
                     </div>
                   </div>
                 );
@@ -311,7 +305,7 @@ export default function DecouvrirPage() {
             <div className="flex w-max gap-4 pr-4 sm:gap-6">
               {clothingItems.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.id}
                   href="/boutique"
                   className="group relative h-97.5 w-72.5 shrink-0 overflow-hidden rounded-[30px] border border-sky-200/20 bg-black/28 transition hover:brightness-110 sm:h-107.5 sm:w-85"
                 >

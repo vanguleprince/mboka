@@ -77,7 +77,7 @@ export default function AproposPage() {
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-5">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#3f2f86]">Structuration</p>
               <p className="mt-2 text-sm leading-7 text-[#2d2468]">
-                À 18 ans, il franchit un cap décisif en structurant ses ambitions avec la création de MBONA SARL, marquant le début d’un parcours entrepreneurial construit avec discipline et stratégie.
+                À 18 ans, il franchit un cap décisif en structurant ses ambitions avec la création de MBOKA SARL, marquant le début d’un parcours entrepreneurial construit avec discipline et stratégie.
               </p>
             </article>
           </div>

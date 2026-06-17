@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,8 +15,13 @@ const videos: VideoItem[] = [
 ];
 
 export default function MediaPreview() {
+  const [isMounted, setIsMounted] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [videoErrors, setVideoErrors] = useState<Record<number, boolean>>({});
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const enforceMuted = (video: HTMLVideoElement | null) => {
     if (!video) return;
@@ -35,7 +40,18 @@ export default function MediaPreview() {
       <div className="overflow-hidden rounded-2xl border border-white/8 bg-linear-to-br from-zinc-900 via-black to-zinc-800 p-2 sm:p-2.5">
         <p className="mb-3 text-sm font-semibold text-zinc-200">{activeVideo.title}</p>
 
-        {hasError ? (
+        {!isMounted ? (
+          <div className="relative flex min-h-[22rem] flex-col items-center justify-center rounded-xl bg-zinc-950 px-4 py-6 text-center sm:min-h-[26rem]">
+            <Image
+              src="/imagepages/mboka.png"
+              alt="Mboka"
+              width={140}
+              height={140}
+              className="mb-3 h-auto w-24 object-contain opacity-90"
+            />
+            <p className="text-sm text-zinc-300">Chargement du media...</p>
+          </div>
+        ) : hasError ? (
           <div className="relative flex min-h-[22rem] flex-col items-center justify-center rounded-xl bg-zinc-950 px-4 py-6 text-center sm:min-h-[26rem]">
             <Image
               src="/imagepages/mboka.png"

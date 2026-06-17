@@ -111,6 +111,9 @@ export default function FlackoPage() {
                 <p>
                   Originaire de la Republique Democratique du Congo et base a Lemba, <span className="font-semibold text-white">Flacko (Armando Choukrani)</span> incarne une nouvelle generation d&apos;artistes africains portee par l&apos;ambition, la discipline et une vision internationale.
                 </p>
+                <p className="mt-3">
+                  Ne a Kinshasa le 28/07/2004, son premier texte a ete ecrit en 2021.
+                </p>
 
                 {/* Paragraphes cachés / affichés */}
                 <div
@@ -240,9 +243,6 @@ export default function FlackoPage() {
           <div className="mb-5 flex items-center justify-between">
             <h2 className="text-lg font-bold text-white">Discographie</h2>
             <div className="flex items-center gap-2">
-              <span className="rounded-full border border-violet-300/30 bg-violet-300/10 px-3 py-1 text-xs tracking-[0.14em] text-violet-200">
-                STREAMING
-              </span>
               <Link
                 href="/artistes/flacko/tracklist"
                 className="rounded-full border border-violet-200/35 bg-black/35 px-3 py-1 text-xs font-semibold tracking-widest text-violet-100 transition hover:bg-violet-500/20"

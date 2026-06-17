@@ -113,6 +113,9 @@ export default function C2BPage() {
                 <p>
                   Originaire de Kinshasa (RDC), entre Barumbu, Kinshasa et Ngaliema, <span className="font-semibold text-white">C2B</span> est un rappeur multilingue (francais, lingala, swahili, tshiluba) qui incarne une nouvelle generation d&apos;artistes africains prets a franchir les frontieres.
                 </p>
+                <p className="mt-3">
+                  Il est ne le 07/05/1997.
+                </p>
 
                 {/* Paragraphes cachés / affichés */}
                 <div
@@ -242,9 +245,6 @@ export default function C2BPage() {
           <div className="mb-5 flex items-center justify-between">
             <h2 className="text-lg font-bold text-white">Discographie</h2>
             <div className="flex items-center gap-2">
-              <span className="rounded-full border border-violet-300/30 bg-violet-300/10 px-3 py-1 text-xs tracking-[0.14em] text-violet-200">
-                STREAMING
-              </span>
               <Link
                 href="/artistes/c2b/tracklist"
                 className="rounded-full border border-violet-200/35 bg-black/35 px-3 py-1 text-xs font-semibold tracking-widest text-violet-100 transition hover:bg-violet-500/20"

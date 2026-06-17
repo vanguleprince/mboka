@@ -5,7 +5,7 @@ import InfiniteLogoMarquee from "@/components/InfiniteLogoMarquee";
 const clothingItems = [
   {
     id: "1",
-    title: "T-shirt Premium Noir",
+    title: "Generation Gang T-shirt",
     price: 15000,
     image: "/imagepages/thrity1.jpeg",
     category: "T-shirt",
@@ -14,65 +14,47 @@ const clothingItems = [
   },
   {
     id: "2",
-    title: "Jeans Slim Fit Bleu",
+    title: "Generation Gang T-shirt",
     price: 35000,
     image: "/imagepages/thrity2.jpeg",
-    category: "Jeans",
+    category: "T-shirt",
     rating: 4.6,
     inStock: true,
   },
   {
     id: "3",
-    title: "Chemise Classique Blanche",
+    title: "MBOKA T-shirt",
     price: 25000,
     image: "/imagepages/mbokaTshirt1.png",
-    category: "Chemise",
+    category: "T-shirt",
     rating: 4.7,
     inStock: true,
   },
   {
     id: "4",
-    title: "Veste Bomber Gris",
-    price: 45000,
-    image: "/imagepages/cape.jpg",
-    category: "Veste",
+    title: "CRAMECITY T-shirt",
+    price: 28000,
+    image: "/imagepages/crame1.png",
+    category: "T-shirt",
     rating: 4.5,
     inStock: true,
   },
   {
     id: "5",
-    title: "Shorts Cargo Kaki",
-    price: 20000,
-    image: "/imagepages/t-shirtwhite.png",
-    category: "Shorts",
-    rating: 4.4,
+    title: "Corne C2B",
+    price: 22000,
+    image: "/corneC2B.jpeg",
+    category: "Accessoire",
+    rating: 4.7,
     inStock: true,
   },
   {
     id: "6",
-    title: "Hoodie Confortable Noir",
-    price: 32000,
-    image: "/imagepages/t-shirt.png",
-    category: "Hoodie",
-    rating: 4.9,
-    inStock: true,
-  },
-  {
-    id: "7",
-    title: "Pantalon Chino Beige",
-    price: 28000,
-    image: "/imagepages/crame1.png",
-    category: "Pantalon",
-    rating: 4.5,
-    inStock: false,
-  },
-  {
-    id: "8",
-    title: "Polo Sportif Bleu",
-    price: 18000,
-    image: "/imagepages/mboka.png",
-    category: "Polo",
-    rating: 4.6,
+    title: "Corne C2B",
+    price: 22000,
+    image: "/corne2C2B.jpeg",
+    category: "Accessoire",
+    rating: 4.7,
     inStock: true,
   },
 ];
@@ -91,21 +73,6 @@ export default function BoutiquePage() {
           </p>
         </div>
 
-        {/* Filtres (optionnel) */}
-        <div className="mb-8 flex flex-wrap justify-center gap-3">
-          <button className="rounded-full border border-white/20 bg-zinc-900 px-5 py-2 font-semibold text-white transition hover:border-pink-500 hover:bg-zinc-800">
-            Tous
-          </button>
-          <button className="rounded-full border border-white/20 bg-zinc-900 px-5 py-2 font-semibold text-zinc-400 transition hover:border-pink-500 hover:bg-zinc-800 hover:text-white">
-            T-shirts
-          </button>
-          <button className="rounded-full border border-white/20 bg-zinc-900 px-5 py-2 font-semibold text-zinc-400 transition hover:border-pink-500 hover:bg-zinc-800 hover:text-white">
-            Pantalons
-          </button>
-          <button className="rounded-full border border-white/20 bg-zinc-900 px-5 py-2 font-semibold text-zinc-400 transition hover:border-pink-500 hover:bg-zinc-800 hover:text-white">
-            Vestes
-          </button>
-        </div>
       </div>
 
       {/* Produits Grid */}
