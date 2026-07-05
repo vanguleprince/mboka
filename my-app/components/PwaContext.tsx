@@ -23,12 +23,10 @@ export function PwaProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const onBeforeInstallPrompt = (event: Event) => {
       event.preventDefault();
-      console.log("beforeinstallprompt captured in PwaProvider");
       setDeferredPrompt(event as BeforeInstallPromptEvent);
     };
 
     const onAppInstalled = () => {
-      console.log("appinstalled event captured in PwaProvider");
       setIsInstalled(true);
       setDeferredPrompt(null);
     };

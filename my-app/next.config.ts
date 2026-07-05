@@ -6,6 +6,13 @@ const withPWA = require("next-pwa")({
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === "development",
+  publicExcludes: [
+    "!audios/**/*",
+    "!videos/**/*",
+    "!cdb/**/*",
+    "!flacko/**/*",
+    "!noprecache/**/*",
+  ],
 });
 
 const nextConfig: NextConfig = {
