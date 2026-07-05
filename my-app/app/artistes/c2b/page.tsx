@@ -187,13 +187,12 @@ export default function C2BPage() {
             rel="noopener noreferrer"
             className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-green-400/40 hover:bg-green-500/10 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]"
           >
-            <div className="mx-auto mb-2 h-12 w-12 relative">
-              <Image
-                src="/spotify.jpg"
-                alt="Spotify"
-                fill
-                className="object-contain"
-              />
+            <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-[#1DB954]">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7" fill="none">
+                <path d="M6 9.3c4.2-1.3 8.7-.8 12.4 1.2" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
+                <path d="M6.9 12.2c3.4-1 7-.6 10 1" stroke="white" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M7.8 15c2.6-.7 5.2-.4 7.5.8" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
             </div>
             <p className="text-xs uppercase tracking-[0.16em] text-green-300 font-semibold">Spotify</p>
           </a>

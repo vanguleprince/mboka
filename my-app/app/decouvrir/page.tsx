@@ -18,12 +18,6 @@ const sections = [
     href: "/boutique",
   },
   {
-    title: "Autre branche",
-    subtitle: "Nouvelle branche du label, visibilite renforcee",
-    color: "from-amber-400/65 via-orange-500/45 to-zinc-900/88",
-    href: "/autre-branche",
-  },
-  {
     title: "Artistes",
     subtitle: "Nouvelles sorties et sons exclusifs",
     color: "from-violet-500/45 via-fuchsia-500/25 to-zinc-900/85",
@@ -34,6 +28,12 @@ const sections = [
     subtitle: "Concerts lives, showcases et invites",
     color: "from-purple-500/40 via-violet-600/25 to-zinc-900/85",
     href: "/evenement",
+  },
+  {
+    title: "Autre branche",
+    subtitle: "Nouvelle branche du label, visibilite renforcee",
+    color: "from-amber-400/65 via-orange-500/45 to-zinc-900/88",
+    href: "/autre-branche",
   },
 ];
 
@@ -113,7 +113,11 @@ export default function DecouvrirPage() {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#08070c] px-4 py-10 text-white sm:px-8">
+    <main
+      className="relative min-h-screen overflow-hidden bg-[#08070c] px-4 py-10 text-white sm:px-8"
+      suppressHydrationWarning
+      translate="no"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-16 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-violet-500/20 blur-3xl" />
         <div className="absolute bottom-6 left-8 h-52 w-52 rounded-full bg-fuchsia-500/10 blur-3xl" />
