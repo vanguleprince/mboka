@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import BackLogo from "@/components/BackLogo";
 
@@ -27,18 +27,9 @@ function MenuIcon({ open }: { open: boolean }) {
 
 export default function MainNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
 
   return (
-    <nav className="relative z-[140] mx-auto max-w-7xl rounded-full border border-white/15 bg-[linear-gradient(135deg,rgba(139,92,246,0.26),rgba(59,130,246,0.18)),linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04))] px-4 py-3 shadow-[0_18px_50px_rgba(18,14,38,0.42)] backdrop-blur-xl ring-1 ring-white/8 sm:px-8 sm:py-4">
+    <nav className="relative z-140 mx-auto max-w-7xl rounded-full border border-white/15 bg-[linear-gradient(135deg,rgba(139,92,246,0.26),rgba(59,130,246,0.18)),linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04))] px-4 py-3 shadow-[0_18px_50px_rgba(18,14,38,0.42)] backdrop-blur-xl ring-1 ring-white/8 sm:px-8 sm:py-4">
       <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(168,85,247,0.22),transparent_32%),radial-gradient(circle_at_right,rgba(59,130,246,0.2),transparent_30%)]" />
         <div className="absolute inset-x-10 top-0 h-px bg-linear-to-r from-transparent via-white/60 to-transparent" />
@@ -54,7 +45,6 @@ export default function MainNav() {
             <Link
               key={item.href}
               href={item.href}
-              suppressHydrationWarning
               className="group relative overflow-hidden rounded-full border border-violet-400/30 bg-[linear-gradient(135deg,rgba(109,40,217,0.62),rgba(37,99,235,0.45))] px-5 py-2.5 text-sm font-bold text-white shadow-[0_4px_20px_rgba(109,40,217,0.22),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all hover:brightness-110"
             >
               <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_46%)]" />
@@ -63,7 +53,6 @@ export default function MainNav() {
           ))}
           <Link
             href="/boutique"
-            suppressHydrationWarning
             className="group relative overflow-hidden rounded-full border border-sky-300/40 bg-[linear-gradient(135deg,rgba(14,165,233,0.72),rgba(99,102,241,0.6))] px-5 py-2.5 text-sm font-bold text-white shadow-[0_4px_22px_rgba(14,165,233,0.25),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all hover:brightness-110"
           >
             <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_46%)]" />
@@ -87,7 +76,7 @@ export default function MainNav() {
       </div>
 
       {isOpen ? (
-        <div className="fixed inset-0 z-[120] md:hidden" role="presentation">
+        <div className="fixed inset-0 z-120 md:hidden" role="presentation">
           <button
             type="button"
             className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.22),transparent_35%),linear-gradient(to_bottom,rgba(2,6,23,0.74),rgba(2,6,23,0.9))] backdrop-blur-md"
@@ -95,7 +84,7 @@ export default function MainNav() {
             onClick={() => setIsOpen(false)}
           />
 
-          <div className="absolute right-4 top-28 w-[min(26rem,calc(100vw-2rem))] overflow-hidden rounded-[32px] border border-white/20 bg-[linear-gradient(135deg,rgba(139,92,246,0.44),rgba(59,130,246,0.34)),linear-gradient(180deg,rgba(10,12,24,0.88),rgba(10,12,24,0.76))] p-4 shadow-[0_30px_90px_rgba(2,6,23,0.78)] backdrop-blur-3xl ring-1 ring-white/16 sm:right-6 sm:top-30">
+          <div className="absolute right-4 top-28 w-[min(26rem,calc(100vw-2rem))] overflow-hidden rounded-4xl border border-white/20 bg-[linear-gradient(135deg,rgba(139,92,246,0.44),rgba(59,130,246,0.34)),linear-gradient(180deg,rgba(10,12,24,0.88),rgba(10,12,24,0.76))] p-4 shadow-[0_30px_90px_rgba(2,6,23,0.78)] backdrop-blur-3xl ring-1 ring-white/16 sm:right-6 sm:top-30">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.28),transparent_38%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.18),transparent_34%)]" />
             <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-linear-to-r from-transparent via-white/60 to-transparent" />
             <div className="relative">

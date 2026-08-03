@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="h-full antialiased bg-black">
-      <body className="min-h-full flex flex-col bg-black text-white" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-black text-white">
         <PwaProvider>
           <AudioProvider>
             <header className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">

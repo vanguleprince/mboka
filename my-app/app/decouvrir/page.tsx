@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useMemo } from "react";
 import { useAudio } from "@/components/AudioProvider";
+import { buildPlayableTracks, hasSameTrackOrder } from "@/lib/audio/playlist";
 
 const sections = [
   {
@@ -39,18 +41,18 @@ const sections = [
 
 const artists = [
   {
-    name: "Bogo",
-    role: "Artiste Trap",
-    image: "/imagepages/bogothegoat3.jpeg",
-    hoverImages: ["/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg", "/imagepages/keurma2.jpg"],
-    href: "/artistes/bogo",
-  },
-  {
     name: "C2B",
     role: "Modjalisme",
     image: "/imagepages/cdbpicture.png",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/flackoCram.jpg", "/imagepages/keurma2.jpg"],
     href: "/artistes/c2b",
+  },
+  {
+    name: "Bogo",
+    role: "Artiste Trap",
+    image: "/imagepages/bogothegoat3.jpeg",
+    hoverImages: ["/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg", "/imagepages/keurma2.jpg"],
+    href: "/artistes/bogo",
   },
   {
     name: "Flacko",
@@ -60,7 +62,7 @@ const artists = [
     href: "/artistes/flacko",
   },
   {
-    name: "Keurma",
+    name: "Ceurma",
     role: "Afro pop kin",
     image: "/imagepages/keurma2.jpg",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
@@ -78,32 +80,34 @@ const clothingItems = [
 ];
 
 const audioTracks = [
-  { title: "HENNESSY", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo1.mp3", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q" },
-  { title: "WOLO PALATA", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo2.mp3", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q" },
   { title: "MPIAKA (feat. Gaz Fabilouss)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - MPIAKA & Gaz Fabilouss - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg" },
   { title: "Oa Nani (feat. Mobutu Satana)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - Oa Nani & @MobutuSatanaOfficiel - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg" },
+  { title: "HENNESSY", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo1.mp3", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q" },
+  { title: "WOLO PALATA", artist: "Bogo", image: "/imagepages/bogothegoat3.jpeg", src: "/audios/bogo/bogo2.mp3", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q" },
   { title: "C'est fou ca (Prod by Offside)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - C'est fou ça (Prod by Offside) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/14CMqCyT5GDbEJpzn8EmsJ?si=7dx-i4_wSl2dmBzYbjAIcg" },
   { title: "HUSTLE (Goat Session)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - HUSTLE ( GOAT SESSION ) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/14CMqCyT5GDbEJpzn8EmsJ?si=7dx-i4_wSl2dmBzYbjAIcg" },
-  { title: "Montage (feat. Suintement)", artist: "Keurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw" },
-  { title: "Vraie Momie", artist: "Keurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw" },
+  { title: "Montage (feat. Suintement)", artist: "Ceurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw" },
+  { title: "Vraie Momie", artist: "Ceurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw" },
 ];
 
 export default function DecouvrirPage() {
   const { playlist, currentIndex, isPlaying, setPlaylist, playTrack } = useAudio();
 
-  const playableTracks = audioTracks.map((track) => ({
-    title: track.title,
-    src: track.src,
-    cover: track.image,
-    artist: track.artist,
-    link: track.link,
-  }));
+  const playableTracks = useMemo(
+    () => buildPlayableTracks(audioTracks, { cover: "", artist: "" }).map((track, index) => ({
+      ...track,
+      cover: audioTracks[index].image,
+      artist: audioTracks[index].artist,
+    })),
+    [],
+  );
+
+  const samePlaylist = useMemo(
+    () => hasSameTrackOrder(playlist, playableTracks),
+    [playlist, playableTracks],
+  );
 
   const playFromLabelList = (index: number) => {
-    const samePlaylist =
-      playlist.length === playableTracks.length &&
-      playableTracks.every((track, playlistIndex) => track.src === playlist[playlistIndex]?.src);
-
     if (!samePlaylist) {
       setPlaylist(playableTracks, index);
       return;
@@ -142,8 +146,12 @@ export default function DecouvrirPage() {
                     <div className="flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-black/25 p-5 backdrop-blur-sm">
                       <div>
                        
-                        <h3 className="mt-4 text-3xl font-black leading-tight text-white">{item.title}</h3>
-                        <p className="mt-3 text-sm leading-6 text-zinc-200/90">{item.subtitle}</p>
+                        <h3 suppressHydrationWarning className="notranslate mt-4 text-3xl font-black leading-tight text-white" translate="no">
+                          {item.title}
+                        </h3>
+                        <p suppressHydrationWarning className="notranslate mt-3 text-sm leading-6 text-zinc-200/90" translate="no">
+                          {item.subtitle}
+                        </p>
                       </div>
 
                       
@@ -239,10 +247,7 @@ export default function DecouvrirPage() {
           <div className="relative overflow-x-auto pb-2 [scrollbar-width:thin] [scrollbar-color:rgba(196,181,253,0.45)_transparent]">
             <div className="flex w-max gap-4 pr-4 sm:gap-6">
               {audioTracks.map((track, index) => {
-                const active =
-                  currentIndex === index &&
-                  playlist.length === playableTracks.length &&
-                  playableTracks.every((item, playlistIndex) => item.src === playlist[playlistIndex]?.src);
+                const active = currentIndex === index && samePlaylist;
                 return (
                 <button
                   key={track.src}

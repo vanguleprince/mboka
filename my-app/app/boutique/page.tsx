@@ -6,7 +6,7 @@ const clothingItems = [
   {
     id: "1",
     title: "Generation Gang T-shirt",
-    price: 15000,
+    price: 45000,
     image: "/imagepages/thrity1.jpeg",
     category: "T-shirt",
     rating: 4.8,
@@ -15,7 +15,7 @@ const clothingItems = [
   {
     id: "2",
     title: "Generation Gang T-shirt",
-    price: 35000,
+    price: 45000,
     image: "/imagepages/thrity2.jpeg",
     category: "T-shirt",
     rating: 4.6,
@@ -24,7 +24,7 @@ const clothingItems = [
   {
     id: "3",
     title: "MBOKA T-shirt",
-    price: 25000,
+    price: 35000,
     image: "/imagepages/mbokaTshirt1.png",
     category: "T-shirt",
     rating: 4.7,
@@ -33,7 +33,7 @@ const clothingItems = [
   {
     id: "4",
     title: "CRAMECITY T-shirt",
-    price: 28000,
+    price: 38000,
     image: "/imagepages/crame1.png",
     category: "T-shirt",
     rating: 4.5,
@@ -42,7 +42,7 @@ const clothingItems = [
   {
     id: "5",
     title: "Corne C2B",
-    price: 22000,
+    price: 32000,
     image: "/corneC2B.jpeg",
     category: "Accessoire",
     rating: 4.7,
@@ -51,7 +51,7 @@ const clothingItems = [
   {
     id: "6",
     title: "Corne C2B",
-    price: 22000,
+    price: 32000,
     image: "/corne2C2B.jpeg",
     category: "Accessoire",
     rating: 4.7,

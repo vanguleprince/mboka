@@ -63,8 +63,8 @@ export default function AproposPage() {
         </div>
 
         <div className="mt-6 rounded-[20px] bg-[#bda6f7] p-5 sm:p-7">
-          <h2 className="text-2xl font-black text-[#20165b]">Laurent Ilonga Weya</h2>
-          <p className="mt-2 text-sm leading-7 text-[#2a1f66] sm:text-base">Né à Kinshasa le 30 juin 1999.</p>
+          <h2 className="text-2xl font-black text-[#20165b]">Laurent Ilonga Weya PDG</h2>
+          <p className="mt-2 text-sm leading-7 text-[#2a1f66] sm:text-base">Né à Kinshasa le 30 juin 2000.</p>
 
           <div className="mt-5 grid gap-4 md:grid-cols-2">
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-5">
@@ -115,7 +115,7 @@ export default function AproposPage() {
                   className="h-72 w-full object-cover"
                 />
               </div>
-              <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Laurent Ilonga Weya</h3>
+              <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Laurent Ilonga Weya </h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Président (CEO)</p>
             </article>
 

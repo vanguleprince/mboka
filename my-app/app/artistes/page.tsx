@@ -3,18 +3,20 @@ import Link from "next/link";
 
 const artists = [
   {
-    name: "Bogo",
-    style: "Rap urbain",
-    city: "Kinshasa",
-    image: "/imagepages/bogopicture.png",
-    highlight: "Nouvel EP en preparation",
-  },
-  {
     name: "C2B",
     style: "Rap urbain",
     city: "Kinshasa",
     image: "/imagepages/cdbpicture.png",
     highlight: "Session live ce vendredi",
+    href: "/artistes/c2b",
+  },
+  {
+    name: "Bogo",
+    style: "Rap urbain",
+    city: "Kinshasa",
+    image: "/imagepages/bogopicture.png",
+    highlight: "Nouvel EP en preparation",
+    href: "/artistes/bogo",
   },
   {
     name: "Flacko",
@@ -22,13 +24,15 @@ const artists = [
     city: "Kinshasa",
     image: "/imagepages/flackoCram.jpg",
     highlight: "Clip Sans Frein disponible",
+    href: "/artistes/flacko",
   },
   {
-    name: "Keurma",
+    name: "Ceurma",
     style: "Afro pop",
     city: "Kinshasa",
     image: "/imagepages/keurma2.jpg",
     highlight: "Single Mon Horizon en tendance",
+    href: "/artistes/keurma",
   },
 ];
 
@@ -62,8 +66,8 @@ export default function ArtistesPage() {
         </section>
 
         <section className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {artists.map((artist) => {
-            const card = (
+          {artists.map((artist) => (
+            <Link key={artist.name} href={artist.href}>
               <div className="group overflow-hidden rounded-[30px] border border-white/12 bg-linear-to-br from-violet-500/20 via-fuchsia-500/10 to-black/70 p-4 shadow-[0_18px_55px_rgba(0,0,0,0.4)] backdrop-blur-sm transition hover:brightness-110">
                 <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/35">
                   <Image
@@ -82,42 +86,8 @@ export default function ArtistesPage() {
                   <p className="pt-2 text-sm leading-6 text-zinc-200">{artist.highlight}</p>
                 </div>
               </div>
-            );
-
-            if (artist.name === "Bogo") {
-              return (
-                <Link key={artist.name} href="/artistes/bogo">
-                  {card}
-                </Link>
-              );
-            }
-
-            if (artist.name === "C2B") {
-              return (
-                <Link key={artist.name} href="/artistes/c2b">
-                  {card}
-                </Link>
-              );
-            }
-
-            if (artist.name === "Flacko") {
-              return (
-                <Link key={artist.name} href="/artistes/flacko">
-                  {card}
-                </Link>
-              );
-            }
-
-            if (artist.name === "Keurma") {
-              return (
-                <Link key={artist.name} href="/artistes/keurma">
-                  {card}
-                </Link>
-              );
-            }
-
-            return <article key={artist.name}>{card}</article>;
-          })}
+            </Link>
+          ))}
         </section>
       </div>
     </main>

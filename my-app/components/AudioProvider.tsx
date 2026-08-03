@@ -12,23 +12,41 @@ import {
 
 const PREVIEW_LIMIT_SECONDS = 17;
 
-function sanitizeSpotifyLink(rawLink: string): string {
-  let cleanLink = rawLink;
+const ALLOWED_EXTERNAL_MEDIA_HOSTS = new Set([
+  "open.spotify.com",
+  "spotify.com",
+  "www.youtube.com",
+  "youtube.com",
+  "youtu.be",
+]);
 
-  if (cleanLink.startsWith("intent://") || cleanLink.includes("browser_fallback_url=")) {
-    const fallbackMatch = cleanLink.match(/S\.browser_fallback_url=([^;]+)/);
-    if (fallbackMatch?.[1]) {
-      cleanLink = decodeURIComponent(fallbackMatch[1]);
-    } else {
-      cleanLink = "https://open.spotify.com";
-    }
+function getIntentFallbackUrl(rawLink: string): string | null {
+  const fallbackMatch = rawLink.match(/(?:S\.)?browser_fallback_url=([^;]+)/);
+  if (!fallbackMatch?.[1]) return null;
+
+  try {
+    return decodeURIComponent(fallbackMatch[1]);
+  } catch {
+    return null;
   }
+}
 
-  if (cleanLink.includes("?")) {
-    cleanLink = cleanLink.split("?")[0];
+function toSafeExternalMediaUrl(rawLink: string): string | null {
+  const candidate = rawLink.startsWith("intent://")
+    ? getIntentFallbackUrl(rawLink)
+    : rawLink;
+
+  if (!candidate) return null;
+
+  try {
+    const parsed = new URL(candidate);
+    if (parsed.protocol !== "https:") return null;
+    if (!ALLOWED_EXTERNAL_MEDIA_HOSTS.has(parsed.hostname)) return null;
+
+    return parsed.toString();
+  } catch {
+    return null;
   }
-
-  return cleanLink;
 }
 
 export interface Track {
@@ -68,7 +86,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
-
+ 
   const playlistRef = useRef<Track[]>([]);
   const currentIndexRef = useRef<number | null>(null);
   const redirectTriggeredRef = useRef(false);
@@ -80,6 +98,19 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     currentIndexRef.current = currentIndex;
   }, [currentIndex]);
+
+  const safePlay = useCallback(async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    try {
+      await audio.play();
+      setIsPlaying(true);
+    } catch (err) {
+      console.error("Autoplay ou lecture refusee :", err);
+      setIsPlaying(false);
+    }
+  }, []);
 
   // Initialisation de l'audio et gestion globale des événements (Uniquement côté Client)
   useEffect(() => {
@@ -105,13 +136,17 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
         redirectTriggeredRef.current = true;
 
         if (currentTrack?.link) {
-          const cleanLink = sanitizeSpotifyLink(currentTrack.link);
+          const safeUrl = toSafeExternalMediaUrl(currentTrack.link);
+          if (!safeUrl) {
+            console.warn("External media URL blocked: invalid or non-whitelisted domain.");
+            return;
+          }
 
           // Ouvre d'abord en nouvel onglet si possible, puis fallback en navigation directe
           // pour eviter les blocages popup sur certains navigateurs/appareils.
-          const openedWindow = window.open(cleanLink, "_blank", "noopener,noreferrer");
+          const openedWindow = window.open(safeUrl, "_blank", "noopener,noreferrer");
           if (!openedWindow) {
-            window.location.assign(cleanLink);
+            window.location.assign(safeUrl);
           }
         }
       }
@@ -148,19 +183,22 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     
     audio.src = playlist[currentIndex].src;
     audio.load();
-    if (isPlaying) audio.play().catch(() => {});
-  }, [currentIndex, playlist, isPlaying]);
+    if (isPlaying) {
+      void safePlay();
+    }
+  }, [currentIndex, playlist, isPlaying, safePlay]);
 
   // Synchronisation de l'état play/pause
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
+
     if (isPlaying) {
-      audio.play().catch(() => {});
+      void safePlay();
     } else {
       audio.pause();
     }
-  }, [isPlaying]);
+  }, [isPlaying, safePlay]);
  
   const setPlaylist = useCallback((tracks: Track[], startIndex = 0) => {
     setPlaylistState(tracks);

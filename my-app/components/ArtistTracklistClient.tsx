@@ -2,42 +2,66 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useMemo } from "react";
 import { useAudio } from "@/components/AudioProvider";
-import type { ArtistTracklist } from "@/lib/artistTracklists";
+import type { ArtistTrack, ArtistTracklist } from "@/lib/artistTracklists";
+import { getTrackIndexBySrc, hasSameTrackOrder } from "@/lib/audio/playlist";
 
 interface ArtistTracklistClientProps {
   tracklist: ArtistTracklist;
 }
 
+function isTrackActive(
+  playableIndex: number,
+  currentIndex: number | null,
+  isSamePlaylist: boolean,
+) {
+  return isSamePlaylist && playableIndex >= 0 && currentIndex === playableIndex;
+}
+
 export default function ArtistTracklistClient({ tracklist }: ArtistTracklistClientProps) {
   const { playlist, currentIndex, isPlaying, setPlaylist, playTrack } = useAudio();
 
-  const playableTracks = tracklist.tracks.filter((track) => Boolean(track.src));
+  const playableTracks = useMemo(
+    () =>
+      tracklist.tracks
+        .filter((track): track is ArtistTrack & { src: string } => Boolean(track.src))
+        .map((track) => ({
+          title: track.title,
+          src: track.src,
+          cover: tracklist.cover,
+          artist: tracklist.name,
+          link: track.link,
+        })),
+    [tracklist.cover, tracklist.name, tracklist.tracks],
+  );
+
+  const samePlaylist = useMemo(
+    () => hasSameTrackOrder(playlist, playableTracks),
+    [playlist, playableTracks],
+  );
+
+  const playableIndexBySrc = useMemo(() => {
+    const indexBySrc = new Map<string, number>();
+
+    playableTracks.forEach((track, index) => {
+      indexBySrc.set(track.src, index);
+    });
+
+    return indexBySrc;
+  }, [playableTracks]);
 
   const playFromTracklist = (index: number) => {
     const selected = tracklist.tracks[index];
     if (!selected.src) return;
 
-    const samePlaylist =
-      playlist.length === playableTracks.length &&
-      playableTracks.every((track, i) => track.src === playlist[i]?.src);
-
     if (!samePlaylist) {
-      setPlaylist(
-        playableTracks.map((track) => ({
-          title: track.title,
-          src: track.src!,
-          cover: tracklist.cover,
-          artist: tracklist.name,
-          link: track.link,
-        })),
-        playableTracks.findIndex((track) => track.src === selected.src)
-      );
+      setPlaylist(playableTracks, getTrackIndexBySrc(playableTracks, selected.src));
       return;
     }
 
-    const playableIndex = playableTracks.findIndex((track) => track.src === selected.src);
-    if (playableIndex >= 0) playTrack(playableIndex);
+    const playableIndex = playableIndexBySrc.get(selected.src);
+    if (playableIndex !== undefined) playTrack(playableIndex);
   };
 
   return (
@@ -79,8 +103,8 @@ export default function ArtistTracklistClient({ tracklist }: ArtistTracklistClie
 
           <div className="flex flex-col gap-2">
             {tracklist.tracks.map((track, index) => {
-              const playableIndex = playableTracks.findIndex((item) => item.src === track.src);
-              const active = track.src && playableIndex === currentIndex;
+              const playableIndex = getTrackIndexBySrc(playableTracks, track.src);
+              const active = Boolean(track.src) && isTrackActive(playableIndex, currentIndex, samePlaylist);
               return (
                 <button
                   key={`${track.title}-${index}`}

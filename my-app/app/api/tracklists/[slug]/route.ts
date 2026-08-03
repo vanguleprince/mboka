@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { ARTIST_SLUGS, isArtistSlug } from "@/lib/types/artist";
 import { getArtistTracklist } from "@/lib/services/artist-tracklist.service";
 
-export const dynamic = "force-static";
-
 export function generateStaticParams() {
   return ARTIST_SLUGS.map((slug) => ({ slug }));
 }
