@@ -68,6 +68,13 @@ const artists = [
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
     href: "/artistes/keurma",
   },
+  {
+    name: "Wendy Rose",
+    role: "Artiste Mboka",
+    image: "/mboka_admi/wendy_rose.png",
+    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
+    href: "/artistes/wendy-rose",
+  },
 ];
 
 const clothingItems = [

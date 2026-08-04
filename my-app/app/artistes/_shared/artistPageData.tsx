@@ -401,9 +401,66 @@ export const keurmaPageData: ArtistPageData = {
   merchItems: keurmaMerchItems,
 };
 
+const wendyTracks: ArtistTrackItem[] = [];
+
+const wendySocialLinks: ArtistSocialLinks = {
+  spotify: "https://open.spotify.com/",
+  instagram: "https://www.instagram.com/",
+  youtube: "https://www.youtube.com/",
+  tiktok: "https://www.tiktok.com/",
+};
+
+const wendyNewsItems: ArtistNewsItem[] = [
+  {
+    title: "Profil en cours de mise a jour",
+    detail: "Les informations officielles de Wendy Rose arrivent bientot.",
+  },
+  {
+    title: "Nouvelles sorties a venir",
+    detail: "Les prochains titres seront ajoutes des reception de tes contenus.",
+  },
+];
+
+const wendyMerchItems: ArtistMerchItem[] = [
+  {
+    name: "Collection Wendy Rose",
+    description: "Visuels et produits a venir.",
+    price: "Bientot",
+  },
+];
+
+export const wendyRosePageData: ArtistPageData = {
+  slug: "wendy-rose",
+  heroImage: "/mboka_admi/wendy_rose.png",
+  heroAlt: "Wendy Rose",
+  heroTitle: "WENDY ROSE",
+  heroSubtitle: "Artiste Mboka · Kinshasa",
+  bioLead: (
+    <p>
+      <span className="font-semibold text-white">Wendy Rose</span> rejoint officiellement le catalogue Mboka. Sa bio complete, ses liens officiels et son univers detaille seront ajoutes des reception de tes elements.
+    </p>
+  ),
+  bioExpanded: (
+    <>
+      <p>
+        Cette page est prete et fonctionnelle. Tu peux maintenant m&apos;envoyer sa bio, ses reseaux, ses liens Spotify/YouTube et ses titres pour finaliser son profil complet.
+      </p>
+    </>
+  ),
+  tagList: ["Nouveau profil", "Mboka Label", "Kinshasa", "Mise a jour a venir"],
+  tracks: wendyTracks,
+  playableArtist: "Wendy Rose",
+  socialLinks: wendySocialLinks,
+  newsTitle: "Les news de Wendy Rose",
+  newsItems: wendyNewsItems,
+  merchDescription: "Les pieces et visuels de Wendy Rose seront publies prochainement.",
+  merchItems: wendyMerchItems,
+};
+
 export const ARTIST_PAGE_DATA: Record<ArtistSlug, ArtistPageData> = {
   bogo: bogoPageData,
   c2b: c2bPageData,
   flacko: flackoPageData,
   keurma: keurmaPageData,
+  "wendy-rose": wendyRosePageData,
 };

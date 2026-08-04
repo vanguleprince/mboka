@@ -49,5 +49,13 @@ export const ARTIST_TRACKLISTS: Record<ArtistSlug, ArtistTracklist> = {
       { title: "Vraie Momie", duration: "2:05", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw" },
     ],
   },
+  "wendy-rose": {
+    slug: "wendy-rose",
+    name: "Wendy Rose",
+    cover: "/mboka_admi/wendy_rose.png",
+    tracks: [
+      { title: "Titre a venir", duration: "0:00" },
+    ],
+  },
 };
 

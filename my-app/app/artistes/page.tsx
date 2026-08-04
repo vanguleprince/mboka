@@ -34,6 +34,14 @@ const artists = [
     highlight: "Single Mon Horizon en tendance",
     href: "/artistes/keurma",
   },
+  {
+    name: "Wendy Rose",
+    style: "Afro pop",
+    city: "Kinshasa",
+    image: "/mboka_admi/wendy_rose.png",
+    highlight: "Profil en cours de creation",
+    href: "/artistes/wendy-rose",
+  },
 ];
 
 export default function ArtistesPage() {
@@ -65,7 +73,7 @@ export default function ArtistesPage() {
           </div>
         </section>
 
-        <section className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {artists.map((artist) => (
             <Link key={artist.name} href={artist.href}>
               <div className="group overflow-hidden rounded-[30px] border border-white/12 bg-linear-to-br from-violet-500/20 via-fuchsia-500/10 to-black/70 p-4 shadow-[0_18px_55px_rgba(0,0,0,0.4)] backdrop-blur-sm transition hover:brightness-110">

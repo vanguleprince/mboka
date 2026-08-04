@@ -142,11 +142,11 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
             return;
           }
 
-          // Ouvre d'abord en nouvel onglet si possible, puis fallback en navigation directe
-          // pour eviter les blocages popup sur certains navigateurs/appareils.
+          // Ouvre uniquement dans un nouvel onglet pour conserver la page du site.
           const openedWindow = window.open(safeUrl, "_blank", "noopener,noreferrer");
           if (!openedWindow) {
-            window.location.assign(safeUrl);
+            console.warn("Popup blocked: allow popups to open the external media page.");
+            window.alert("Autorisez les pop-ups pour ouvrir Spotify/YouTube dans un nouvel onglet.");
           }
         }
       }
