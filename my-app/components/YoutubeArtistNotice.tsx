@@ -93,22 +93,29 @@ export default function YoutubeArtistNotice() {
     >
       <div
         className="relative w-full max-w-5xl overflow-hidden rounded-3xl border border-white/15 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.22),rgba(17,24,39,0.95)_48%),linear-gradient(130deg,rgba(220,38,38,0.18),rgba(15,23,42,0.95))] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:p-7"
+        style={{ paddingTop: "calc(env(safe-area-inset-top, 0px) + 1.25rem)" }}
         onClick={(event) => event.stopPropagation()}
       >
         <div className="pointer-events-none absolute -left-16 -top-16 h-44 w-44 rounded-full bg-red-500/25 blur-3xl" />
         <div className="pointer-events-none absolute -right-16 bottom-0 h-52 w-52 rounded-full bg-blue-500/20 blur-3xl" />
 
-        <button
-          type="button"
-          aria-label="Fermer"
-          onClick={() => setIsOpen(false)}
-          className="absolute right-4 top-4 z-10 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-xs font-semibold text-white/90 transition hover:bg-white/20"
-        >
-          Fermer
-        </button>
-
         <div className="relative">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-red-200/90">Video notice</p>
+          <div className="mb-4 flex items-start justify-between gap-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-red-200/90">Video notice</p>
+            <button
+              type="button"
+              aria-label="Fermer"
+              onClick={() => setIsOpen(false)}
+              className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border border-white/25 bg-black/60 px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition hover:bg-white/20 active:scale-[0.98] sm:min-h-10 sm:px-3 sm:py-1.5 sm:text-xs"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 shrink-0">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+              <span>Fermer</span>
+            </button>
+          </div>
+
           <h2 className="mt-2 max-w-xl text-2xl font-black tracking-tight text-white sm:text-3xl">
             Nouvelles videos a voir sur YouTube
           </h2>
@@ -154,6 +161,16 @@ export default function YoutubeArtistNotice() {
                 </div>
               </a>
             ))}
+          </div>
+
+          <div className="mt-5 sm:hidden">
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="flex min-h-12 w-full items-center justify-center rounded-2xl border border-white/20 bg-white/12 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/20 active:scale-[0.99]"
+            >
+              Fermer cette section
+            </button>
           </div>
         </div>
       </div>

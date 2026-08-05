@@ -404,10 +404,9 @@ export const keurmaPageData: ArtistPageData = {
 const wendyTracks: ArtistTrackItem[] = [];
 
 const wendySocialLinks: ArtistSocialLinks = {
-  spotify: "https://open.spotify.com/",
-  instagram: "https://www.instagram.com/",
-  youtube: "https://www.youtube.com/",
-  tiktok: "https://www.tiktok.com/",
+  instagram: "https://www.instagram.com/wendyrose01_?igsh=emtpcWt3a253ZDB6",
+  youtube: "https://www.youtube.com/@wendyrose00",
+  tiktok: "https://www.tiktok.com/@djwendyrose?_r=1&_t=ZS-98cvJvINt6z",
 };
 
 const wendyNewsItems: ArtistNewsItem[] = [
@@ -443,7 +442,7 @@ export const wendyRosePageData: ArtistPageData = {
   bioExpanded: (
     <>
       <p>
-        Cette page est prete et fonctionnelle. Tu peux maintenant m&apos;envoyer sa bio, ses reseaux, ses liens Spotify/YouTube et ses titres pour finaliser son profil complet.
+        Cette page est prete et fonctionnelle. Tu peux maintenant m&apos;envoyer sa bio, ses titres et tout contenu complementaire pour finaliser son profil complet.
       </p>
     </>
   ),

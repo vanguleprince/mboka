@@ -25,10 +25,10 @@ export interface ArtistMerchItem {
 }
 
 export interface ArtistSocialLinks {
-  spotify: string;
-  instagram: string;
-  youtube: string;
-  tiktok: string;
+  spotify?: string;
+  instagram?: string;
+  youtube?: string;
+  tiktok?: string;
 }
 
 export interface ArtistPromoBlock {
@@ -229,49 +229,57 @@ export default function ArtistPageTemplate({
         </section>
 
         <section className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <a
-            href={socialLinks.spotify}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-green-400/40 hover:bg-green-500/10 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]"
-          >
-            <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-[#1DB954]">
-              <SpotifyIcon />
-            </div>
-            <p className="text-xs uppercase tracking-[0.16em] text-green-300 font-semibold">Spotify</p>
-          </a>
+          {socialLinks.spotify ? (
+            <a
+              href={socialLinks.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-green-400/40 hover:bg-green-500/10 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)]"
+            >
+              <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-[#1DB954]">
+                <SpotifyIcon />
+              </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-green-300">Spotify</p>
+            </a>
+          ) : null}
 
-          <a
-            href={socialLinks.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-pink-400/40 hover:bg-pink-500/10 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]"
-          >
-            <div className="mx-auto mb-2 h-12 w-12 rounded-full bg-linear-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
-              <InstagramIcon />
-            </div>
-            <p className="text-xs uppercase tracking-[0.16em] text-pink-300 font-semibold">Instagram</p>
-          </a>
+          {socialLinks.instagram ? (
+            <a
+              href={socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-pink-400/40 hover:bg-pink-500/10 hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]"
+            >
+              <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-purple-500 via-pink-500 to-orange-400">
+                <InstagramIcon />
+              </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-pink-300">Instagram</p>
+            </a>
+          ) : null}
 
-          <a
-            href={socialLinks.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-red-400/40 hover:bg-red-500/10 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]"
-          >
-            <YoutubeIcon className="mx-auto h-12 w-12 text-red-500 mb-2" />
-            <p className="text-xs uppercase tracking-[0.16em] text-red-300 font-semibold">YouTube</p>
-          </a>
+          {socialLinks.youtube ? (
+            <a
+              href={socialLinks.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-red-400/40 hover:bg-red-500/10 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]"
+            >
+              <YoutubeIcon className="mx-auto mb-2 h-12 w-12 text-red-500" />
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-red-300">YouTube</p>
+            </a>
+          ) : null}
 
-          <a
-            href={socialLinks.tiktok}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-cyan-300/40 hover:bg-cyan-500/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
-          >
-            <TiktokIcon />
-            <p className="text-xs uppercase tracking-[0.16em] text-cyan-200 font-semibold">TikTok</p>
-          </a>
+          {socialLinks.tiktok ? (
+            <a
+              href={socialLinks.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-3xl border border-white/10 bg-black/40 p-5 text-center backdrop-blur-sm transition hover:border-cyan-300/40 hover:bg-cyan-500/10 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
+            >
+              <TiktokIcon />
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">TikTok</p>
+            </a>
+          ) : null}
         </section>
 
         {promoBlock ? (
