@@ -71,7 +71,7 @@ const artists = [
   {
     name: "Wendy Rose",
     role: "Artiste Mboka",
-    image: "/mboka_admi/wendy_rose.png",
+    image: "/wendypict.jpeg",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
     href: "/artistes/wendy-rose",
   },

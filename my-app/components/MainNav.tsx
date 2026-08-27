@@ -29,34 +29,34 @@ export default function MainNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative z-140 mx-auto max-w-7xl rounded-full border border-white/15 bg-[linear-gradient(135deg,rgba(139,92,246,0.26),rgba(59,130,246,0.18)),linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04))] px-4 py-3 shadow-[0_18px_50px_rgba(18,14,38,0.42)] backdrop-blur-xl ring-1 ring-white/8 sm:px-8 sm:py-4">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
+    <nav className="relative z-140 mx-auto w-[calc(100%-1.25rem)] max-w-[1800px] rounded-[2rem] border border-white/15 bg-[linear-gradient(135deg,rgba(139,92,246,0.26),rgba(59,130,246,0.18)),linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04))] px-3 py-3 shadow-[0_18px_50px_rgba(18,14,38,0.42)] backdrop-blur-xl ring-1 ring-white/8 sm:w-[calc(100%-2.5rem)] md:h-[160px] md:px-[3.75rem] md:py-0 lg:rounded-[80px]">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[2rem] lg:rounded-[80px]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(168,85,247,0.22),transparent_32%),radial-gradient(circle_at_right,rgba(59,130,246,0.2),transparent_30%)]" />
         <div className="absolute inset-x-10 top-0 h-px bg-linear-to-r from-transparent via-white/60 to-transparent" />
       </div>
 
-      <div className="relative flex items-center justify-between gap-4">
+      <div className="relative flex h-full items-center justify-between gap-3 md:gap-4">
         <div className="flex items-center">
           <BackLogo />
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 md:flex md:gap-4">
           {navLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="group relative overflow-hidden rounded-full border border-violet-400/30 bg-[linear-gradient(135deg,rgba(109,40,217,0.62),rgba(37,99,235,0.45))] px-5 py-2.5 text-sm font-bold text-white shadow-[0_4px_20px_rgba(109,40,217,0.22),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all hover:brightness-110"
+              className="group relative flex h-[66px] items-center overflow-hidden rounded-full border border-violet-400/30 bg-[linear-gradient(135deg,rgba(109,40,217,0.62),rgba(37,99,235,0.45))] px-[34px] text-[23px] font-bold text-white shadow-[0_4px_20px_rgba(109,40,217,0.22),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all hover:brightness-110"
             >
               <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_46%)]" />
-              <span className="relative">{item.label}</span>
+              <span className="relative leading-none">{item.label}</span>
             </Link>
           ))}
           <Link
             href="/boutique"
-            className="group relative overflow-hidden rounded-full border border-sky-300/40 bg-[linear-gradient(135deg,rgba(14,165,233,0.72),rgba(99,102,241,0.6))] px-5 py-2.5 text-sm font-bold text-white shadow-[0_4px_22px_rgba(14,165,233,0.25),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all hover:brightness-110"
+            className="group relative flex h-[66px] items-center overflow-hidden rounded-full border border-sky-300/40 bg-[linear-gradient(135deg,rgba(14,165,233,0.72),rgba(99,102,241,0.6))] px-[34px] text-[23px] font-bold text-white shadow-[0_4px_22px_rgba(14,165,233,0.25),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all hover:brightness-110"
           >
             <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_46%)]" />
-            <span className="relative">Boutique</span>
+            <span className="relative leading-none">Boutique</span>
           </Link>
         </div>
 

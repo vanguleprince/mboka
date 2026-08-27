@@ -38,7 +38,7 @@ const artists = [
     name: "Wendy Rose",
     style: "Afro pop",
     city: "Kinshasa",
-    image: "/mboka_admi/wendy_rose.png",
+    image: "/wendypict2.jpeg",
     highlight: "Profil en cours de creation",
     href: "/artistes/wendy-rose",
   },

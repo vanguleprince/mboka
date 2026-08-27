@@ -430,23 +430,66 @@ const wendyMerchItems: ArtistMerchItem[] = [
 
 export const wendyRosePageData: ArtistPageData = {
   slug: "wendy-rose",
-  heroImage: "/mboka_admi/wendy_rose.png",
+  heroImage: "/wendypict2.jpeg",
   heroAlt: "Wendy Rose",
   heroTitle: "WENDY ROSE",
   heroSubtitle: "Artiste Mboka · Kinshasa",
   bioLead: (
     <p>
-      <span className="font-semibold text-white">Wendy Rose</span> rejoint officiellement le catalogue Mboka. Sa bio complete, ses liens officiels et son univers detaille seront ajoutes des reception de tes elements.
+      <span className="font-semibold text-white">Wendy Rose</span> construit un univers sonore où la musique devient une vibration qui relie les corps, les esprits et les cultures.
     </p>
   ),
   bioExpanded: (
     <>
       <p>
-        Cette page est prete et fonctionnelle. Tu peux maintenant m&apos;envoyer sa bio, ses titres et tout contenu complementaire pour finaliser son profil complet.
+        L&apos;univers de <span className="font-semibold text-white">WENDY ROSE</span> repose sur une idée simple : la musique est une vibration qui connecte les corps, les esprits et les cultures.
       </p>
+      <p>
+        À travers ses sets et ses performances vocales, elle crée des espaces où les rythmes afro contemporains rencontrent la culture globale du dancefloor.
+      </p>
+      <p>
+        Son approche artistique s&apos;inscrit dans une génération d&apos;artistes africains qui utilisent le son, l&apos;image et le style comme outils d&apos;expression culturelle.
+      </p>
+
+      <div className="mt-4 space-y-4">
+        <div>
+          <h3 className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-pink-200">Vision</h3>
+          <ul className="space-y-2 text-sm leading-6 text-zinc-200/90">
+            <li>• Énergie collective</li>
+            <li>• Expression personnelle</li>
+            <li>• Identité sonore</li>
+            <li>• Dimension symbolique</li>
+            <li>• Position sociale</li>
+            <li>• DJ</li>
+            <li>• Afro fusion spirit</li>
+            <li>• Prêtresse vibeuse</li>
+            <li>• Chanteuse</li>
+            <li>• Activiste</li>
+            <li>• Mode</li>
+            <li>• Langage visuel</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-pink-200">Univers</h3>
+          <p className="text-sm leading-6 text-zinc-200/90">
+            L&apos;identité visuelle de Wendy Rose se caractérise par une esthétique graphique forte, un contraste noir &amp; blanc amplifié par un rose électrique signature, une typographie expressive et expérimentale, ainsi qu&apos;une présence visuelle inspirée de la culture club et de la mode.
+          </p>
+          <p className="mt-3 text-sm leading-6 text-zinc-200/90">
+            Cette direction artistique traduit une énergie à la fois urbaine, contemporaine et audacieuse.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-pink-200">Adn</h3>
+          <p className="text-sm leading-6 text-zinc-200/90">
+            WENDY ROSE se définit par quatre éléments : <span className="font-semibold text-white">Sound</span> – une fusion de rythmes afro et d&apos;influences globales ; <span className="font-semibold text-white">Style</span> – une identité visuelle marquée et contemporaine ; <span className="font-semibold text-white">Energy</span> – une performance scénique vibrante.
+          </p>
+        </div>
+      </div>
     </>
   ),
-  tagList: ["Nouveau profil", "Mboka Label", "Kinshasa", "Mise a jour a venir"],
+  tagList: ["Afro fusion", "Mboka Label", "Kinshasa", "DJ & chanteuse"],
   tracks: wendyTracks,
   playableArtist: "Wendy Rose",
   socialLinks: wendySocialLinks,

@@ -37,11 +37,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="h-full antialiased bg-black">
-      <body className="min-h-full flex flex-col bg-black text-white">
+    <html lang="fr" className="h-full ntialiased bg-black" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-black text-white" suppressHydrationWarning>
         <PwaProvider>
           <AudioProvider>
-            <header className="bg-linear-to-r from-purple-900 to-blue-900 px-4 py-4 sm:px-6 sm:py-5">
+            <header className="bg-linear-to-r from-purple-900 to-blue-900 px-1 py-1 sm:px-6 sm:py-3">
               <MainNav />
             </header>
 

@@ -7,15 +7,15 @@ export default function BackLogo() {
   return (
     <Link
       href="/decouvrir"
-      className="transition-opacity hover:opacity-80"
+      className="flex items-center justify-center transition-opacity hover:opacity-80"
       aria-label="Aller a la page Decouvrir"
     >
       <Image
         src="/imagepages/mboka.png"
         alt="Mboka"
-        width={200}
-        height={174}
-        className="h-24 w-auto object-contain"
+        width={180}
+        height={180}
+        className="h-[72px] w-auto object-contain sm:h-[88px] md:h-[112px] lg:h-[140px]"
         priority
       />
     </Link>
