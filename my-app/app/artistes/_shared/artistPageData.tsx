@@ -184,7 +184,7 @@ const c2bPromoBlock: ArtistPromoBlock = {
 
 export const c2bPageData: ArtistPageData = {
   slug: "c2b",
-  heroImage: "/imagepages/cdbpicture.png",
+  heroImage: "/c2b_pict.png",
   heroAlt: "C2B",
   heroTitle: "C2B",
   heroSubtitle: "Rap urbain · Kinshasa",

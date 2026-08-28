@@ -6,7 +6,7 @@ const artists = [
     name: "C2B",
     style: "Rap urbain",
     city: "Kinshasa",
-    image: "/imagepages/cdbpicture.png",
+    image: "/c2b_pict2.png",
     highlight: "Session live ce vendredi",
     href: "/artistes/c2b",
   },
