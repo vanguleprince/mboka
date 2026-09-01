@@ -78,9 +78,16 @@ export default function YoutubeArtistNotice() {
       }
     };
 
+    const previousOverflow = document.body.style.overflow;
+    const previousOverflowY = document.body.style.overflowY;
+    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
+
     window.addEventListener("keydown", onKeyDown);
     return () => {
       window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+      document.body.style.overflowY = previousOverflowY;
     };
   }, [isOpen]);
 
@@ -88,16 +95,17 @@ export default function YoutubeArtistNotice() {
 
   return (
     <div
-      className="fixed inset-0 z-80 flex items-end justify-center bg-black/65 px-4 py-6 sm:items-center"
+      className="fixed inset-0 z-80 flex items-end justify-center overflow-y-auto bg-black/65 px-4 py-6 sm:items-center"
       onClick={() => setIsOpen(false)}
     >
-      <div
-        className="relative w-full max-w-5xl overflow-hidden rounded-3xl border border-white/15 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.22),rgba(17,24,39,0.95)_48%),linear-gradient(130deg,rgba(220,38,38,0.18),rgba(15,23,42,0.95))] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:p-7"
-        style={{ paddingTop: "calc(env(safe-area-inset-top, 0px) + 1.25rem)" }}
-        onClick={(event) => event.stopPropagation()}
-      >
-        <div className="pointer-events-none absolute -left-16 -top-16 h-44 w-44 rounded-full bg-red-500/25 blur-3xl" />
-        <div className="pointer-events-none absolute -right-16 bottom-0 h-52 w-52 rounded-full bg-blue-500/20 blur-3xl" />
+      <div className="flex min-h-full w-full items-end justify-center sm:items-center">
+        <div
+          className="relative w-full max-w-5xl max-h-[calc(100vh-2.5rem)] overflow-y-auto rounded-3xl border border-white/15 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.22),rgba(17,24,39,0.95)_48%),linear-gradient(130deg,rgba(220,38,38,0.18),rgba(15,23,42,0.95))] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:p-7"
+          style={{ paddingTop: "calc(env(safe-area-inset-top, 0px) + 1.25rem)" }}
+          onClick={(event) => event.stopPropagation()}
+        >
+          <div className="pointer-events-none absolute -left-16 -top-16 h-44 w-44 rounded-full bg-red-500/25 blur-3xl" />
+          <div className="pointer-events-none absolute -right-16 bottom-0 h-52 w-52 rounded-full bg-blue-500/20 blur-3xl" />
 
         <div className="relative">
           <div className="mb-4 flex items-start justify-between gap-3">
@@ -171,6 +179,7 @@ export default function YoutubeArtistNotice() {
             >
               Fermer cette section
             </button>
+          </div>
           </div>
         </div>
       </div>
