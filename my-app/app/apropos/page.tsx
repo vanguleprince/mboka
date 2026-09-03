@@ -108,7 +108,7 @@ export default function AproposPage() {
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
                 <Image
-                  src="/à_propos-pict/laurent.png"
+                  src="/à_propos-pict/laurentIlonga.JPG"
                   alt="Laurent Ilonga Weya"
                   width={900}
                   height={900}
@@ -122,7 +122,7 @@ export default function AproposPage() {
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
                 <Image
-                  src="/à_propos-pict/despi_pict-1.png"
+                  src="/à_propos-pict/Despi.jpeg"
                   alt="Desmond Despi"
                   width={900}
                   height={900}
@@ -130,13 +130,15 @@ export default function AproposPage() {
                 />
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Desmond Despi</h3>
-              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Manager d&apos;artistes</p>
+              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Superviseur / Résposable de suivis</p>
+              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Tshibuabua-Mukengeshai-desmonde</p>
+            
             </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
                 <Image
-                  src="/à_propos-pict/sharon_pict-2.png"
+                  src="/à_propos-pict/Sharon.JPG"
                   alt="Sharon"
                   width={900}
                   height={900}
@@ -144,13 +146,14 @@ export default function AproposPage() {
                 />
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Sharon</h3>
-              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Secrétaire</p>
+              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Secrétaire / et manager d'artistes</p>
+               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Secrétaire</p>
             </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
                 <Image
-                  src="/à_propos-pict/henock_hk.png"
+                  src="/à_propos-pict/HK.jpg"
                   alt="Henock HK"
                   width={900}
                   height={900}
@@ -158,8 +161,10 @@ export default function AproposPage() {
                 />
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Henock HK</h3>
-              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Membre de l&apos;équipe</p>
-            </article>
+              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Direction de comptable</p>
+              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Henock-Mpiana</p>
+      
+            </article>²
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
@@ -173,34 +178,37 @@ export default function AproposPage() {
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Young Grace</h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Direction artistique (D.A)</p>
+               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Grace-keya-bitoukou</p>
             </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
                 <Image
-                  src="/à_propos-pict/leprince-vangu_mvuluzi.png"
+                  src="/à_propos-pict/leprince.jpeg"
                   alt="Le Prince"
                   width={900}
                   height={900}
                   className="h-72 w-full object-cover"
                 />
               </div>
-              <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Leprince-vangu</h3>
+              <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Leprince</h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Direction technique (D.T)</p>
+              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Vangu-Mvuluzi Mayola</p>
             </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
                 <Image
-                  src="/à_propos-pict/mkh_henock.png"
+                  src="/à_propos-pict/MKH.JPG"
                   alt="Mkh Henock"
                   width={900}
                   height={900}
                   className="h-72 w-full object-cover"
                 />
               </div>
-              <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Mkh Henock</h3>
+              <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Mkh</h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Brand Manager</p>
+              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Henock Mpova</p>
             </article>
           </div>
         </section>

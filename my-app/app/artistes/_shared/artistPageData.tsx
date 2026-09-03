@@ -283,7 +283,7 @@ export const flackoPageData: ArtistPageData = {
       <p>
         Originaire de la Republique Democratique du Congo et base a Lemba, <span className="font-semibold text-white">Flacko (Armando Choukrani)</span> incarne une nouvelle generation d&apos;artistes africains portee par l&apos;ambition, la discipline et une vision internationale.
       </p>
-      <p className="mt-3">Ne a Kinshasa le 28/07/2004, son premier texte a ete ecrit en 2021.</p>
+      <p className="mt-3">Ne a Kinshasa le 28/07/2004, son premier texte a ete ecrit en 2018.</p>
     </>
   ),
   bioExpanded: (

@@ -35,7 +35,7 @@ export default async function AdminDashboardPage() {
             { title: "Artistes", value: "5", detail: "enregistrés", trend: "actifs" },
             { title: "Musiques", value: "30", detail: "titres", trend: "total" },
             { title: "Commandes", value: "0", detail: "commandes", trend: "aucune" },
-            { title: "Utilisateurs", value: "16", detail: "utilisateurs", trend: "total" },
+            { title: "Utilisateurs", value: "21", detail: "utilisateurs", trend: "total" },
           ].map((item) => (
             <div
               key={item.title}
