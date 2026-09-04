@@ -164,7 +164,7 @@ export default function AproposPage() {
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Direction de comptable</p>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Henock-Mpiana</p>
       
-            </article>²
+            </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <div className="relative overflow-hidden rounded-2xl border border-[#4e3a95]/20">
@@ -210,6 +210,8 @@ export default function AproposPage() {
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Brand Manager</p>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Henock Mpova</p>
             </article>
+
+           
           </div>
         </section>
       </section>

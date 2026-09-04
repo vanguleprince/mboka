@@ -27,6 +27,14 @@ const artists = [
     href: "/artistes/flacko",
   },
   {
+    name: "B.WALLY",
+    style: "Rap / Production",
+    city: "Kinshasa",
+    image: "/B.wally.jpg",
+    highlight: "Artiste et ingénieur du son",
+    href: "/artistes/b-wally",
+  },
+  {
     name: "Ceurma",
     style: "Afro pop",
     city: "Kinshasa",

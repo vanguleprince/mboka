@@ -346,7 +346,7 @@ export default function ArtistPageTemplate({
               const active = currentIndex === index && samePlaylist;
               return (
                 <button
-                  key={track.src}
+                  key={`${track.title}-${index}`}
                   type="button"
                   onClick={() => playFromArtistList(index)}
                   className={`flex w-full items-center gap-4 rounded-2xl border px-4 py-3 text-left transition ${

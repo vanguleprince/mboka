@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const branchCards = [
@@ -54,6 +55,17 @@ export default function AutreBranchePage() {
               key={card.title}
               className="rounded-3xl border border-amber-200/25 bg-linear-to-br from-amber-400/35 via-orange-500/25 to-zinc-900/90 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]"
             >
+              {card.title === "Location des vehicules" && (
+                <div className="mb-4 overflow-hidden rounded-2xl border border-amber-200/25 bg-zinc-950/60">
+                  <Image
+                    src="/mbokatrans.png"
+                    alt="Location de véhicules Mboka"
+                    width={1200}
+                    height={800}
+                    className="h-48 w-full object-cover"
+                  />
+                </div>
+              )}
               <span className="inline-flex rounded-full border border-amber-200/40 bg-amber-200/15 px-3 py-1 text-xs tracking-[0.12em] text-amber-100">
                 {card.status}
               </span>

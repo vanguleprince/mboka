@@ -72,12 +72,12 @@ const bogoMerchItems: ArtistMerchItem[] = [
   {
     name: "Hoodie Black Drop",
     description: "Sweat premium pensé pour les sorties, les shows et le quotidien.",
-    price: "45$",
+    price: "25$",
   },
   {
     name: "Casquette Logo",
     description: "Accessoire minimal avec branding frontal inspiré de l'univers Mboka.",
-    price: "20$",
+    price: "25$",
   },
 ];
 
@@ -401,6 +401,160 @@ export const keurmaPageData: ArtistPageData = {
   merchItems: keurmaMerchItems,
 };
 
+const bWallyTracks: ArtistTrackItem[] = [
+  { title: "Mélodie", duration: "3:16", link: "https://heylink.me/B.Wally", src: "https://heylink.me/B.Wally" },
+  { title: "Toucher Jouer", duration: "3:12", link: "https://heylink.me/B.Wally", src: "https://heylink.me/B.Wally?track=toucher-jouer" },
+  { title: "Makala (collab. C2B)", duration: "3:24", link: "https://heylink.me/B.Wally", src: "https://heylink.me/B.Wally?track=makala" },
+  { title: "OA NANI (collab. C2B)", duration: "3:19", link: "https://heylink.me/B.Wally", src: "https://heylink.me/B.Wally?track=oa-nani" },
+];
+
+const bWallySocialLinks: ArtistSocialLinks = {
+  instagram: "https://heylink.me/B.Wally",
+  youtube: "https://heylink.me/B.Wally",
+  tiktok: "https://heylink.me/B.Wally",
+  spotify: "https://heylink.me/B.Wally",
+};
+
+const bWallyNewsItems: ArtistNewsItem[] = [
+  {
+    title: "Nouveaux titres en ligne",
+    detail: "B.Wally fait grandir sa présence avec des morceaux salués sur les plateformes et des morceaux déjà très suivis en ligne.",
+  },
+  {
+    title: "Ascension silencieuse",
+    detail: "L'artiste poursuit sa montée en puissance avec une approche discrète, déterminée et très cohérente.",
+  },
+  {
+    title: "Collabos marquantes",
+    detail: "Son travail d'ingénieur du son avec C2B sur des titres comme MAKALA et OA NANI a renforcé sa crédibilité artistique.",
+  },
+];
+
+const bWallyMerchItems: ArtistMerchItem[] = [
+  {
+    name: "Merch B.WALLY",
+    description: "Identité visuelle à venir pour les prochains drops officiels.",
+    price: "À venir",
+  },
+  {
+    name: "Signature audio",
+    description: "Un univers produit par B.WALLY, mêlant qualité sonore et vision artistique.",
+    price: "À venir",
+  },
+];
+
+export const bWallyPageData: ArtistPageData = {
+  slug: "b-wally",
+  heroImage: "/B.wally.jpg",
+  heroAlt: "B.WALLY",
+  heroTitle: "B.WALLY",
+  heroSubtitle: "Artiste & ingénieur du son · Kinshasa",
+  bioLead: (
+    <p>
+      <span className="font-semibold text-white">B.Wally</span>, de son vrai nom Bercy Boloka Mankoto, est un artiste et ingénieur du son originaire de la République Démocratique du Congo.
+    </p>
+  ),
+  bioExpanded: (
+    <>
+      <p>
+        Il est notamment connu pour ses titres à succès <span className="font-semibold text-white">Mélodie</span> et <span className="font-semibold text-white">Toucher Jouer</span>, disponibles sur sa chaîne YouTube, ainsi que pour de nombreux morceaux déjà salués sur les plateformes de streaming.
+      </p>
+      <p>
+        En tant qu&apos;ingénieur du son, il a notamment collaboré avec l&apos;artiste C2B sur des projets remarqués tels que <span className="font-semibold text-white">MAKALA</span> et <span className="font-semibold text-white">OA NANI</span>.
+      </p>
+      <p>
+        Fort de ce parcours, B.Wally poursuit son ascension avec discrétion et détermination, en construisant une identité artistique solide au croisement du talent vocal, de la production et de la maîtrise sonore.
+      </p>
+    </>
+  ),
+  tagList: ["Artiste", "Ingénieur du son", "Kinshasa", "YouTube", "Streaming"],
+  tracks: bWallyTracks,
+  playableArtist: "B.WALLY",
+  socialLinks: bWallySocialLinks,
+  newsTitle: "Les news de B.WALLY",
+  newsItems: bWallyNewsItems,
+  merchDescription: "Une sélection de contenus et visuels en préparation pour B.WALLY.",
+  merchItems: bWallyMerchItems,
+};
+
+const ndokiTracks: ArtistTrackItem[] = [
+  { title: "Tuku Tuku (feat. C2B)", duration: "3:10", link: "https://www.youtube.com/results?search_query=Ndoki+na+Beats", src: "https://www.youtube.com/results?search_query=Ndoki+na+Beats" },
+  { title: "Kiolé (feat. Solina)", duration: "3:08", link: "https://www.youtube.com/results?search_query=Ndoki+na+Beats", src: "https://www.youtube.com/results?search_query=Ndoki+na+Beats" },
+  { title: "Olali (feat. Raayka)", duration: "3:20", link: "https://www.youtube.com/results?search_query=Ndoki+na+Beats", src: "https://www.youtube.com/results?search_query=Ndoki+na+Beats" },
+];
+
+const ndokiSocialLinks: ArtistSocialLinks = {
+  youtube: "https://www.youtube.com/results?search_query=Ndoki+na+Beats",
+  instagram: "https://www.instagram.com/",
+  tiktok: "https://www.tiktok.com/",
+  spotify: "https://open.spotify.com/",
+};
+
+const ndokiNewsItems: ArtistNewsItem[] = [
+  {
+    title: "Art incompris",
+    detail: "Ndoki na Beats construit un univers artistique porté par la réflexion, l’authenticité et la distance volontaire vis-à-vis des apparences.",
+  },
+  {
+    title: "Collaborations marquantes",
+    detail: "Ses participations avec C2B, Solina et Raayka renforcent son identité de créateur singulier et visionnaire.",
+  },
+  {
+    title: "Parcours discret",
+    detail: "L’artiste continue de faire évoluer son univers dans l’ombre, laissant la musique porter la lumière.",
+  },
+];
+
+const ndokiMerchItems: ArtistMerchItem[] = [
+  {
+    name: "Art incompris",
+    description: "Une philosophie visuelle inspirée par l’univers sombre et intemporel de Ndoki na Beats.",
+    price: "Bientôt",
+  },
+  {
+    name: "Signature Ndoki",
+    description: "Un univers visuel en préparation pour les prochaines sorties.",
+    price: "Bientôt",
+  },
+];
+
+export const ndokiNaBeatsPageData: ArtistPageData = {
+  slug: "ndoki-na-beats",
+  heroImage: "/ndoki-eeeh.jpeg",
+  heroAlt: "Ndoki na Beats",
+  heroTitle: "NDOKI NA BEATS",
+  heroSubtitle: "Artiste · Brazzaville",
+  bioLead: (
+    <p>
+      <span className="font-semibold text-white">Ndoki na Beats</span>, artiste originaire de <span className="font-semibold text-white">Brazzaville</span>, est né le <span className="font-semibold text-white">1er mai 2000</span>. Actif dans l’univers musical depuis près de <span className="font-semibold text-white">10 ans</span>, il construit son parcours dans l’ombre, laissant son art parler à sa place.
+    </p>
+  ),
+  bioExpanded: (
+    <>
+      <p>
+        Entre musique et sagesse, Ndoki na Beats développe un univers singulier, marqué par l’authenticité, la réflexion et une volonté de transmettre des émotions au-delà des apparences. Son identité civile reste volontairement anonyme : seule sa musique doit être connue.
+      </p>
+      <p>
+        Au fil de son parcours, il participe à plusieurs collaborations, notamment avec C2B sur <span className="font-semibold text-white">« Tuku Tuku »</span>, Solina sur <span className="font-semibold text-white">« Kiolé »</span> et Raayka sur <span className="font-semibold text-white">« Olali »</span>.
+      </p>
+      <p>
+        Son approche artistique repose sur une idée simple : tout ce qui est créé n’est pas forcément destiné à être compris par tout le monde. C’est cette philosophie qui définit son univers : <span className="font-semibold text-white">« Art incompris »</span>.
+      </p>
+      <p>
+        <span className="font-semibold text-white">Ndoki na Beats — un nom, une vision, une musique.</span> L’homme reste dans l’ombre, l’art reste dans la lumière.
+      </p>
+    </>
+  ),
+  tagList: ["Art incompris", "Brazzaville", "Beatmaker", "Authentique"],
+  tracks: ndokiTracks,
+  playableArtist: "Ndoki na Beats",
+  socialLinks: ndokiSocialLinks,
+  newsTitle: "Les news de Ndoki na Beats",
+  newsItems: ndokiNewsItems,
+  merchDescription: "Une sélection artistique inspirée par la philosophie « Art incompris » de Ndoki na Beats.",
+  merchItems: ndokiMerchItems,
+};
+
 const wendyTracks: ArtistTrackItem[] = [];
 
 const wendySocialLinks: ArtistSocialLinks = {
@@ -505,4 +659,6 @@ export const ARTIST_PAGE_DATA: Record<ArtistSlug, ArtistPageData> = {
   flacko: flackoPageData,
   keurma: keurmaPageData,
   "wendy-rose": wendyRosePageData,
+  "b-wally": bWallyPageData,
+  "ndoki-na-beats": ndokiNaBeatsPageData,
 };
