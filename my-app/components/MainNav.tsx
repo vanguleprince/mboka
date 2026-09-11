@@ -29,7 +29,10 @@ export default function MainNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative z-140 mx-auto w-[calc(100%-1.25rem)] max-w-[1800px] rounded-[2rem] border border-white/15 bg-[linear-gradient(135deg,rgba(139,92,246,0.26),rgba(59,130,246,0.18)),linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04))] px-3 py-3 shadow-[0_18px_50px_rgba(18,14,38,0.42)] backdrop-blur-xl ring-1 ring-white/8 sm:w-[calc(100%-2.5rem)] md:h-[160px] md:px-[3.75rem] md:py-0 lg:rounded-[80px]">
+    <nav
+      suppressHydrationWarning
+      className="relative z-140 mx-auto w-[calc(100%-1.25rem)] max-w-[1800px] rounded-[2rem] border border-white/15 bg-[linear-gradient(135deg,rgba(139,92,246,0.26),rgba(59,130,246,0.18)),linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04))] px-3 py-3 shadow-[0_18px_50px_rgba(18,14,38,0.42)] backdrop-blur-xl ring-1 ring-white/8 sm:w-[calc(100%-2.5rem)] md:h-[160px] md:px-[3.75rem] md:py-0 lg:rounded-[80px]"
+    >
       <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[2rem] lg:rounded-[80px]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(168,85,247,0.22),transparent_32%),radial-gradient(circle_at_right,rgba(59,130,246,0.2),transparent_30%)]" />
         <div className="absolute inset-x-10 top-0 h-px bg-linear-to-r from-transparent via-white/60 to-transparent" />

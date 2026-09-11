@@ -92,12 +92,11 @@ const artists = [
 ];
 
 const clothingItems = [
-  { id: "1", name: "Generation Gang T-shirt", type: "T-shirt", price: "15.000 FC", image: "/imagepages/thrity1.jpeg" },
-  { id: "2", name: "Generation Gang T-shirt", type: "T-shirt", price: "35.000 FC", image: "/imagepages/thrity2.jpeg" },
-  { id: "3", name: "MBOKA T-shirt", type: "T-shirt", price: "25.000 FC", image: "/imagepages/mbokaTshirt1.png" },
-  { id: "4", name: "CRAMECITY T-shirt", type: "T-shirt", price: "28.000 FC", image: "/imagepages/crame1.png" },
-  { id: "5", name: "Corne C2B", type: "Accessoire", price: "22.000 FC", image: "/corneC2B.jpeg" },
-  { id: "6", name: "Corne C2B", type: "Accessoire", price: "22.000 FC", image: "/corne2C2B.jpeg" },
+  { id: "1", name: "Generation Gang T-shirt", type: "T-shirt", price: "25$", image: "/imagepages/thrity1.jpeg" },
+  { id: "2", name: "Generation Gang T-shirt", type: "T-shirt", price: "25$", image: "/imagepages/thrity2.jpeg" },
+  { id: "3", name: "MBOKA T-shirt", type: "T-shirt", price: "25$", image: "/imagepages/mbokaTshirt1.png" },
+  { id: "4", name: "Corne C2B", type: "Accessoire", price: "20$", image: "/corneC2B.jpeg" },
+  { id: "5", name: "Corne C2B", type: "Accessoire", price: "20$", image: "/corne2C2B.jpeg" },
 ];
 
 const audioTracks = [
@@ -139,18 +138,18 @@ export default function DecouvrirPage() {
 
   return (
     <main
-      className="relative min-h-screen overflow-hidden bg-[#08070c] px-4 py-10 text-white sm:px-8"
+      className="relative min-h-screen overflow-hidden bg-[#0d1016] px-4 py-8 text-white sm:px-8"
       suppressHydrationWarning
       translate="no"
     >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-16 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-violet-500/20 blur-3xl" />
-        <div className="absolute bottom-6 left-8 h-52 w-52 rounded-full bg-fuchsia-500/10 blur-3xl" />
-        <div className="absolute -right-10 top-1/3 h-60 w-60 rounded-full bg-indigo-500/15 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 opacity-80">
+        <div className="absolute -top-16 left-1/2 h-52 w-52 -translate-x-1/2 rounded-full bg-violet-500/10 blur-3xl" />
+        <div className="absolute bottom-6 left-8 h-40 w-40 rounded-full bg-fuchsia-500/8 blur-3xl" />
+        <div className="absolute -right-10 top-1/3 h-52 w-52 rounded-full bg-indigo-500/10 blur-3xl" />
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl">
-        <section className="rounded-[34px] border border-white/10 bg-black/40 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-6">
+        <section className="rounded-[28px] border border-white/8 bg-black/25 p-3 shadow-[0_10px_28px_rgba(0,0,0,0.22)] backdrop-blur-sm sm:p-5">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-bold text-violet-100 sm:text-xl">Explore</h2>
            
@@ -194,7 +193,7 @@ export default function DecouvrirPage() {
           </div>
         </section>
 
-        <section className="mt-8 rounded-[34px] border border-emerald-300/20 bg-linear-to-br from-emerald-500/24 via-green-500/12 to-zinc-900/85 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-6">
+        <section className="mt-6 rounded-[28px] border border-emerald-300/15 bg-linear-to-br from-emerald-500/16 via-green-500/8 to-zinc-900/80 p-3 shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-sm sm:p-5">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-bold text-emerald-100 sm:text-xl">Artistes du label</h2>
             <span className="rounded-full border border-emerald-300/35 bg-emerald-300/12 px-3 py-1 text-xs tracking-[0.16em] text-emerald-100">
@@ -257,7 +256,7 @@ export default function DecouvrirPage() {
             </div>
           </div>
         </section>
-        <section className="mt-8 rounded-[34px] border border-violet-300/20 bg-linear-to-br from-violet-500/26 via-fuchsia-500/12 to-zinc-900/88 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-6">
+        <section className="mt-6 rounded-[28px] border border-violet-300/15 bg-linear-to-br from-violet-500/16 via-fuchsia-500/8 to-zinc-900/80 p-3 shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-sm sm:p-5">
           <div className="mb-4 flex items-center justify-between gap-3">
             <h2 className="text-lg font-bold text-violet-100 sm:text-xl">Ecouter les artistes du label</h2>
             <span className="rounded-full border border-violet-300/35 bg-violet-300/12 px-3 py-1 text-xs tracking-[0.16em] text-violet-100">
@@ -323,7 +322,7 @@ export default function DecouvrirPage() {
           </div>
         </section>
 
-        <section className="mt-8 rounded-[34px] border border-sky-300/20 bg-linear-to-br from-blue-900/70 via-indigo-900/55 to-zinc-900/90 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-6">
+        <section className="mt-6 rounded-[28px] border border-sky-300/15 bg-linear-to-br from-blue-900/55 via-indigo-900/45 to-zinc-900/82 p-3 shadow-[0_12px_28px_rgba(0,0,0,0.2)] backdrop-blur-sm sm:p-5">
           <div className="mb-4 flex items-center justify-between gap-3">
             <h2 className="text-lg font-bold text-sky-100 sm:text-xl">Collection vetements</h2>
             <span className="rounded-full border border-sky-300/35 bg-sky-300/12 px-3 py-1 text-xs tracking-[0.16em] text-sky-100">
