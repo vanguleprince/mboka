@@ -9,12 +9,6 @@ const branchCards = [
       "Ajoutez ici les categories de vehicules, les tarifs journaliers, les conditions et le numero de contact.",
   },
   {
-    title: "Mboka Session",
-    status: "A planifier",
-    description:
-      "Presentez les sessions studio, les invites, les dates et les formulaires d'inscription.",
-  },
-  {
     title: "Autres services",
     status: "En preparation",
     description:
@@ -37,7 +31,7 @@ export default function AutreBranchePage() {
             <p className="text-xs tracking-[0.2em] text-amber-200/80">M B O K A</p>
             <h1 className="mt-2 text-3xl font-black text-amber-100 sm:text-5xl">Autre branche</h1>
             <p className="mt-3 max-w-2xl text-sm text-zinc-200/90 sm:text-base">
-              Cette page est prete pour centraliser les nouvelles activites: location des vehicules, Mboka Session et tous les services annexes.
+              Cette page est prete pour centraliser les nouvelles activites: location des vehicules et tous les services annexes.
             </p>
           </div>
 

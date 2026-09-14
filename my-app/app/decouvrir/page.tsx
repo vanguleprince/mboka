@@ -62,25 +62,11 @@ const artists = [
     href: "/artistes/flacko",
   },
   {
-    name: "B.WALLY",
-    role: "Artiste & ingénieur du son",
-    image: "/wally_pict.jpeg",
-    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/keurma2.jpg"],
-    href: "/artistes/b-wally",
-  },
-  {
     name: "Ceurma",
     role: "Afro pop kin",
     image: "/keurma.jpeg",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
     href: "/artistes/keurma",
-  },
-  {
-    name: "Ndoki na Beats",
-    role: "Artiste",
-    image: "/ndoki_na-beat.jpeg",
-    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
-    href: "/artistes/ndoki-na-beats",
   },
   {
     name: "Wendy Rose",
@@ -102,12 +88,9 @@ const clothingItems = [
 const audioTracks = [
   { title: "MPIAKA (feat. Gaz Fabilouss)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - MPIAKA & Gaz Fabilouss - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg" },
   { title: "Oa Nani (feat. Mobutu Satana)", artist: "C2B", image: "/imagepages/cdbpicture.png", src: "/cdb/C2B - Oa Nani & @MobutuSatanaOfficiel - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6zUcMw2Cj20JpCj4XoPqp9?si=QwCrFTPCSFOUSP-bOIzaOg" },
-  { title: "HENNESSY", artist: "Bogo", image: "/bogothegoat_pict21.png", src: "/audios/bogo/bogo1.mp3", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q" },
   { title: "WOLO PALATA", artist: "Bogo", image: "/bogothegoat_pict21.png", src: "/audios/bogo/bogo2.mp3", link: "https://open.spotify.com/artist/21lSdHT5xVPgV1R7RknvFC?si=csAB-2U7S0W5zAmCUc8Q3Q" },
   { title: "C'est fou ca (Prod by Offside)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - C'est fou ça (Prod by Offside) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/14CMqCyT5GDbEJpzn8EmsJ?si=7dx-i4_wSl2dmBzYbjAIcg" },
   { title: "HUSTLE (Goat Session)", artist: "Flacko", image: "/imagepages/flackoCram.jpg", src: "/flacko/FLACKO - HUSTLE ( GOAT SESSION ) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/14CMqCyT5GDbEJpzn8EmsJ?si=7dx-i4_wSl2dmBzYbjAIcg" },
-  { title: "Montage (feat. Suintement)", artist: "Ceurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Montage feat. Suintement (Clip Officiel) - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw" },
-  { title: "Vraie Momie", artist: "Ceurma", image: "/imagepages/keurma.jpg", src: "/keurma/❤️MA - Vraie Momie - Download - Tubidy.mp3", link: "https://open.spotify.com/artist/6dFCDvHfmQzvELK8AlpXoi?si=sbKCCt3CQBqcDaEAd7z5Hw" },
 ];
 
 export default function DecouvrirPage() {

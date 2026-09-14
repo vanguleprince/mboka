@@ -15,13 +15,6 @@ type VideoNoticeItem = {
 
 const VIDEO_ITEMS: VideoNoticeItem[] = [
   {
-    title: "NTABA MISATO",
-    artist: "Bogo",
-    href: "https://www.youtube.com/results?search_query=Bogo+Ntaba+Misato",
-    image: "/imagepages/bogothegoat3.jpeg",
-    cta: "Regarder sur YouTube",
-  },
-  {
     title: "Flacko",
     artist: "Flacko",
     href: "https://www.youtube.com/@BIGFLACKOCRAM",
@@ -91,7 +84,12 @@ export default function YoutubeArtistNotice() {
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen || items.length === 0) return null;
+
+  const noticeDescription =
+    items.length === 1
+      ? `Decouvre le contenu de ${items[0].artist}. Clique sur la carte pour ouvrir directement YouTube.`
+      : "Decouvre les contenus de Flacko et C2B. Clique sur une carte pour ouvrir directement YouTube.";
 
   return (
     <div
@@ -128,7 +126,7 @@ export default function YoutubeArtistNotice() {
             Nouvelles videos a voir sur YouTube
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-zinc-200/90">
-            Decouvre les contenus de NTABA MISATO, Flacko et C2B. Clique sur une carte pour ouvrir directement YouTube.
+            {noticeDescription}
           </p>
 
           <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

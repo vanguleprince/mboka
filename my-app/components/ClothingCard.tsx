@@ -20,7 +20,7 @@ export default function ClothingCard({
   rating = 4.5,
   inStock = true,
 }: ClothingCardProps) {
-  const formattedPrice = `${price.toLocaleString("fr-FR")} FC`;
+  const formattedPrice = `${price.toLocaleString("en-US")} $`;
 
   return (
     <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-zinc-900 transition hover:border-pink-500/50 hover:shadow-lg hover:shadow-pink-500/20">

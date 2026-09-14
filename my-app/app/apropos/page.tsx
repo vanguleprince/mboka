@@ -117,7 +117,6 @@ export default function AproposPage() {
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Laurent Ilonga Weya</h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Président (CEO chez MBOKA) busnessman</p>
-               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">le 30 juin 200$</p>
             </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
@@ -132,7 +131,6 @@ export default function AproposPage() {
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Desmond Despi</h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">(Superviseur / Résposable de suivis chez MBOKA) Manager d'artistes</p>
-              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">16/ 12 /200$</p>
             
             </article>
 
@@ -148,7 +146,6 @@ export default function AproposPage() {
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Sharon</h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Secrétaire chez MBOKA / et manager d'artistes</p>
-               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">16 / 08 / 200$</p>
             </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
@@ -163,8 +160,6 @@ export default function AproposPage() {
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Henock HK</h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Direction de comptable chez MBOKA / Habilleur</p>
-              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Henock-Mpiana</p>
-      
             </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
@@ -179,7 +174,7 @@ export default function AproposPage() {
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Young Grace</h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Direction artistique (D.A chez MBOKA) Artiste visuel styliste</p>
-               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">20 janvier 199$</p>
+
             </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
@@ -194,7 +189,7 @@ export default function AproposPage() {
               </div>
               <h3 className="mt-4 text-xl font-extrabold text-[#281f66]">Leprince</h3>
               <p className="mt-1 text-sm font-semibold text-[#3f2f86]">Direction technique (D.T chez MBOKA) devellopeur web et mobile.</p>
-              <p className="mt-1 text-sm font-semibold text-[#3f2f86]">07 novembre 200$</p>
+ 
             </article>
 
             <article className="rounded-[20px] border border-[#4e3a95]/20 bg-white/70 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
