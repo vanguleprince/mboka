@@ -421,6 +421,73 @@ const wendyMerchItems: ArtistMerchItem[] = [
   },
 ];
 
+const ndokiTracks: ArtistTrackItem[] = [];
+
+const ndokiSocialLinks: ArtistSocialLinks = {};
+
+const ndokiNewsItems: ArtistNewsItem[] = [
+  {
+    title: "Nouveau chapitre en préparation",
+    detail: "Ndoki na Beats travaille sur de nouvelles productions qui prolongent son univers introspectif et authentique.",
+  },
+  {
+    title: "Collaboration en ligne de mire",
+    detail: "L’artiste continue de tisser des rencontres créatives qui enrichissent son identité musicale.",
+  },
+  {
+    title: "Philosophie artistique",
+    detail: "Son univers repose sur une idée simple : tout ce qui est créé n’est pas forcément destiné à être compris par tout le monde.",
+  },
+];
+
+const ndokiMerchItems: ArtistMerchItem[] = [
+  {
+    name: "Collection Art incompris",
+    description: "Visuels et objets officiels inspirés du concept artistique de Ndoki na Beats.",
+    price: "Bientôt",
+  },
+];
+
+export const ndokiNaBeatPageData: ArtistPageData = {
+  slug: "ndoki-na-beat",
+  heroImage: "/ndoki_na-beat.jpeg",
+  heroAlt: "Ndoki na Beats",
+  heroTitle: "NDOKI NA BEATS",
+  heroSubtitle: "Musique & sagesse · Brazzaville",
+  bioLead: (
+    <p>
+      <span className="font-semibold text-white">Ndoki na Beats</span>, artiste originaire de <span className="font-semibold text-white">Brazzaville</span>, est né le 1er mai 2000. Actif dans l’univers musical depuis près de 10 ans, il construit son parcours dans l’ombre, laissant son art parler à sa place.
+    </p>
+  ),
+  bioExpanded: (
+    <>
+      <p>
+        Entre musique et sagesse, Ndoki na Beats développe un univers singulier, marqué par l’authenticité, la réflexion et une volonté de transmettre des émotions au-delà des apparences. Son identité civile reste volontairement anonyme : seule sa musique doit être connue.
+      </p>
+      <p>
+        Au fil de son parcours, il participe à plusieurs collaborations, notamment avec <span className="font-semibold text-white">C2B</span> sur <span className="font-semibold text-white">« Tuku Tuku »</span>, <span className="font-semibold text-white">Solina</span> sur <span className="font-semibold text-white">« Kiolé »</span> et <span className="font-semibold text-white">Raayka</span> sur <span className="font-semibold text-white">« Olali »</span>.
+      </p>
+      <p>
+        Son approche artistique repose sur une idée simple : tout ce qui est créé n’est pas forcément destiné à être compris par tout le monde. C’est cette philosophie qui définit son univers : <span className="font-semibold text-white">« Art incompris »</span>.
+      </p>
+      <p>
+        <span className="font-semibold text-white">Ndoki na Beats — un nom, une vision, une musique.</span>
+      </p>
+      <p>
+        L’homme reste dans l’ombre, l’art reste dans la lumière.
+      </p>
+    </>
+  ),
+  tagList: ["Musique & sagesse", "Brazzaville", "Art incompris", "10 ans de parcours"],
+  tracks: ndokiTracks,
+  playableArtist: "Ndoki na Beats",
+  socialLinks: ndokiSocialLinks,
+  newsTitle: "Les news de Ndoki na Beats",
+  newsItems: ndokiNewsItems,
+  merchDescription: "Les pieces et visuels de Ndoki na Beats arrivent prochainement.",
+  merchItems: ndokiMerchItems,
+};
+
 export const wendyRosePageData: ArtistPageData = {
   slug: "wendy-rose",
   heroImage: "/wendypict2.jpeg",
@@ -497,5 +564,6 @@ export const ARTIST_PAGE_DATA: Record<ArtistSlug, ArtistPageData> = {
   c2b: c2bPageData,
   flacko: flackoPageData,
   keurma: keurmaPageData,
+  "ndoki-na-beat": ndokiNaBeatPageData,
   "wendy-rose": wendyRosePageData,
 };

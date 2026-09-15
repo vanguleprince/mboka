@@ -35,6 +35,14 @@ const artists = [
     href: "/artistes/keurma",
   },
   {
+    name: "Ndoki na Beats",
+    style: "Musique & sagesse",
+    city: "Brazzaville",
+    image: "/ndoki_na-beat.jpeg",
+    highlight: "Art incompris",
+    href: "/artistes/ndoki-na-beat",
+  },
+  {
     name: "Wendy Rose",
     style: "Afro pop",
     city: "Kinshasa",

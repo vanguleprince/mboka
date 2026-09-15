@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
@@ -67,6 +66,13 @@ const artists = [
     image: "/keurma.jpeg",
     hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
     href: "/artistes/keurma",
+  },
+  {
+    name: "Ndoki na Beats",
+    role: "Musique & sagesse",
+    image: "/ndoki_na-beat.jpeg",
+    hoverImages: ["/imagepages/bogothegoat3.jpeg", "/imagepages/cdbpicture.png", "/imagepages/flackoCram.jpg"],
+    href: "/artistes/ndoki-na-beat",
   },
   {
     name: "Wendy Rose",

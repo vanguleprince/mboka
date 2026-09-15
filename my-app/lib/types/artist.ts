@@ -1,4 +1,4 @@
-export const ARTIST_SLUGS = ["bogo", "c2b", "flacko", "keurma", "wendy-rose"] as const;
+export const ARTIST_SLUGS = ["bogo", "c2b", "flacko", "keurma", "ndoki-na-beat", "wendy-rose"] as const;
 
 export type ArtistSlug = (typeof ARTIST_SLUGS)[number];
 

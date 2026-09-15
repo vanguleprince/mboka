@@ -27,6 +27,12 @@ export const ARTIST_TRACKLISTS: Record<ArtistSlug, ArtistTracklist> = {
     cover: "/imagepages/keurma.jpg",
     tracks: [],
   },
+  "ndoki-na-beat": {
+    slug: "ndoki-na-beat",
+    name: "Ndoki na Beats",
+    cover: "/ndoki_na-beat.jpeg",
+    tracks: [],
+  },
   "wendy-rose": {
     slug: "wendy-rose",
     name: "Wendy Rose",
