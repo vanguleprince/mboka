@@ -6,7 +6,15 @@ import { usePwa } from "@/components/PwaContext";
 const DISMISSED_KEY = "mboka:pwa-install-dismissed:v3";
 
 export default function InstallPwaBanner() {
-  const { deferredPrompt, setDeferredPrompt, isInstalled, setIsInstalled } = usePwa();
+  const {
+    deferredPrompt,
+    setDeferredPrompt,
+    isInstalled,
+    setIsInstalled,
+    notificationPermission,
+    requestNotificationPermission,
+    sendUpdateNotification,
+  } = usePwa();
 
   // mounted = le nœud DOM est dans le DOM
   // visible = déclenche la transition d'entrée/sortie
@@ -32,6 +40,7 @@ export default function InstallPwaBanner() {
     setIsInstalled(true);
     setVisible(false);
     setTimeout(() => setMounted(false), 420);
+    void sendUpdateNotification("MBOKA est installé. Une notification te signalera les nouvelles sorties et mises à jour.");
   };
 
   useEffect(() => {
@@ -211,6 +220,21 @@ export default function InstallPwaBanner() {
             </p>
           </div>
         </div>
+
+        {notificationPermission === "default" && !previewMode && (
+          <button
+            type="button"
+            onClick={async () => {
+              const permission = await requestNotificationPermission();
+              if (permission === "granted") {
+                await sendUpdateNotification("Notifications activées. Tu recevras la prochaine mise à jour MBOKA directement sur ton appareil.");
+              }
+            }}
+            className="mb-4 inline-flex w-full items-center justify-center gap-2 rounded-full border border-violet-300/35 bg-violet-500/15 px-4 py-2 text-sm font-semibold text-violet-100 transition hover:bg-violet-500/20"
+          >
+            Activer les notifications
+          </button>
+        )}
 
         {isIos ? (
           /* ═══════════════════════════════════════════════════════════════════
