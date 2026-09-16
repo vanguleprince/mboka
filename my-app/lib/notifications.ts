@@ -47,7 +47,7 @@ export async function triggerMbokaNotification({
           tag,
           requireInteraction,
           vibrate: [120, 60, 120],
-        });
+        } as NotificationOptions & { vibrate: number[] });
         return true;
       }
     }
@@ -67,7 +67,7 @@ export async function triggerMbokaNotification({
     tag,
     requireInteraction,
     vibrate: [120, 60, 120],
-  });
+  } as NotificationOptions & { vibrate: number[] });
 
   return true;
 }
