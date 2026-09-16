@@ -9,6 +9,7 @@ export default function BackLogo() {
       href="/decouvrir"
       className="flex items-center justify-center transition-opacity hover:opacity-80"
       aria-label="Aller a la page Decouvrir"
+      suppressHydrationWarning
     >
       <Image
         src="/imagepages/mboka.png"
@@ -17,6 +18,7 @@ export default function BackLogo() {
         height={180}
         className="h-[72px] w-auto object-contain sm:h-[88px] md:h-[112px] lg:h-[140px]"
         priority
+        suppressHydrationWarning
       />
     </Link>
   );
