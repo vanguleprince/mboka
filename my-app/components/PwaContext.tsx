@@ -50,7 +50,7 @@ export function PwaProvider({ children }: { children: ReactNode }) {
             tag: "mboka-update",
             requireInteraction: true,
             vibrate: [120, 60, 120],
-          });
+          } as NotificationOptions & { vibrate: number[] });
           return true;
         }
       } catch {
@@ -68,7 +68,7 @@ export function PwaProvider({ children }: { children: ReactNode }) {
       tag: "mboka-update",
       requireInteraction: true,
       vibrate: [120, 60, 120],
-    });
+    } as NotificationOptions & { vibrate: number[] });
 
     return true;
   };
